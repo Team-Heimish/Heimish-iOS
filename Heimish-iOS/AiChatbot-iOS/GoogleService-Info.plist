@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>415167700355-jtqo624oerf4el4681h9t5rb8d5ltaog.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.415167700355-jtqo624oerf4el4681h9t5rb8d5ltaog</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAS8rnLXcvxa-cS3jN0JwFDlXC0xqbe2lQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>415167700355</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>wonseok.AiChatbot-iOS</string>
+	<key>PROJECT_ID</key>
+	<string>wonseok-pf9a</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wonseok-pf9a.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:415167700355:ios:ed8c52e302dda1c025aab6</string>
+</dict>
+</plist>
