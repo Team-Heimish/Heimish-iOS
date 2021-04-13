@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserBalloonTableViewCell" rowHeight="81" id="il7-R4-TIt" customClass="UserBalloonTableViewCell" customModule="AiChatbot_iOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="81"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="il7-R4-TIt" id="AHR-03-Ubx">
+                <rect key="frame" x="0.0" y="0.0" width="299" height="81"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TUK-tc-FZA">
+                        <rect key="frame" x="234.5" y="10" width="49.5" height="61"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zzs-wB-63j">
+                                <rect key="frame" x="10" y="10" width="29.5" height="41"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="12"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Zzs-wB-63j" secondAttribute="bottom" constant="10" id="5B4-IL-jgK"/>
+                            <constraint firstItem="Zzs-wB-63j" firstAttribute="top" secondItem="TUK-tc-FZA" secondAttribute="top" constant="10" id="RFF-Ft-huh"/>
+                            <constraint firstItem="Zzs-wB-63j" firstAttribute="leading" secondItem="TUK-tc-FZA" secondAttribute="leading" constant="10" id="YMg-TX-Qua"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="sAI-9E-nXB"/>
+                            <constraint firstAttribute="trailing" secondItem="Zzs-wB-63j" secondAttribute="trailing" constant="10" id="wZm-Lm-Bnd"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc1-fl-aJZ">
+                        <rect key="frame" x="209.5" y="61.5" width="20" height="9.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="8"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" name="ChatBack"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="TUK-tc-FZA" secondAttribute="bottom" constant="10" id="D7s-sI-b3B"/>
+                    <constraint firstItem="TUK-tc-FZA" firstAttribute="leading" secondItem="Fc1-fl-aJZ" secondAttribute="trailing" constant="5" id="Mqz-XR-u6T"/>
+                    <constraint firstAttribute="trailing" secondItem="TUK-tc-FZA" secondAttribute="trailing" constant="15" id="VIJ-lo-TGt"/>
+                    <constraint firstItem="TUK-tc-FZA" firstAttribute="top" secondItem="AHR-03-Ubx" secondAttribute="top" constant="10" id="bxO-l8-Lm0"/>
+                    <constraint firstItem="Fc1-fl-aJZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AHR-03-Ubx" secondAttribute="leading" constant="15" id="eDT-N5-NXG"/>
+                    <constraint firstItem="Fc1-fl-aJZ" firstAttribute="bottom" secondItem="TUK-tc-FZA" secondAttribute="bottom" id="sCI-1x-rCG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="balloonView" destination="TUK-tc-FZA" id="GWO-7v-jXv"/>
+                <outlet property="messageLabel" destination="Zzs-wB-63j" id="CJH-qs-baI"/>
+                <outlet property="timeLabel" destination="Fc1-fl-aJZ" id="cNO-M3-073"/>
+            </connections>
+            <point key="canvasLocation" x="-302.17391304347831" y="-33.147321428571431"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="ChatBack">
+            <color red="0.36349576697233743" green="0.67115603600966167" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
