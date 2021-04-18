@@ -118,9 +118,13 @@ class ChatVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
         UserDefaults.standard.setValue(chatDatas, forKey: "userDB")
     }
+    @IBAction func resetChat(_ sender: Any) {
+        chatDatas = []
+        chatTV.reloadData()
+    }
     // 전송버튼
     @IBAction func sendBtnAction(_ sender: Any) {
-        // 텍스트뷰에 있는 값이 chatDatas array에 들어가야지.
+        // 텍스트뷰에 있는 값이 chatDatas에 저장
         if inputTextView.text != ""{
             chatDatas.append(inputTextView.text!)
             let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
@@ -168,7 +172,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
         nowTime = formatter.string(from: Date())
         if indexPath.row % 2 == 0{
             
-            let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as! UserBalloonTableViewCell // MyCell 형식으로 사용하기 위해 형변환이 필요하다.
+            let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as! UserBalloonTableViewCell
             userCell.messageLabel.text = chatDatas[indexPath.row]
             
             if userCell.timeLabel.text != nowTime{
@@ -183,7 +187,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
         }
         else{
             
-            let aiCell = tableView.dequeueReusableCell(withIdentifier: "AiBalloonTableViewCell", for: indexPath) as! AiBalloonTableViewCell // 이것도 마찬가지.
+            let aiCell = tableView.dequeueReusableCell(withIdentifier: "AiBalloonTableViewCell", for: indexPath) as! AiBalloonTableViewCell
             aiCell.messageLabel.text = chatDatas[indexPath.row]
             if aiCell.timeLabel.text != nowTime{
                 aiCell.timeLabel.text = nowTime

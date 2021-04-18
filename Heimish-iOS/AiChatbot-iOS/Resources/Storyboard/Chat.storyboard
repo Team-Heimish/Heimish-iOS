@@ -8,6 +8,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--ChatVC-->
         <scene sceneID="LQ5-rc-jGH">
@@ -46,38 +51,55 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="stF-If-yYh">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="708"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="620"/>
                                 <color key="backgroundColor" name="ChatBack"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="QbX-zK-cGe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9C-s9-cIw">
-                                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                            <state key="normal" image="icnBack"/>
-                                            <connections>
-                                                <action selector="backToHome:" destination="IwT-L7-HwH" eventType="touchUpInside" id="hp2-vp-7eM"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
-                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <constraints>
-                                        <constraint firstItem="k9C-s9-cIw" firstAttribute="top" secondItem="QbX-zK-cGe" secondAttribute="top" id="XQs-IR-ko2"/>
-                                        <constraint firstItem="k9C-s9-cIw" firstAttribute="leading" secondItem="QbX-zK-cGe" secondAttribute="leading" id="ifK-qR-5mH"/>
-                                        <constraint firstAttribute="bottom" secondItem="k9C-s9-cIw" secondAttribute="bottom" id="tgi-Ll-czt"/>
-                                    </constraints>
-                                </view>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej7-Hp-ANZ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3M-fC-Pm7">
+                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <state key="normal" image="icnBack"/>
+                                        <connections>
+                                            <action selector="backToHome:" destination="IwT-L7-HwH" eventType="touchUpInside" id="IKb-jN-J60"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gO-eg-8L4">
+                                        <rect key="frame" x="257" y="0.0" width="98" height="44"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                        <state key="normal" title="대화 기록 초기화">
+                                            <color key="titleColor" systemColor="labelColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="resetChat:" destination="IwT-L7-HwH" eventType="touchUpInside" id="KiO-F9-e5X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="S3M-fC-Pm7" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="top" id="DfL-0h-Nbd"/>
+                                    <constraint firstItem="S3M-fC-Pm7" firstAttribute="leading" secondItem="Ej7-Hp-ANZ" secondAttribute="leading" id="I1C-qC-QMu"/>
+                                    <constraint firstAttribute="bottom" secondItem="S3M-fC-Pm7" secondAttribute="bottom" id="IIj-88-xgx"/>
+                                    <constraint firstAttribute="trailing" secondItem="4gO-eg-8L4" secondAttribute="trailing" constant="20" id="JDp-2m-XKT"/>
+                                    <constraint firstAttribute="bottom" secondItem="4gO-eg-8L4" secondAttribute="bottom" id="MG8-9F-lsH"/>
+                                    <constraint firstItem="4gO-eg-8L4" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="top" id="XD5-OD-3eR"/>
+                                    <constraint firstAttribute="height" constant="44" id="tPS-Vs-4O7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gFl-pg-9xo"/>
                         <color key="backgroundColor" name="InputBack"/>
                         <constraints>
-                            <constraint firstItem="stF-If-yYh" firstAttribute="top" secondItem="E9q-9s-v4V" secondAttribute="top" id="Qqs-9d-Wtr"/>
+                            <constraint firstItem="Ej7-Hp-ANZ" firstAttribute="leading" secondItem="gFl-pg-9xo" secondAttribute="leading" id="Y26-E8-3cd"/>
+                            <constraint firstItem="Ej7-Hp-ANZ" firstAttribute="top" secondItem="gFl-pg-9xo" secondAttribute="top" id="ZJu-yQ-yVB"/>
                             <constraint firstItem="b1B-Fv-aj5" firstAttribute="leading" secondItem="gFl-pg-9xo" secondAttribute="leading" constant="10" id="bH5-zt-TT2"/>
                             <constraint firstItem="b1B-Fv-aj5" firstAttribute="top" secondItem="stF-If-yYh" secondAttribute="bottom" constant="10" id="bHa-Fc-uzy"/>
                             <constraint firstItem="stF-If-yYh" firstAttribute="leading" secondItem="gFl-pg-9xo" secondAttribute="leading" id="f5h-IG-DM7"/>
                             <constraint firstAttribute="bottom" secondItem="b1B-Fv-aj5" secondAttribute="bottom" constant="54" id="k3N-3M-sWh"/>
+                            <constraint firstItem="stF-If-yYh" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="bottom" id="mjb-jg-sH6"/>
                             <constraint firstItem="gFl-pg-9xo" firstAttribute="trailing" secondItem="b1B-Fv-aj5" secondAttribute="trailing" constant="10" id="rr2-3d-oY2"/>
+                            <constraint firstItem="stF-If-yYh" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="bottom" id="syI-1L-ndu"/>
+                            <constraint firstItem="gFl-pg-9xo" firstAttribute="trailing" secondItem="Ej7-Hp-ANZ" secondAttribute="trailing" id="uHF-5V-3tk"/>
                             <constraint firstItem="gFl-pg-9xo" firstAttribute="trailing" secondItem="stF-If-yYh" secondAttribute="trailing" id="vHM-kK-6Gb"/>
                         </constraints>
                     </view>
@@ -125,6 +147,9 @@
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
