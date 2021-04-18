@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5410ADB0262C19E700419F50 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5410ADAF262C19E700419F50 /* Home.storyboard */; };
+		5410ADB3262C1A0100419F50 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410ADB2262C1A0100419F50 /* HomeVC.swift */; };
+		5410ADBB262C2AF600419F50 /* ChatNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410ADBA262C2AF600419F50 /* ChatNC.swift */; };
 		541A69B9261C64E200201F0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 541A69B8261C64E200201F0F /* GoogleService-Info.plist */; };
 		541A6AA72625851600201F0F /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A6AA62625851600201F0F /* GenericResponse.swift */; };
 		541A6AAD262588A200201F0F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A6AAC262588A200201F0F /* APIService.swift */; };
@@ -31,6 +34,9 @@
 
 /* Begin PBXFileReference section */
 		2FC5A43631D8559E69F60552 /* Pods-AiChatbot-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiChatbot-iOS.debug.xcconfig"; path = "Target Support Files/Pods-AiChatbot-iOS/Pods-AiChatbot-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		5410ADAF262C19E700419F50 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		5410ADB2262C1A0100419F50 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		5410ADBA262C2AF600419F50 /* ChatNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatNC.swift; sourceTree = "<group>"; };
 		541A69B8261C64E200201F0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		541A6AA62625851600201F0F /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		541A6AAC262588A200201F0F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 			children = (
 				54A6971326107E1D008B4F2C /* LaunchScreen.storyboard */,
 				54A6972226107EB4008B4F2C /* Chat.storyboard */,
+				5410ADAF262C19E700419F50 /* Home.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -152,7 +159,9 @@
 		54A6972126107E9E008B4F2C /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				5410ADB2262C1A0100419F50 /* HomeVC.swift */,
 				54A6972B26108355008B4F2C /* ChatVC.swift */,
+				5410ADBA262C2AF600419F50 /* ChatNC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54A6972326107EB4008B4F2C /* Chat.storyboard in Resources */,
+				5410ADB0262C19E700419F50 /* Home.storyboard in Resources */,
 				5486DC2C2610C51500AB139D /* NotoSansCJKkr-Regular.otf in Resources */,
 				541A69B9261C64E200201F0F /* GoogleService-Info.plist in Resources */,
 				54A6971526107E1D008B4F2C /* LaunchScreen.storyboard in Resources */,
@@ -322,7 +332,9 @@
 				541A6AA72625851600201F0F /* GenericResponse.swift in Sources */,
 				54A6970926107E1A008B4F2C /* AppDelegate.swift in Sources */,
 				54A6970B26107E1A008B4F2C /* SceneDelegate.swift in Sources */,
+				5410ADBB262C2AF600419F50 /* ChatNC.swift in Sources */,
 				54A69731261089A3008B4F2C /* AiBalloonTableViewCell.swift in Sources */,
+				5410ADB3262C1A0100419F50 /* HomeVC.swift in Sources */,
 				541A6AB02625924B00201F0F /* MessageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

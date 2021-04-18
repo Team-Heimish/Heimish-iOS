@@ -41,9 +41,9 @@ class ChatVC: UIViewController {
         super.viewDidLoad()
         setNib()
         setNoti()
-        self.navigationController?.navigationBar.alpha = 0.1
+        loadChat()
     }
-
+    
     
     //MARK: -사용자 정의 함수
     
@@ -51,6 +51,10 @@ class ChatVC: UIViewController {
     func setNib() {
         chatTV.register(UINib(nibName: "UserBalloonTableViewCell", bundle:nil), forCellReuseIdentifier:"UserBalloonTableViewCell")
         chatTV.register(UINib(nibName: "AiBalloonTableViewCell", bundle:nil), forCellReuseIdentifier:"AiBalloonTableViewCell")
+    }
+    
+    func loadChat() {
+        chatDatas = UserDefaults.standard.array(forKey: "userDB") as? [String] ?? [String]()
     }
     
     @objc func keyboardWillShow(_ sender:Notification){
@@ -104,43 +108,50 @@ class ChatVC: UIViewController {
     
     //터치가 있을 시 핸들러 캐치
     @objc func handleTap(sender: UITapGestureRecognizer) {
-         if sender.state == .ended {
+        if sender.state == .ended {
             self.view.endEditing(true)
-         }
-         sender.cancelsTouchesInView = false
+        }
+        sender.cancelsTouchesInView = false
     }
     
+    @IBAction func backToHome(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        UserDefaults.standard.setValue(chatDatas, forKey: "userDB")
+    }
     // 전송버튼
     @IBAction func sendBtnAction(_ sender: Any) {
-        provider.request(.intent(text: inputTextView.text, sessionId: "1111")) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let response):
-                do {
-                    let msgData = try JSONDecoder().decode(MessageData.self, from: response.data)
-                    print(msgData.message.text)
-                }catch(let err) {
-                    print(err.localizedDescription)
+        // 텍스트뷰에 있는 값이 chatDatas array에 들어가야지.
+        if inputTextView.text != ""{
+            chatDatas.append(inputTextView.text!)
+            let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
+            // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
+            self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
+            // TableView에는 원하는 곳으로 이동하는 함수가 있다. 고로 전송할때마다 최신 대화로 이동.
+            self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+            provider.request(.intent(text: inputTextView.text, sessionId: "1111")) { [weak self] result in
+                guard let self = self else { return }
+                self.inputTextView.text = ""
+                
+                switch result {
+                case .success(let response):
+                    do {
+                        let msgData = try JSONDecoder().decode(MessageData.self, from: response.data)
+                        print(msgData.message.text)
+                        self.chatDatas.append(msgData.message.text)
+                        let lastindexPath = IndexPath(row: self.chatDatas.count - 1, section: 0)
+                        // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
+                        self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
+                        // TableView에는 원하는 곳으로 이동하는 함수가 있다. 고로 전송할때마다 최신 대화로 이동.
+                        self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+                        
+                    }catch(let err) {
+                        print(err.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
-            inputTextView.text = ""
-//        // 텍스트뷰에 있는 값이 chatDatas array에 들어가야지.
-//        if inputTextView.text != ""{
-//            chatDatas.append(inputTextView.text!)
-//            inputTextView.text = ""
-//        }
-//        
-//        let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
-//        
-//        // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
-//        chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
-//        
-//        // TableView에는 원하는 곳으로 이동하는 함수가 있다. 고로 전송할때마다 최신 대화로 이동.
-//        chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
     }
 }
 
@@ -158,7 +169,8 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
         if indexPath.row % 2 == 0{
             
             let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as! UserBalloonTableViewCell // MyCell 형식으로 사용하기 위해 형변환이 필요하다.
-            userCell.messageLabel.text = chatDatas[indexPath.row]   // 버튼 누르면 chatDatas 에 텍스트를 넣을 것이기 때문에 거기서 꺼내오면 되는거다.
+            userCell.messageLabel.text = chatDatas[indexPath.row]
+            
             if userCell.timeLabel.text != nowTime{
                 userCell.timeLabel.text = nowTime
                 userCell.timeLabel.isHidden = false

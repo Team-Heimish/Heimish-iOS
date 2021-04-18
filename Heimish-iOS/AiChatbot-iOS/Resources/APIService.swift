@@ -15,7 +15,7 @@ enum APIService {
 extension APIService: TargetType {
     
     public var baseURL: URL {
-        return URL(string: "https://768a4749f7f9.ngrok.io")!
+        return URL(string: "https://ffc555696cc4.ngrok.io")!
     }
     
     public var path: String {
