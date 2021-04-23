@@ -15,12 +15,12 @@ enum APIService {
 extension APIService: TargetType {
     
     public var baseURL: URL {
-        return URL(string: "https://ffc555696cc4.ngrok.io")!
+        return URL(string: "http://3.36.216.158:4000/")!
     }
     
     public var path: String {
         switch self {
-        case .intent: return "/message"
+        case .intent: return "dialogflow/message"
         }
     }
     

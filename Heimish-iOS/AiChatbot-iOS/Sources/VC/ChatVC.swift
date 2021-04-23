@@ -126,22 +126,25 @@ class ChatVC: UIViewController {
     @IBAction func sendBtnAction(_ sender: Any) {
         // 텍스트뷰에 있는 값이 chatDatas에 저장
         if inputTextView.text != ""{
-            chatDatas.append(inputTextView.text!)
+            // textView 초기화 위해 messageBox 선언하여 저장
+            let messageBox = self.inputTextView.text
+            self.inputTextView.text = ""
+            chatDatas.append(messageBox ?? "행복해")
+        
+            // chatTableView.reloadData() 는 부자연스러워서 scrollToRow를 사용하여 전송할때마다 최신 대화로 이동.
             let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
-            // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
             self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
-            // TableView에는 원하는 곳으로 이동하는 함수가 있다. 고로 전송할때마다 최신 대화로 이동.
             self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
-            provider.request(.intent(text: inputTextView.text, sessionId: "1111")) { [weak self] result in
+            
+            // Server: -Dialogflow/message .POST
+            provider.request(.intent(text: messageBox ?? "행복해", sessionId: "1111")) { [weak self] result in
                 guard let self = self else { return }
-                self.inputTextView.text = ""
-                
                 switch result {
                 case .success(let response):
                     do {
                         let msgData = try JSONDecoder().decode(MessageData.self, from: response.data)
-                        print(msgData.message.text)
-                        self.chatDatas.append(msgData.message.text)
+                        print(msgData.message)
+                        self.chatDatas.append(msgData.data)
                         let lastindexPath = IndexPath(row: self.chatDatas.count - 1, section: 0)
                         // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
                         self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)

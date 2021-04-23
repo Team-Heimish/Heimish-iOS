@@ -9,10 +9,9 @@ import Foundation
 
 // MARK: - MessageData
 struct MessageData: Codable {
-    let message: Message
+    let status: Int
+    let success: Bool
+    let message, data: String
+    
 }
 
-// MARK: - Message
-struct Message: Codable {
-    let text: String
-}
