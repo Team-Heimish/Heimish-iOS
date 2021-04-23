@@ -11,10 +11,11 @@ import Moya
 
 class ChatVC: UIViewController {
     
-    var chatDatas = [String]() // 대화가 저장되는 배열
     let formatter = DateFormatter()
+    var chatDatas = [[String]]() // 대화가 저장되는 배열
     var nowTime: String?
     var keyboardStatus: Bool = false
+    
     
     fileprivate var provider = MoyaProvider<APIService>()
     
@@ -54,7 +55,7 @@ class ChatVC: UIViewController {
     }
     
     func loadChat() {
-        chatDatas = UserDefaults.standard.array(forKey: "userDB") as? [String] ?? [String]()
+        chatDatas = UserDefaults.standard.array(forKey: "userDB") as? [[String]] ?? [[String]]()
     }
     
     @objc func keyboardWillShow(_ sender:Notification){
@@ -101,6 +102,21 @@ class ChatVC: UIViewController {
         chatTV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
+    //대화 reset Alert
+    func resetAlert(title: String?, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default)
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
+            chatDatas = []
+            chatTV.reloadData()
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
+    
     ///화면 터치시 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -118,9 +134,9 @@ class ChatVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
         UserDefaults.standard.setValue(chatDatas, forKey: "userDB")
     }
+    
     @IBAction func resetChat(_ sender: Any) {
-        chatDatas = []
-        chatTV.reloadData()
+        resetAlert(title: "정말 초기화 하시겠어요?", message: "초기화된 대화는 복구할 수 없어요!")
     }
     // 전송버튼
     @IBAction func sendBtnAction(_ sender: Any) {
@@ -129,7 +145,7 @@ class ChatVC: UIViewController {
             // textView 초기화 위해 messageBox 선언하여 저장
             let messageBox = self.inputTextView.text
             self.inputTextView.text = ""
-            chatDatas.append(messageBox ?? "행복해")
+            chatDatas.append([messageBox ?? "행복해","user"])
         
             // chatTableView.reloadData() 는 부자연스러워서 scrollToRow를 사용하여 전송할때마다 최신 대화로 이동.
             let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
@@ -144,7 +160,7 @@ class ChatVC: UIViewController {
                     do {
                         let msgData = try JSONDecoder().decode(MessageData.self, from: response.data)
                         print(msgData.message)
-                        self.chatDatas.append(msgData.data)
+                        self.chatDatas.append([msgData.data,"chatbot"])
                         let lastindexPath = IndexPath(row: self.chatDatas.count - 1, section: 0)
                         // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
                         self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
@@ -173,10 +189,10 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         formatter.dateFormat = "hh:mm"
         nowTime = formatter.string(from: Date())
-        if indexPath.row % 2 == 0{
+        if chatDatas[indexPath.row][1] == "user"{
             
             let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as! UserBalloonTableViewCell
-            userCell.messageLabel.text = chatDatas[indexPath.row]
+            userCell.messageLabel.text = chatDatas[indexPath.row][0]
             
             if userCell.timeLabel.text != nowTime{
                 userCell.timeLabel.text = nowTime
@@ -188,10 +204,10 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
             return userCell
             
         }
-        else{
+        else if chatDatas[indexPath.row][1] == "chatbot"{
             
             let aiCell = tableView.dequeueReusableCell(withIdentifier: "AiBalloonTableViewCell", for: indexPath) as! AiBalloonTableViewCell
-            aiCell.messageLabel.text = chatDatas[indexPath.row]
+            aiCell.messageLabel.text = chatDatas[indexPath.row][0]
             if aiCell.timeLabel.text != nowTime{
                 aiCell.timeLabel.text = nowTime
                 aiCell.timeLabel.isHidden = false
@@ -203,5 +219,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
             return aiCell
             
         }
+        
+        return UITableViewCell()
     }
 }
