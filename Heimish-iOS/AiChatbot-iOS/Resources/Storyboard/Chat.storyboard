@@ -108,6 +108,7 @@
                         <outlet property="chatTV" destination="stF-If-yYh" id="oU1-gn-LqL"/>
                         <outlet property="inputBottomContraint" destination="k3N-3M-sWh" id="8Xu-hD-Njm"/>
                         <outlet property="inputTextView" destination="ioz-xJ-10u" id="aG4-ZQ-SNa"/>
+                        <outlet property="naviView" destination="Ej7-Hp-ANZ" id="kCX-gV-X4y"/>
                         <outlet property="sendBtn" destination="Rt3-s5-18G" id="7Pe-QE-Xpp"/>
                     </connections>
                 </viewController>

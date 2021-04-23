@@ -20,6 +20,11 @@ class ChatVC: UIViewController {
     fileprivate var provider = MoyaProvider<APIService>()
     
     //MARK: -IBOutlet
+    @IBOutlet weak var naviView: UIView!{
+        didSet{
+            naviView.dropShadow(color: .orange, offSet: CGSize(width: 0, height: 5), opacity: 0.2, radius: 3)
+        }
+    }
     @IBOutlet weak var chatTV: UITableView!{
         didSet{
             chatTV.delegate = self
@@ -66,10 +71,10 @@ class ChatVC: UIViewController {
         if !keyboardStatus {
             keyboardStatus = true
             print("Show \(keyboardSize)")
-            
             // 키보드 올라오는 애니메이션이랑 동일하게 텍스트뷰 올라가게 만들기.
             UIView.animate(withDuration: animationDuration) {
                 self.inputBottomContraint.constant += keyboardSize-30
+                self.chatTV.setContentOffset(CGPoint(x: 0, y: self.chatTV.frame.height), animated: true)
                 self.view.layoutIfNeeded()
             }
         }
