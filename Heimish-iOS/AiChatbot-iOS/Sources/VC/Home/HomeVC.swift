@@ -42,6 +42,12 @@ class HomeVC: UIViewController {
             })
     }
     
+    @IBAction func goToStorage(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Storage", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(identifier: "StorageVC") as? StorageVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     @IBAction func startChat(_ sender: Any) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Chat", bundle: nil)
         if let vc = storyBoard.instantiateViewController(identifier: "ChatVC") as? ChatVC {

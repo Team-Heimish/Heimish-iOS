@@ -7,10 +7,10 @@
 
 import UIKit
 import Moya
-
+import RealmSwift
 
 class ChatVC: UIViewController {
-    
+    let realm = try! Realm() // Realm 가져오기
     let formatter = DateFormatter()
     var chatDatas = [[String]]() // 대화가 저장되는 배열
     var nowTime: String?
@@ -34,12 +34,16 @@ class ChatVC: UIViewController {
     }
     @IBOutlet weak var inputTextView: UITextView!{
         didSet{
-            inputTextView.makeRounded(cornerRadius: 20)
+            inputTextView.makeRounded(cornerRadius: 5)
             inputTextView.textContainerInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
             inputTextView.delegate = self 
         }
     }
-    @IBOutlet weak var sendBtn: UIButton!
+    @IBOutlet weak var sendBtn: UIButton!{
+        didSet{
+            sendBtn.makeRounded(cornerRadius: 5.0)
+        }
+    }
     @IBOutlet weak var inputBottomContraint: NSLayoutConstraint!
     
     
@@ -48,6 +52,8 @@ class ChatVC: UIViewController {
         setNib()
         setNoti()
         loadChat()
+        // Realm 파일 위치
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     
@@ -143,6 +149,21 @@ class ChatVC: UIViewController {
     @IBAction func resetChat(_ sender: Any) {
         resetAlert(title: "정말 초기화 하시겠어요?", message: "초기화된 대화는 복구할 수 없어요!")
     }
+    
+    // 상담일지 기록
+    @IBAction func finishChat(_ sender: Any) {
+        formatter.dateFormat = "yy.mm.dd hh:mm"
+        nowTime = formatter.string(from: Date())
+        let counseiling = Counseiling()
+        counseiling.date.append( nowTime ?? "1996.12.26 11:56")
+        for i in 0..<chatDatas.count{
+            let content = Content(value: ["sender": chatDatas[i][1], "message": chatDatas[i][0]])
+            counseiling.chat.append(content)
+        }
+        try! realm.write {
+            realm.add(counseiling)
+        }
+    }
     // 전송버튼
     @IBAction func sendBtnAction(_ sender: Any) {
         // 텍스트뷰에 있는 값이 chatDatas에 저장
@@ -151,7 +172,7 @@ class ChatVC: UIViewController {
             let messageBox = self.inputTextView.text
             self.inputTextView.text = ""
             chatDatas.append([messageBox ?? "행복해","user"])
-        
+            
             // chatTableView.reloadData() 는 부자연스러워서 scrollToRow를 사용하여 전송할때마다 최신 대화로 이동.
             let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
             self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)

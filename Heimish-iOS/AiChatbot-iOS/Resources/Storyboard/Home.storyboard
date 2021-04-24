@@ -62,12 +62,21 @@
                                     <constraint firstAttribute="width" constant="90" id="wZF-HU-fvI"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFo-tt-pvM">
+                                <rect key="frame" x="322" y="74" width="23" height="22"/>
+                                <state key="normal" image="folder.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="goToStorage:" destination="jYl-LR-0iz" eventType="touchUpInside" id="xaG-ZL-09v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2H2-Za-Kl5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="dFo-tt-pvM" firstAttribute="top" secondItem="2H2-Za-Kl5" secondAttribute="top" constant="30" id="8KI-oE-Wnd"/>
                             <constraint firstItem="nxv-Kv-zSG" firstAttribute="width" secondItem="U3e-O9-15s" secondAttribute="width" multiplier="0.666667" id="Dyp-cp-9hR"/>
                             <constraint firstItem="5Sm-ob-X9K" firstAttribute="bottom" secondItem="hAp-X4-Hrd" secondAttribute="bottom" constant="-35" id="O3I-7Q-1ZP"/>
+                            <constraint firstItem="2H2-Za-Kl5" firstAttribute="trailing" secondItem="dFo-tt-pvM" secondAttribute="trailing" constant="30" id="TAQ-66-z2c"/>
                             <constraint firstItem="2H2-Za-Kl5" firstAttribute="bottom" secondItem="nxv-Kv-zSG" secondAttribute="bottom" constant="50" id="b9O-c7-488"/>
                             <constraint firstItem="nxv-Kv-zSG" firstAttribute="centerX" secondItem="2H2-Za-Kl5" secondAttribute="centerX" id="fgb-al-ULr"/>
                             <constraint firstItem="nxv-Kv-zSG" firstAttribute="top" secondItem="hAp-X4-Hrd" secondAttribute="bottom" constant="300" id="jhr-SU-U30"/>
@@ -105,6 +114,7 @@
     </scenes>
     <resources>
         <image name="7AAF30C8-7C90-4CE2-A759-7632F5282B51" width="184" height="184"/>
+        <image name="folder.fill" catalog="system" width="128" height="97"/>
         <namedColor name="mainColor">
             <color red="0.99000000953674316" green="0.69300001859664917" blue="0.25999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
