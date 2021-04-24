@@ -43,6 +43,7 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="FJX-N4-k97"/>
                                                         <constraint firstItem="lY5-Oc-4rp" firstAttribute="centerY" secondItem="GwR-QL-jyh" secondAttribute="centerY" id="ilD-qz-utN"/>
                                                         <constraint firstAttribute="trailing" secondItem="lY5-Oc-4rp" secondAttribute="trailing" constant="20" id="yX8-bw-G9t"/>
                                                     </constraints>

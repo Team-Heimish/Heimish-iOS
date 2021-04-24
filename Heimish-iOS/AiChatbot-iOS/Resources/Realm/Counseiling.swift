@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 class Counseiling: Object {
-    @objc dynamic var date: String = "1996-12-26"
+    @objc dynamic var date = ""
     var emotion = List<Int>()
     var chat = List<Content>()
     

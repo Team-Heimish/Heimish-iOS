@@ -152,10 +152,10 @@ class ChatVC: UIViewController {
     
     // 상담일지 기록
     @IBAction func finishChat(_ sender: Any) {
-        formatter.dateFormat = "yy.mm.dd hh:mm"
+        formatter.dateFormat = "yy년 mm월 dd일 hh:mm분 상담 종료"
         nowTime = formatter.string(from: Date())
         let counseiling = Counseiling()
-        counseiling.date.append( nowTime ?? "1996.12.26 11:56")
+        counseiling.date = nowTime ?? "1996.12.26 11:56"
         for i in 0..<chatDatas.count{
             let content = Content(value: ["sender": chatDatas[i][1], "message": chatDatas[i][0]])
             counseiling.chat.append(content)
