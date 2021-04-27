@@ -16,7 +16,6 @@ class ChatVC: UIViewController {
     var nowTime: String?
     var keyboardStatus: Bool = false
     
-    
     fileprivate var provider = MoyaProvider<APIService>()
     
     //MARK: -IBOutlet
@@ -57,6 +56,11 @@ class ChatVC: UIViewController {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        UserDefaults.standard.setValue(chatDatas, forKey: "loadChat") // 채팅화면에서 자의에 의해 뒤로가기 한건 상담이 안끝났다는 뜻. 대화 저장.
+    }
+    
     
     //MARK: -사용자 정의 함수
     
@@ -66,8 +70,87 @@ class ChatVC: UIViewController {
         chatTV.register(UINib(nibName: "AiBalloonTableViewCell", bundle:nil), forCellReuseIdentifier:"AiBalloonTableViewCell")
     }
     
+    func setNoti(){
+        // 키보드 관련 옵저버 설정
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(saveChat), name: NSNotification.Name("saveChat"), object: nil) //SceneDelegate 백그라운드 진입시 대화저장
+        // 제스쳐 add(테이블 뷰에서 터치 간섭을 해결하기 위함)
+        chatTV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
+    
+    // 대화 불러오기
     func loadChat() {
-        chatDatas = UserDefaults.standard.array(forKey: "userDB") as? [[String]] ?? [[String]]()
+        chatDatas = UserDefaults.standard.array(forKey: "loadChat") as? [[String]] ?? [[String]]()
+    }
+    
+    //대화 reset Alert
+    func resetAlert(title: String?, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default)
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
+            UserDefaults.standard.removeObject(forKey: "loadChat")
+            chatTV.reloadData()
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
+    
+    // 상담 종료 Alert
+    func finishAlert(title: String?, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default)
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
+            formatter.dateFormat = "YYYY년 MM월 dd일"
+            let finishTime = formatter.string(from: Date()) // 상담 종료 시각
+            let counseiling = Counseiling()
+            counseiling.idx = (realm.objects(Counseiling.self).last?.idx ?? 0) + 1
+            counseiling.date = finishTime
+            for i in 0..<chatDatas.count{
+                let content = Content(value: ["sender": chatDatas[i][0], "message": chatDatas[i][1], "time": chatDatas[i][2]])
+                counseiling.chat.append(content)
+            }
+            try! realm.write {
+                realm.add(counseiling)
+            }
+            UserDefaults.standard.removeObject(forKey: "loadChat")
+            chatDatas = []
+            chatTV.reloadData()
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
+    
+    // 일반 Alert
+    func normalAlert(title: String?, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    ///화면 터치시 키보드 내리기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    //터치가 있을 시 핸들러 캐치
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.view.endEditing(true)
+        }
+        sender.cancelsTouchesInView = false
+    }
+    
+    @objc func saveChat(){
+        UserDefaults.standard.setValue(chatDatas, forKey: "loadChat") // chat기록 저장
     }
     
     @objc func keyboardWillShow(_ sender:Notification){
@@ -102,82 +185,8 @@ class ChatVC: UIViewController {
         }
     }
     
-    func setNoti(){
-        // 키보드 관련 옵저버 설정
-        NotificationCenter.default.addObserver(self, selector:
-                                                #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
-        NotificationCenter.default.addObserver(self, selector:
-                                                #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification,
-                                               object: nil)
-        // 제스쳐 add(테이블 뷰에서 터치 간섭을 해결하기 위함)
-        chatTV.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-    }
-    
-    //대화 reset Alert
-    func resetAlert(title: String?, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "취소", style: .default)
-        let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
-            chatDatas = []
-            chatTV.reloadData()
-        }
-        alert.addAction(cancelAction)
-        alert.addAction(okAction)
-        
-        present(alert, animated: true)
-    }
-    
-    // 상담 종료 Alert
-    func finishAlert(title: String?, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "취소", style: .default)
-        let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
-            formatter.dateFormat = "YYYY년 MM월 dd일 HH:mm분"
-            let finishTime = formatter.string(from: Date()) // 상담 종료 시각
-            let counseiling = Counseiling()
-            counseiling.date = finishTime
-            for i in 0..<chatDatas.count{
-                let content = Content(value: ["sender": chatDatas[i][0], "message": chatDatas[i][1], "time": chatDatas[i][2]])
-                counseiling.chat.append(content)
-            }
-            try! realm.write {
-                realm.add(counseiling)
-            }
-            self.navigationController?.popViewController(animated: true)
-        }
-        alert.addAction(cancelAction)
-        alert.addAction(okAction)
-        
-        present(alert, animated: true)
-    }
-    
-    // 일반 Alert
-    func normalAlert(title: String?, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
-    
-    ///화면 터치시 키보드 내리기
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    //터치가 있을 시 핸들러 캐치
-    @objc func handleTap(sender: UITapGestureRecognizer) {
-        if sender.state == .ended {
-            self.view.endEditing(true)
-        }
-        sender.cancelsTouchesInView = false
-    }
-    
     @IBAction func backToHome(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-        UserDefaults.standard.setValue(chatDatas, forKey: "userDB")
     }
     
     @IBAction func resetChat(_ sender: Any) {
