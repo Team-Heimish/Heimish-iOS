@@ -11,6 +11,11 @@ class StorageTableViewCell: UITableViewCell {
     static let identifier = "StorageTableViewCell"
     
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var emotionView: UIView!{
+        didSet{
+            emotionView.makeRounded(cornerRadius: 10.0)
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

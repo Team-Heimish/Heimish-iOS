@@ -15,6 +15,19 @@ class HomeVC: UIViewController {
         }
     }
     @IBOutlet weak var sunImageView: UIImageView!
+    @IBOutlet weak var todayWordView: UIView!{
+        didSet{
+            todayWordView.backgroundColor = .none
+            todayWordView.layer.borderColor = UIColor.nariYellow.cgColor
+            todayWordView.layer.borderWidth  = 2.0
+            todayWordView.makeRounded(cornerRadius: 15.0)
+        }
+    }
+    @IBOutlet weak var yourEmotionView: UIView!{
+        didSet{
+            yourEmotionView.makeRounded(cornerRadius: 15.0)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         startBtnAnimation()

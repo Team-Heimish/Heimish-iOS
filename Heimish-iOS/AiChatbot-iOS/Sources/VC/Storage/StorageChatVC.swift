@@ -17,24 +17,28 @@ class StorageChatVC: UIViewController {
             chatTV.delegate = self
             chatTV.dataSource = self
             chatTV.separatorStyle = .none // 경계선 제거
+            chatTV.backgroundColor = .nariYellow
         }
     }
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!{
+        didSet{
+            dateLabel.text = date
+        }
+    }
+    @IBOutlet weak var naviView: UIView!{
+        didSet{
+            naviView.dropShadow(color: .orange, offSet: CGSize(width: 0, height: 5), opacity: 0.2, radius: 3)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         setNib()
-        setStyle()
     }
     
     //Nib 등록
     func setNib() {
         chatTV.register(UINib(nibName: "UserBalloonTableViewCell", bundle:nil), forCellReuseIdentifier:"UserBalloonTableViewCell")
         chatTV.register(UINib(nibName: "AiBalloonTableViewCell", bundle:nil), forCellReuseIdentifier:"AiBalloonTableViewCell")
-    }
-    
-    func setStyle(){
-        dateLabel.text = date
-        chatTV.backgroundColor = .nariYellow
     }
     
     @IBAction func backAction(_ sender: Any) {
@@ -54,12 +58,12 @@ extension StorageChatVC: UITableViewDelegate, UITableViewDataSource{
         
         if chat[indexPath.row].sender == "user" {
             userCell.messageLabel.text = chat[indexPath.row].message
-            userCell.timeLabel.isHidden = true
+            userCell.timeLabel.text = chat[indexPath.row].time
             userCell.selectionStyle = .none
             return userCell
         }else if chat[indexPath.row].sender == "chatbot" {
             aiCell.messageLabel.text = chat[indexPath.row].message
-            aiCell.timeLabel.isHidden = true
+            aiCell.timeLabel.text = chat[indexPath.row].time
             aiCell.selectionStyle = .none
             return aiCell
         }

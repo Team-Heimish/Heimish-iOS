@@ -23,4 +23,5 @@ class Counseiling: Object {
 class Content: Object {
     @objc dynamic var sender :String = ""
     @objc dynamic var message :String = ""
+    @objc dynamic var time :String = ""
 }

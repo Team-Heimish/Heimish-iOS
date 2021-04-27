@@ -135,12 +135,12 @@ class ChatVC: UIViewController {
         
         let cancelAction = UIAlertAction(title: "취소", style: .default)
         let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
-            formatter.dateFormat = "YYYY년 MM월 dd일 HH:mm분 상담"
-            nowTime = formatter.string(from: Date())
+            formatter.dateFormat = "YYYY년 MM월 dd일 HH:mm분"
+            let finishTime = formatter.string(from: Date()) // 상담 종료 시각
             let counseiling = Counseiling()
-            counseiling.date = nowTime ?? "1996.12.26 11:56"
+            counseiling.date = finishTime
             for i in 0..<chatDatas.count{
-                let content = Content(value: ["sender": chatDatas[i][1], "message": chatDatas[i][0]])
+                let content = Content(value: ["sender": chatDatas[i][0], "message": chatDatas[i][1], "time": chatDatas[i][2]])
                 counseiling.chat.append(content)
             }
             try! realm.write {
@@ -200,13 +200,14 @@ class ChatVC: UIViewController {
     }
     // 전송버튼
     @IBAction func sendBtnAction(_ sender: Any) {
+        formatter.dateFormat = "HH:mm"
         // 텍스트뷰에 있는 값이 chatDatas에 저장
         if inputTextView.text != ""{
-            // textView 초기화 위해 messageBox 선언하여 저장
+            // textView 초기화 위해 messageBox 변수 선언하여 먼저 저장
             let messageBox = self.inputTextView.text
+            nowTime = formatter.string(from: Date()) // 사용자가 보낸 메시지 도착 시간
             self.inputTextView.text = ""
-            chatDatas.append([messageBox ?? "행복해","user"])
-            
+            chatDatas.append(["user",messageBox ?? "행복해", nowTime ?? "-"])
             // chatTableView.reloadData() 는 부자연스러워서 scrollToRow를 사용하여 전송할때마다 최신 대화로 이동.
             let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
             self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
@@ -220,7 +221,8 @@ class ChatVC: UIViewController {
                     do {
                         let msgData = try JSONDecoder().decode(MessageData.self, from: response.data)
                         print(msgData.message)
-                        self.chatDatas.append([msgData.data,"chatbot"])
+                        self.nowTime = self.formatter.string(from: Date()) // 챗봇이 보낸 메시지 도착 시간
+                        self.chatDatas.append(["chatbot", msgData.data, self.nowTime ?? "-"])
                         let lastindexPath = IndexPath(row: self.chatDatas.count - 1, section: 0)
                         // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
                         self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
@@ -247,15 +249,14 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        formatter.dateFormat = "hh:mm"
-        nowTime = formatter.string(from: Date())
-        if chatDatas[indexPath.row][1] == "user"{
+        
+        if chatDatas[indexPath.row][0] == "user"{
             
             let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as! UserBalloonTableViewCell
-            userCell.messageLabel.text = chatDatas[indexPath.row][0]
+            userCell.messageLabel.text = chatDatas[indexPath.row][1]
             
-            if userCell.timeLabel.text != nowTime{
-                userCell.timeLabel.text = nowTime
+            if userCell.timeLabel.text != chatDatas[indexPath.row][2]{
+                userCell.timeLabel.text = chatDatas[indexPath.row][2]
                 userCell.timeLabel.isHidden = false
             }else{
                 userCell.timeLabel.isHidden = true
@@ -264,12 +265,12 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
             return userCell
             
         }
-        else if chatDatas[indexPath.row][1] == "chatbot"{
+        else if chatDatas[indexPath.row][0] == "chatbot"{
             
             let aiCell = tableView.dequeueReusableCell(withIdentifier: "AiBalloonTableViewCell", for: indexPath) as! AiBalloonTableViewCell
-            aiCell.messageLabel.text = chatDatas[indexPath.row][0]
-            if aiCell.timeLabel.text != nowTime{
-                aiCell.timeLabel.text = nowTime
+            aiCell.messageLabel.text = chatDatas[indexPath.row][1]
+            if aiCell.timeLabel.text != chatDatas[indexPath.row][2]{
+                aiCell.timeLabel.text = chatDatas[indexPath.row][2]
                 aiCell.timeLabel.isHidden = false
             }else{
                 aiCell.timeLabel.isHidden = true
