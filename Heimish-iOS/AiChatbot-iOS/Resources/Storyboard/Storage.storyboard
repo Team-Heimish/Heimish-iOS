@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,9 @@
     <customFonts key="customFonts">
         <array key="NotoSansCJKkr-Medium.otf">
             <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -32,39 +36,52 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-y5-dqL">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="SqI-D1-Epv">
+                                                    <rect key="frame" x="20" y="0.0" width="86.5" height="40"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[상담일자]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kS2-Qe-9F6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-y5-dqL">
+                                                            <rect key="frame" x="59" y="0.0" width="27.5" height="40"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GwR-QL-jyh">
-                                                    <rect key="frame" x="20" y="31" width="374" height="99"/>
+                                                    <rect key="frame" x="20" y="50" width="374" height="80"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lY5-Oc-4rp">
-                                                            <rect key="frame" x="341" y="38.5" width="13" height="22"/>
-                                                            <state key="normal" image="chevron.right" catalog="system"/>
+                                                            <rect key="frame" x="339.5" y="29" width="14.5" height="22"/>
+                                                            <color key="tintColor" systemColor="labelColor"/>
+                                                            <state key="normal" image="chevron.right" catalog="system">
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                            </state>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                    <color key="backgroundColor" name="nariYellow"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="FJX-N4-k97"/>
+                                                        <constraint firstAttribute="height" constant="80" id="DRR-Pe-U8P"/>
                                                         <constraint firstItem="lY5-Oc-4rp" firstAttribute="centerY" secondItem="GwR-QL-jyh" secondAttribute="centerY" id="ilD-qz-utN"/>
                                                         <constraint firstAttribute="trailing" secondItem="lY5-Oc-4rp" secondAttribute="trailing" constant="20" id="yX8-bw-G9t"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="vuj-y5-dqL" firstAttribute="top" secondItem="TE3-14-aZU" secondAttribute="topMargin" id="6eb-RI-NiI"/>
-                                                <constraint firstItem="GwR-QL-jyh" firstAttribute="top" secondItem="TE3-14-aZU" secondAttribute="topMargin" constant="20" id="B6B-5m-w1K"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GwR-QL-jyh" secondAttribute="bottom" id="Jbe-ds-eVX"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GwR-QL-jyh" secondAttribute="trailing" id="TQa-or-GtX"/>
-                                                <constraint firstItem="vuj-y5-dqL" firstAttribute="leading" secondItem="TE3-14-aZU" secondAttribute="leadingMargin" id="cU2-g7-oB7"/>
                                                 <constraint firstItem="GwR-QL-jyh" firstAttribute="leading" secondItem="TE3-14-aZU" secondAttribute="leadingMargin" id="f0G-gp-tXy"/>
+                                                <constraint firstItem="SqI-D1-Epv" firstAttribute="top" secondItem="TE3-14-aZU" secondAttribute="top" id="tpo-Ae-pM4"/>
+                                                <constraint firstItem="GwR-QL-jyh" firstAttribute="top" secondItem="SqI-D1-Epv" secondAttribute="bottom" constant="10" id="uex-fb-Ros"/>
+                                                <constraint firstItem="SqI-D1-Epv" firstAttribute="leading" secondItem="GwR-QL-jyh" secondAttribute="leading" id="x5z-E9-2YQ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="vuj-y5-dqL" id="sRN-TW-zOi"/>
+                                            <outlet property="emotionView" destination="GwR-QL-jyh" id="8sh-rd-DED"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -79,10 +96,18 @@
                                             <action selector="backAction:" destination="RxS-VL-lOM" eventType="touchUpInside" id="1Pf-ZC-jYF"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heimish와의 상담일지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo6-Io-de8">
+                                        <rect key="frame" x="139" y="13.5" width="136.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="RZa-kl-mJZ" firstAttribute="top" secondItem="JFb-xy-UbB" secondAttribute="top" id="2am-A0-O6v"/>
+                                    <constraint firstItem="Jo6-Io-de8" firstAttribute="centerY" secondItem="JFb-xy-UbB" secondAttribute="centerY" id="Jd8-jZ-YW4"/>
+                                    <constraint firstItem="Jo6-Io-de8" firstAttribute="centerX" secondItem="JFb-xy-UbB" secondAttribute="centerX" id="SYZ-Kl-Q9y"/>
                                     <constraint firstAttribute="height" constant="44" id="U5k-UI-vec"/>
                                     <constraint firstItem="RZa-kl-mJZ" firstAttribute="leading" secondItem="JFb-xy-UbB" secondAttribute="leading" id="epz-3P-7La"/>
                                     <constraint firstAttribute="bottom" secondItem="RZa-kl-mJZ" secondAttribute="bottom" id="sAW-Jx-bed"/>
@@ -165,6 +190,7 @@
                     <connections>
                         <outlet property="chatTV" destination="nYp-aO-L2b" id="zFa-bY-xe9"/>
                         <outlet property="dateLabel" destination="UBe-eo-vUf" id="xm3-oO-lm7"/>
+                        <outlet property="naviView" destination="TAS-Di-4ck" id="hTy-oK-wt9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkX-0j-YaE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -192,11 +218,14 @@
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="icnBack" width="44" height="44"/>
+        <namedColor name="nariYellow">
+            <color red="0.97647058823529409" green="0.85098039215686272" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

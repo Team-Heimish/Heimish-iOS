@@ -17,6 +17,7 @@ class StorageVC: UIViewController {
             counseilingTV.delegate = self
             counseilingTV.dataSource = self
             counseilingTV.separatorStyle = .none // 경계선 제거
+            counseilingTV.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 0,right: 0)
         }
     }
     override func viewDidLoad() {
@@ -44,7 +45,6 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(identifier: "StorageChatVC") as? StorageChatVC {
             self.navigationController?.pushViewController(vc, animated: true)
@@ -52,4 +52,5 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
             vc.date = realm.objects(Counseiling.self)[indexPath.row].date
         }
     }
+
 }

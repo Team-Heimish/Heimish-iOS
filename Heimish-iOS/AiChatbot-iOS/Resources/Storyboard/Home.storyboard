@@ -12,9 +12,6 @@
         <array key="NotoSansCJKkr-Medium.otf">
             <string>NotoSansCJKkr-Medium</string>
         </array>
-        <array key="NotoSansCJKkr-Regular.otf">
-            <string>NotoSansCJKkr-Regular</string>
-        </array>
     </customFonts>
     <scenes>
         <!--HomeVC-->
@@ -47,7 +44,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0xm-ou-fds"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
                                 <state key="normal" title="대화 시작하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -74,13 +71,35 @@
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vS-Y2-QZj">
                                 <rect key="frame" x="30" y="259" width="315" height="224"/>
-                                <color key="backgroundColor" name="mainColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="하루 따뜻한 한마디 기능" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcQ-kN-Foa">
+                                        <rect key="frame" x="77.333333333333329" y="102" width="160.33333333333337" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="NcQ-kN-Foa" firstAttribute="centerX" secondItem="3vS-Y2-QZj" secondAttribute="centerX" id="Arx-L4-Yl3"/>
+                                    <constraint firstItem="NcQ-kN-Foa" firstAttribute="centerY" secondItem="3vS-Y2-QZj" secondAttribute="centerY" id="wjl-tW-RbO"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HPa-Tt-l7n">
                                 <rect key="frame" x="30" y="513" width="315" height="100"/>
-                                <color key="backgroundColor" name="mainColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상담기록의 감정들 아카이빙해서 보여주기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roW-aM-ivH">
+                                        <rect key="frame" x="18.666666666666657" y="40" width="278" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="nariYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="ay1-vf-cqt"/>
+                                    <constraint firstItem="roW-aM-ivH" firstAttribute="centerX" secondItem="HPa-Tt-l7n" secondAttribute="centerX" id="tkn-HJ-yLq"/>
+                                    <constraint firstItem="roW-aM-ivH" firstAttribute="centerY" secondItem="HPa-Tt-l7n" secondAttribute="centerY" id="w9f-e4-QWq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -109,6 +128,8 @@
                     <connections>
                         <outlet property="startChatBtn" destination="nxv-Kv-zSG" id="qbf-e3-99p"/>
                         <outlet property="sunImageView" destination="5Sm-ob-X9K" id="RMt-go-EJL"/>
+                        <outlet property="todayWordView" destination="3vS-Y2-QZj" id="1cm-kq-y5s"/>
+                        <outlet property="yourEmotionView" destination="HPa-Tt-l7n" id="I5s-Qt-mP7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9W-F6-dUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -138,6 +159,9 @@
         <image name="folder.fill" catalog="system" width="128" height="97"/>
         <namedColor name="mainColor">
             <color red="0.99000000953674316" green="0.69300001859664917" blue="0.25999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nariYellow">
+            <color red="0.97647058823529409" green="0.85098039215686272" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
