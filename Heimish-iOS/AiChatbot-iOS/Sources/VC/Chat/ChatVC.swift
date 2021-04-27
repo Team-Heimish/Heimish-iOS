@@ -135,7 +135,7 @@ class ChatVC: UIViewController {
         
         let cancelAction = UIAlertAction(title: "취소", style: .default)
         let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
-            formatter.dateFormat = "YYYY년 MM월 dd일 hh:mm분 상담"
+            formatter.dateFormat = "YYYY년 MM월 dd일 HH:mm분 상담"
             nowTime = formatter.string(from: Date())
             let counseiling = Counseiling()
             counseiling.date = nowTime ?? "1996.12.26 11:56"
