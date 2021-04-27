@@ -10,6 +10,7 @@ import UIKit
 class StorageTableViewCell: UITableViewCell {
     static let identifier = "StorageTableViewCell"
     
+    @IBOutlet weak var idxLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var emotionView: UIView!{
         didSet{

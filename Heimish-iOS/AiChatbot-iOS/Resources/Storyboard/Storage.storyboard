@@ -37,15 +37,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="SqI-D1-Epv">
-                                                    <rect key="frame" x="20" y="0.0" width="86.5" height="40"/>
+                                                    <rect key="frame" x="20" y="0.0" width="104.5" height="40"/>
                                                     <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Af-DH-9Kn">
+                                                            <rect key="frame" x="0.0" y="0.0" width="11" height="40"/>
+                                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[상담일자]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kS2-Qe-9F6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="40"/>
+                                                            <rect key="frame" x="18" y="0.0" width="52" height="40"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-y5-dqL">
-                                                            <rect key="frame" x="59" y="0.0" width="27.5" height="40"/>
+                                                            <rect key="frame" x="77" y="0.0" width="27.5" height="40"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -61,12 +67,20 @@
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                             </state>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 상담에 대해 기록했던 감정 표시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFX-y7-HdN">
+                                                            <rect key="frame" x="73" y="30" width="228" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" name="nariYellow"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="80" id="DRR-Pe-U8P"/>
+                                                        <constraint firstItem="zFX-y7-HdN" firstAttribute="centerY" secondItem="GwR-QL-jyh" secondAttribute="centerY" id="M77-tV-q9c"/>
                                                         <constraint firstItem="lY5-Oc-4rp" firstAttribute="centerY" secondItem="GwR-QL-jyh" secondAttribute="centerY" id="ilD-qz-utN"/>
                                                         <constraint firstAttribute="trailing" secondItem="lY5-Oc-4rp" secondAttribute="trailing" constant="20" id="yX8-bw-G9t"/>
+                                                        <constraint firstItem="zFX-y7-HdN" firstAttribute="centerX" secondItem="GwR-QL-jyh" secondAttribute="centerX" id="zEX-0z-woj"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -82,6 +96,7 @@
                                         <connections>
                                             <outlet property="dateLabel" destination="vuj-y5-dqL" id="sRN-TW-zOi"/>
                                             <outlet property="emotionView" destination="GwR-QL-jyh" id="8sh-rd-DED"/>
+                                            <outlet property="idxLabel" destination="8Af-DH-9Kn" id="C4x-qe-qgC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

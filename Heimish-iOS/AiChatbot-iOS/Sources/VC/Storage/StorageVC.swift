@@ -40,6 +40,7 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
         
         // Realm 데이터 불러오기
         let chatModel = realm.objects(Counseiling.self)
+        cell.idxLabel.text = "\(chatModel[indexPath.row].idx)"
         cell.dateLabel.text = chatModel[indexPath.row].date
         cell.selectionStyle = .none
         return cell

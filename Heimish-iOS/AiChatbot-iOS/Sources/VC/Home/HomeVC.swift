@@ -39,7 +39,6 @@ class HomeVC: UIViewController {
     }
     
     func sunAnimation(){
-        
         UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
                 self.sunImageView.transform = CGAffineTransform(translationX: 0, y: 10)
             }, completion: { _ in
@@ -52,7 +51,9 @@ class HomeVC: UIViewController {
     func startBtnAnimation(){
         UIView.animate(withDuration: 1, animations: {
                 self.startChatBtn.transform = CGAffineTransform(translationX: 0, y: -20)
-            })
+        }, completion: { [self] _ in
+            sunAnimation()
+        });
     }
     
     @IBAction func goToStorage(_ sender: Any) {

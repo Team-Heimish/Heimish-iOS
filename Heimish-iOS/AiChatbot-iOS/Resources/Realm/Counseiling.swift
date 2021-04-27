@@ -9,14 +9,15 @@ import Foundation
 import RealmSwift
 
 class Counseiling: Object {
-    @objc dynamic var date = ""
+    @objc dynamic var idx = 0
+    @objc dynamic var date: String = ""
     var emotion = List<Int>()
     var chat = List<Content>()
     
     
     // id 가 고유 값입니다.
     override static func primaryKey() -> String? {
-      return "date"
+      return "idx"
     }
 }
 
