@@ -17,6 +17,7 @@
 		542E7AE5263442FD005798AA /* StorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542E7AE4263442FD005798AA /* StorageTableViewCell.swift */; };
 		542E7AE926344694005798AA /* StorageNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542E7AE826344694005798AA /* StorageNC.swift */; };
 		542E7AEF26345013005798AA /* StorageChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542E7AEE26345013005798AA /* StorageChatVC.swift */; };
+		543D62AA2637F78300B94527 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543D62A92637F78300B94527 /* UIColor+Additions.swift */; };
 		5486DC2B2610C51500AB139D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC282610C51500AB139D /* NotoSansCJKkr-Medium.otf */; };
 		5486DC2C2610C51500AB139D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC292610C51500AB139D /* NotoSansCJKkr-Regular.otf */; };
 		5486DC2D2610C51500AB139D /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC2A2610C51500AB139D /* NotoSansCJKkr-Bold.otf */; };
@@ -50,6 +51,7 @@
 		542E7AE4263442FD005798AA /* StorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTableViewCell.swift; sourceTree = "<group>"; };
 		542E7AE826344694005798AA /* StorageNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageNC.swift; sourceTree = "<group>"; };
 		542E7AEE26345013005798AA /* StorageChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageChatVC.swift; sourceTree = "<group>"; };
+		543D62A92637F78300B94527 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		5486DC282610C51500AB139D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		5486DC292610C51500AB139D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
 		5486DC2A2610C51500AB139D /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			children = (
 				54A6973826109068008B4F2C /* UIView+Extension.swift */,
 				54A6973C261090B9008B4F2C /* UITextField+Extension.swift */,
+				543D62A92637F78300B94527 /* UIColor+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				542E7AE926344694005798AA /* StorageNC.swift in Sources */,
 				54A6973926109068008B4F2C /* UIView+Extension.swift in Sources */,
 				54A69735261089B0008B4F2C /* UserBalloonTableViewCell.swift in Sources */,
+				543D62AA2637F78300B94527 /* UIColor+Additions.swift in Sources */,
 				54A6973D261090B9008B4F2C /* UITextField+Extension.swift in Sources */,
 				54F2349326343B16009465B1 /* Counseiling.swift in Sources */,
 				541A6AAD262588A200201F0F /* APIService.swift in Sources */,

@@ -11,16 +11,19 @@ import RealmSwift
 class StorageChatVC: UIViewController {
     let realm = try! Realm()
     var chat = List<Content>()
+    var date: String?
     @IBOutlet weak var chatTV: UITableView!{
         didSet{
             chatTV.delegate = self
             chatTV.dataSource = self
+            chatTV.separatorStyle = .none // 경계선 제거
         }
     }
+    @IBOutlet weak var dateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         setNib()
-        // Do any additional setup after loading the view.
+        setStyle()
     }
     
     //Nib 등록
@@ -28,6 +31,12 @@ class StorageChatVC: UIViewController {
         chatTV.register(UINib(nibName: "UserBalloonTableViewCell", bundle:nil), forCellReuseIdentifier:"UserBalloonTableViewCell")
         chatTV.register(UINib(nibName: "AiBalloonTableViewCell", bundle:nil), forCellReuseIdentifier:"AiBalloonTableViewCell")
     }
+    
+    func setStyle(){
+        dateLabel.text = date
+        chatTV.backgroundColor = .nariYellow
+    }
+    
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -45,9 +54,13 @@ extension StorageChatVC: UITableViewDelegate, UITableViewDataSource{
         
         if chat[indexPath.row].sender == "user" {
             userCell.messageLabel.text = chat[indexPath.row].message
+            userCell.timeLabel.isHidden = true
+            userCell.selectionStyle = .none
             return userCell
         }else if chat[indexPath.row].sender == "chatbot" {
             aiCell.messageLabel.text = chat[indexPath.row].message
+            aiCell.timeLabel.isHidden = true
+            aiCell.selectionStyle = .none
             return aiCell
         }
         

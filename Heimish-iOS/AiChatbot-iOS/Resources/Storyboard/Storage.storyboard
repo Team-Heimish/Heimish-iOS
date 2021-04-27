@@ -7,6 +7,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--StorageVC-->
         <scene sceneID="xEA-Ft-5ow">
@@ -127,11 +132,19 @@
                                             <action selector="backAction:" destination="Xzt-xw-x7P" eventType="touchUpInside" id="DIm-di-unj"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBe-eo-vUf">
+                                        <rect key="frame" x="187.5" y="11" width="39.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="jye-xy-ntG" firstAttribute="top" secondItem="TAS-Di-4ck" secondAttribute="top" id="2DT-hT-gth"/>
                                     <constraint firstItem="jye-xy-ntG" firstAttribute="leading" secondItem="TAS-Di-4ck" secondAttribute="leading" id="D1P-cB-EPr"/>
+                                    <constraint firstItem="UBe-eo-vUf" firstAttribute="centerY" secondItem="TAS-Di-4ck" secondAttribute="centerY" id="TJt-AI-69E"/>
+                                    <constraint firstItem="UBe-eo-vUf" firstAttribute="centerX" secondItem="TAS-Di-4ck" secondAttribute="centerX" id="TbJ-dH-a0f"/>
                                     <constraint firstAttribute="height" constant="44" id="aW3-LD-gui"/>
                                     <constraint firstAttribute="bottom" secondItem="jye-xy-ntG" secondAttribute="bottom" id="tg8-70-nHP"/>
                                 </constraints>
@@ -151,6 +164,7 @@
                     </view>
                     <connections>
                         <outlet property="chatTV" destination="nYp-aO-L2b" id="zFa-bY-xe9"/>
+                        <outlet property="dateLabel" destination="UBe-eo-vUf" id="xm3-oO-lm7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkX-0j-YaE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -52,7 +52,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" name="ChatBack"/>
+                <color key="backgroundColor" name="nariYellow"/>
                 <constraints>
                     <constraint firstItem="Xkf-64-uFd" firstAttribute="leading" secondItem="VUC-19-W7o" secondAttribute="trailing" constant="5" id="3Ce-IE-vRv"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Xkf-64-uFd" secondAttribute="trailing" constant="15" id="FLO-2b-wmV"/>
@@ -72,8 +72,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="ChatBack">
-            <color red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="nariYellow">
+            <color red="0.97647058823529409" green="0.85098039215686272" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

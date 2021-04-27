@@ -30,6 +30,7 @@ class ChatVC: UIViewController {
             chatTV.delegate = self
             chatTV.dataSource = self
             chatTV.separatorStyle = .none // 경계선 제거
+            chatTV.backgroundColor = .nariYellow
         }
     }
     @IBOutlet weak var inputTextView: UITextView!{
@@ -128,6 +129,39 @@ class ChatVC: UIViewController {
         present(alert, animated: true)
     }
     
+    // 상담 종료 Alert
+    func finishAlert(title: String?, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default)
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
+            formatter.dateFormat = "YYYY년 MM월 dd일 hh:mm분 상담"
+            nowTime = formatter.string(from: Date())
+            let counseiling = Counseiling()
+            counseiling.date = nowTime ?? "1996.12.26 11:56"
+            for i in 0..<chatDatas.count{
+                let content = Content(value: ["sender": chatDatas[i][1], "message": chatDatas[i][0]])
+                counseiling.chat.append(content)
+            }
+            try! realm.write {
+                realm.add(counseiling)
+            }
+            self.navigationController?.popViewController(animated: true)
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
+    
+    // 일반 Alert
+    func normalAlert(title: String?, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
     ///화면 터치시 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -147,22 +181,22 @@ class ChatVC: UIViewController {
     }
     
     @IBAction func resetChat(_ sender: Any) {
-        resetAlert(title: "정말 초기화 하시겠어요?", message: "초기화된 대화는 복구할 수 없어요!")
+        if chatDatas.count == 0 {
+            normalAlert(title: "초기화 할 수 없어요", message: "Heimish와의 대화를 시작해보세요!")
+        }else{
+            resetAlert(title: "정말 초기화 하시겠어요?", message: "초기화된 대화는 복구할 수 없어요!")
+        }
+        
     }
     
     // 상담일지 기록
     @IBAction func finishChat(_ sender: Any) {
-        formatter.dateFormat = "yy년 mm월 dd일 hh:mm분 상담 종료"
-        nowTime = formatter.string(from: Date())
-        let counseiling = Counseiling()
-        counseiling.date = nowTime ?? "1996.12.26 11:56"
-        for i in 0..<chatDatas.count{
-            let content = Content(value: ["sender": chatDatas[i][1], "message": chatDatas[i][0]])
-            counseiling.chat.append(content)
+        if chatDatas.count == 0 {
+            normalAlert(title: "기록할 상담이 없어요", message: "상담이 이루어져야 기록할 수 있어요!")
+        }else{
+            finishAlert(title: "상담을 기록하시겠어요?", message: "기록된 상담은 \n 모아보기에서 확인 할 수 있어요!")
         }
-        try! realm.write {
-            realm.add(counseiling)
-        }
+        
     }
     // 전송버튼
     @IBAction func sendBtnAction(_ sender: Any) {

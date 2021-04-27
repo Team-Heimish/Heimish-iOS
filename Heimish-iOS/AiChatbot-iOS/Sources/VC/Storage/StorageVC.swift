@@ -16,6 +16,7 @@ class StorageVC: UIViewController {
         didSet{
             counseilingTV.delegate = self
             counseilingTV.dataSource = self
+            counseilingTV.separatorStyle = .none // 경계선 제거
         }
     }
     override func viewDidLoad() {
@@ -39,6 +40,7 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
         // Realm 데이터 불러오기
         let chatModel = realm.objects(Counseiling.self)
         cell.dateLabel.text = chatModel[indexPath.row].date
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -47,6 +49,7 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
         if let vc = self.storyboard?.instantiateViewController(identifier: "StorageChatVC") as? StorageChatVC {
             self.navigationController?.pushViewController(vc, animated: true)
             vc.chat = realm.objects(Counseiling.self)[indexPath.row].chat
+            vc.date = realm.objects(Counseiling.self)[indexPath.row].date
         }
     }
 }

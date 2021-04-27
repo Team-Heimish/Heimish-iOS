@@ -8,11 +8,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="NotoSansCJKkr-Regular.otf">
-            <string>NotoSansCJKkr-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--ChatVC-->
         <scene sceneID="LQ5-rc-jGH">
@@ -65,34 +60,40 @@
                                             <action selector="backToHome:" destination="IwT-L7-HwH" eventType="touchUpInside" id="IKb-jN-J60"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gO-eg-8L4">
-                                        <rect key="frame" x="262" y="0.0" width="93" height="44"/>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                        <state key="normal" title="대화 기록 초기화">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="resetChat:" destination="IwT-L7-HwH" eventType="touchUpInside" id="KiO-F9-e5X"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEK-gB-9wE">
-                                        <rect key="frame" x="216" y="7" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="finishChat:" destination="IwT-L7-HwH" eventType="touchUpInside" id="vHK-om-WJq"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fqr-A5-Vgl">
+                                        <rect key="frame" x="290.66666666666669" y="8.6666666666666661" width="64.333333333333314" height="26.666666666666671"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEK-gB-9wE">
+                                                <rect key="frame" x="0.0" y="0.0" width="29.333333333333332" height="26.666666666666668"/>
+                                                <color key="tintColor" name="mainColor"/>
+                                                <state key="normal" image="tray.and.arrow.down.fill" catalog="system">
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="finishChat:" destination="IwT-L7-HwH" eventType="touchUpInside" id="vHK-om-WJq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gO-eg-8L4">
+                                                <rect key="frame" x="37.333333333333314" y="0.0" width="27" height="26.666666666666668"/>
+                                                <color key="tintColor" name="mainColor"/>
+                                                <state key="normal" image="memories" catalog="system">
+                                                    <color key="titleColor" systemColor="labelColor"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="resetChat:" destination="IwT-L7-HwH" eventType="touchUpInside" id="KiO-F9-e5X"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="S3M-fC-Pm7" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="top" id="DfL-0h-Nbd"/>
                                     <constraint firstItem="S3M-fC-Pm7" firstAttribute="leading" secondItem="Ej7-Hp-ANZ" secondAttribute="leading" id="I1C-qC-QMu"/>
                                     <constraint firstAttribute="bottom" secondItem="S3M-fC-Pm7" secondAttribute="bottom" id="IIj-88-xgx"/>
-                                    <constraint firstAttribute="trailing" secondItem="4gO-eg-8L4" secondAttribute="trailing" constant="20" id="JDp-2m-XKT"/>
-                                    <constraint firstAttribute="bottom" secondItem="4gO-eg-8L4" secondAttribute="bottom" id="MG8-9F-lsH"/>
-                                    <constraint firstItem="4gO-eg-8L4" firstAttribute="leading" secondItem="FEK-gB-9wE" secondAttribute="trailing" id="PW2-hY-RJA"/>
-                                    <constraint firstItem="FEK-gB-9wE" firstAttribute="centerY" secondItem="4gO-eg-8L4" secondAttribute="centerY" id="TjW-uw-9ve"/>
-                                    <constraint firstItem="4gO-eg-8L4" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="top" id="XD5-OD-3eR"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fqr-A5-Vgl" secondAttribute="trailing" constant="20" id="Uoe-ky-zoo"/>
+                                    <constraint firstItem="Fqr-A5-Vgl" firstAttribute="centerY" secondItem="Ej7-Hp-ANZ" secondAttribute="centerY" id="f4R-mi-qlC"/>
                                     <constraint firstAttribute="height" constant="44" id="tPS-Vs-4O7"/>
                                 </constraints>
                             </view>
@@ -150,6 +151,8 @@
     <resources>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="icnBack" width="44" height="44"/>
+        <image name="memories" catalog="system" width="128" height="110"/>
+        <image name="tray.and.arrow.down.fill" catalog="system" width="128" height="114"/>
         <namedColor name="ChatBack">
             <color red="1" green="1" blue="1" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
