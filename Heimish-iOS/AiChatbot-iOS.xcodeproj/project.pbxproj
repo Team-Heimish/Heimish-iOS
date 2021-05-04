@@ -17,6 +17,8 @@
 		542E7AE5263442FD005798AA /* StorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542E7AE4263442FD005798AA /* StorageTableViewCell.swift */; };
 		542E7AE926344694005798AA /* StorageNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542E7AE826344694005798AA /* StorageNC.swift */; };
 		542E7AEF26345013005798AA /* StorageChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542E7AEE26345013005798AA /* StorageChatVC.swift */; };
+		5436E46826417AC100B71AE4 /* Emotion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5436E46726417AC100B71AE4 /* Emotion.storyboard */; };
+		5436E46B26417AD100B71AE4 /* EmotionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436E46A26417AD100B71AE4 /* EmotionVC.swift */; };
 		543D62AA2637F78300B94527 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543D62A92637F78300B94527 /* UIColor+Additions.swift */; };
 		5486DC2B2610C51500AB139D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC282610C51500AB139D /* NotoSansCJKkr-Medium.otf */; };
 		5486DC2C2610C51500AB139D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC292610C51500AB139D /* NotoSansCJKkr-Regular.otf */; };
@@ -33,7 +35,7 @@
 		54A69735261089B0008B4F2C /* UserBalloonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A69734261089B0008B4F2C /* UserBalloonTableViewCell.swift */; };
 		54A6973926109068008B4F2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A6973826109068008B4F2C /* UIView+Extension.swift */; };
 		54A6973D261090B9008B4F2C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A6973C261090B9008B4F2C /* UITextField+Extension.swift */; };
-		54F2349326343B16009465B1 /* Counseiling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2349226343B16009465B1 /* Counseiling.swift */; };
+		54F2349326343B16009465B1 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2349226343B16009465B1 /* RealmDB.swift */; };
 		54F23496263440CD009465B1 /* Storage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F23495263440CD009465B1 /* Storage.storyboard */; };
 		54F2349926344171009465B1 /* StorageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2349826344171009465B1 /* StorageVC.swift */; };
 		6AEFCFE609163013B37A1E01 /* Pods_AiChatbot_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D28A1CD07DC893A27DF3792 /* Pods_AiChatbot_iOS.framework */; };
@@ -51,6 +53,8 @@
 		542E7AE4263442FD005798AA /* StorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTableViewCell.swift; sourceTree = "<group>"; };
 		542E7AE826344694005798AA /* StorageNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageNC.swift; sourceTree = "<group>"; };
 		542E7AEE26345013005798AA /* StorageChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageChatVC.swift; sourceTree = "<group>"; };
+		5436E46726417AC100B71AE4 /* Emotion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Emotion.storyboard; sourceTree = "<group>"; };
+		5436E46A26417AD100B71AE4 /* EmotionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionVC.swift; sourceTree = "<group>"; };
 		543D62A92637F78300B94527 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		5486DC282610C51500AB139D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		5486DC292610C51500AB139D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
@@ -69,7 +73,7 @@
 		54A69734261089B0008B4F2C /* UserBalloonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBalloonTableViewCell.swift; sourceTree = "<group>"; };
 		54A6973826109068008B4F2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		54A6973C261090B9008B4F2C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
-		54F2349226343B16009465B1 /* Counseiling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counseiling.swift; sourceTree = "<group>"; };
+		54F2349226343B16009465B1 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		54F23495263440CD009465B1 /* Storage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storage.storyboard; sourceTree = "<group>"; };
 		54F2349826344171009465B1 /* StorageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageVC.swift; sourceTree = "<group>"; };
 		5FCB80E8EA4A88180802F7B4 /* Pods-AiChatbot-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiChatbot-iOS.release.xcconfig"; path = "Target Support Files/Pods-AiChatbot-iOS/Pods-AiChatbot-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			children = (
 				54A6972B26108355008B4F2C /* ChatVC.swift */,
 				5410ADBA262C2AF600419F50 /* ChatNC.swift */,
+				5436E46A26417AD100B71AE4 /* EmotionVC.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				54A6972226107EB4008B4F2C /* Chat.storyboard */,
 				5410ADAF262C19E700419F50 /* Home.storyboard */,
 				54F23495263440CD009465B1 /* Storage.storyboard */,
+				5436E46726417AC100B71AE4 /* Emotion.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -242,7 +248,7 @@
 		54F2349126343AF6009465B1 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				54F2349226343B16009465B1 /* Counseiling.swift */,
+				54F2349226343B16009465B1 /* RealmDB.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5436E46826417AC100B71AE4 /* Emotion.storyboard in Resources */,
 				54A6972326107EB4008B4F2C /* Chat.storyboard in Resources */,
 				5410ADB0262C19E700419F50 /* Home.storyboard in Resources */,
 				5486DC2C2610C51500AB139D /* NotoSansCJKkr-Regular.otf in Resources */,
@@ -391,8 +398,9 @@
 				54A69735261089B0008B4F2C /* UserBalloonTableViewCell.swift in Sources */,
 				543D62AA2637F78300B94527 /* UIColor+Additions.swift in Sources */,
 				54A6973D261090B9008B4F2C /* UITextField+Extension.swift in Sources */,
-				54F2349326343B16009465B1 /* Counseiling.swift in Sources */,
+				54F2349326343B16009465B1 /* RealmDB.swift in Sources */,
 				541A6AAD262588A200201F0F /* APIService.swift in Sources */,
+				5436E46B26417AD100B71AE4 /* EmotionVC.swift in Sources */,
 				54A6972C26108355008B4F2C /* ChatVC.swift in Sources */,
 				541A6AA72625851600201F0F /* GenericResponse.swift in Sources */,
 				54A6970926107E1A008B4F2C /* AppDelegate.swift in Sources */,

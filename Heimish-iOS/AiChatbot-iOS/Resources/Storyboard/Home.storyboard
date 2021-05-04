@@ -39,7 +39,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxv-Kv-zSG">
-                                <rect key="frame" x="62.666666666666657" y="678" width="249.99999999999997" height="50"/>
+                                <rect key="frame" x="30" y="678" width="315" height="50"/>
                                 <color key="backgroundColor" name="mainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0xm-ou-fds"/>
@@ -107,7 +107,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="3vS-Y2-QZj" firstAttribute="top" secondItem="hAp-X4-Hrd" secondAttribute="bottom" constant="18" id="1QS-5E-BEo"/>
-                            <constraint firstItem="nxv-Kv-zSG" firstAttribute="width" secondItem="U3e-O9-15s" secondAttribute="width" multiplier="0.666667" id="Dyp-cp-9hR"/>
+                            <constraint firstItem="nxv-Kv-zSG" firstAttribute="trailing" secondItem="HPa-Tt-l7n" secondAttribute="trailing" id="87A-z7-DSp"/>
+                            <constraint firstItem="nxv-Kv-zSG" firstAttribute="leading" secondItem="HPa-Tt-l7n" secondAttribute="leading" id="DQ3-8Z-NYb"/>
                             <constraint firstItem="5Sm-ob-X9K" firstAttribute="top" secondItem="dFo-tt-pvM" secondAttribute="bottom" constant="30" id="M2t-E2-8tn"/>
                             <constraint firstItem="5Sm-ob-X9K" firstAttribute="bottom" secondItem="hAp-X4-Hrd" secondAttribute="bottom" constant="-35" id="O3I-7Q-1ZP"/>
                             <constraint firstItem="3vS-Y2-QZj" firstAttribute="leading" secondItem="hAp-X4-Hrd" secondAttribute="leading" id="Ugf-eS-SNy"/>

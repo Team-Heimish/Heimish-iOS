@@ -17,6 +17,12 @@ class StorageTableViewCell: UITableViewCell {
             emotionView.makeRounded(cornerRadius: 10.0)
         }
     }
+    @IBOutlet weak var happyLabel: UILabel!
+    @IBOutlet weak var smileLabel: UILabel!
+    @IBOutlet weak var sosoLabel: UILabel!
+    @IBOutlet weak var sadLabel: UILabel!
+    @IBOutlet weak var depressedLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

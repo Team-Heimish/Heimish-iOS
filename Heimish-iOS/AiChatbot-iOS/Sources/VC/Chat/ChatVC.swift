@@ -13,6 +13,7 @@ class ChatVC: UIViewController {
     let realm = try! Realm() // Realm 가져오기
     let formatter = DateFormatter()
     var chatDatas = [[String]]() // 대화가 저장되는 배열
+    var emotionDatas = [Int]()
     var nowTime: String?
     var keyboardStatus: Bool = false
     
@@ -105,22 +106,13 @@ class ChatVC: UIViewController {
         
         let cancelAction = UIAlertAction(title: "취소", style: .default)
         let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
-            formatter.dateFormat = "YYYY년 MM월 dd일"
-            let finishTime = formatter.string(from: Date()) // 상담 종료 시각
-            let counseiling = Counseiling()
-            counseiling.idx = (realm.objects(Counseiling.self).last?.idx ?? 0) + 1
-            counseiling.date = finishTime
-            for i in 0..<chatDatas.count{
-                let content = Content(value: ["sender": chatDatas[i][0], "message": chatDatas[i][1], "time": chatDatas[i][2]])
-                counseiling.chat.append(content)
+            NotificationCenter.default.addObserver(self, selector: #selector(recordChat), name: NSNotification.Name("recordChat"), object: nil)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Emotion", bundle: nil)
+            if let vc = storyBoard.instantiateViewController(identifier: "EmotionVC") as? EmotionVC {
+                vc.modalPresentationStyle = .fullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                self.present(vc, animated: true, completion: nil)
             }
-            try! realm.write {
-                realm.add(counseiling)
-            }
-            UserDefaults.standard.removeObject(forKey: "loadChat")
-            chatDatas = []
-            chatTV.reloadData()
-            self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(cancelAction)
         alert.addAction(okAction)
@@ -141,6 +133,27 @@ class ChatVC: UIViewController {
         self.view.endEditing(true)
     }
     
+    @objc func recordChat(){
+        formatter.dateFormat = "YYYY년 MM월 dd일"
+        let finishTime = formatter.string(from: Date()) // 상담 종료 시각
+        let counseiling = Counseiling()
+        counseiling.idx = (realm.objects(Counseiling.self).last?.idx ?? 0) + 1
+        counseiling.date = finishTime
+        counseiling.emotionArray = emotionDatas
+        print(emotionDatas)
+        for i in 0..<chatDatas.count{
+            let content = Content(value: ["sender": chatDatas[i][0], "message": chatDatas[i][1], "time": chatDatas[i][2]])
+            counseiling.chat.append(content)
+        }
+        try! realm.write {
+            realm.add(counseiling)
+        }
+        UserDefaults.standard.removeObject(forKey: "loadChat")
+        chatDatas = []
+        chatTV.reloadData()
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     //터치가 있을 시 핸들러 캐치
     @objc func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
@@ -150,7 +163,9 @@ class ChatVC: UIViewController {
     }
     
     @objc func saveChat(){
-        UserDefaults.standard.setValue(chatDatas, forKey: "loadChat") // chat기록 저장
+        if chatDatas.count > 0 {
+            UserDefaults.standard.setValue(chatDatas, forKey: "loadChat") // chat기록 저장
+        }
     }
     
     @objc func keyboardWillShow(_ sender:Notification){

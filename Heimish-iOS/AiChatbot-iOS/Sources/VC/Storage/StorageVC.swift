@@ -42,6 +42,11 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
         let chatModel = realm.objects(Counseiling.self)
         cell.idxLabel.text = "\(chatModel[indexPath.row].idx)"
         cell.dateLabel.text = chatModel[indexPath.row].date
+        cell.happyLabel.text = "\(chatModel[indexPath.row].emotion[0])"
+        cell.smileLabel.text = "\(chatModel[indexPath.row].emotion[1])"
+        cell.sosoLabel.text = "\(chatModel[indexPath.row].emotion[2])"
+        cell.sadLabel.text = "\(chatModel[indexPath.row].emotion[3])"
+        cell.depressedLabel.text = "\(chatModel[indexPath.row].emotion[4])"
         cell.selectionStyle = .none
         return cell
     }
