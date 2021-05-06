@@ -17,7 +17,7 @@ class StorageVC: UIViewController {
             counseilingTV.delegate = self
             counseilingTV.dataSource = self
             counseilingTV.separatorStyle = .none // 경계선 제거
-            counseilingTV.contentInset = UIEdgeInsets(top: 20,left: 0,bottom: 0,right: 0)
+            counseilingTV.contentInset = UIEdgeInsets(top: 10,left: 0,bottom: 10,right: 0)
         }
     }
     override func viewDidLoad() {
@@ -35,12 +35,17 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
         return savedChat.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+        
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StorageTableViewCell", for: indexPath) as! StorageTableViewCell
         
         // Realm 데이터 불러오기
         let chatModel = realm.objects(Counseiling.self)
-        cell.idxLabel.text = "\(chatModel[indexPath.row].idx)"
+        cell.idxLabel.text = "[\(chatModel[indexPath.row].idx)]"
         cell.dateLabel.text = chatModel[indexPath.row].date
         cell.happyLabel.text = "\(chatModel[indexPath.row].emotion[0])"
         cell.smileLabel.text = "\(chatModel[indexPath.row].emotion[1])"

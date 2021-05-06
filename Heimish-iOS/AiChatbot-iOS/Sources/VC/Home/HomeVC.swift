@@ -11,7 +11,7 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var startChatBtn: UIButton!{
         didSet{
-            startChatBtn.makeRounded(cornerRadius: 25.0)
+            startChatBtn.makeRounded(cornerRadius: 15.0)
         }
     }
     @IBOutlet weak var sunImageView: UIImageView!
@@ -51,8 +51,6 @@ class HomeVC: UIViewController {
     func startBtnAnimation(){
         UIView.animate(withDuration: 1, animations: {
                 self.startChatBtn.transform = CGAffineTransform(translationX: 0, y: -20)
-        }, completion: { [self] _ in
-            sunAnimation()
         });
     }
     
