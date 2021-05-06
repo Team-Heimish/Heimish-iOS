@@ -33,4 +33,5 @@ class Content: Object {
     @objc dynamic var sender :String = ""
     @objc dynamic var message :String = ""
     @objc dynamic var time :String = ""
+    let counseiling = LinkingObjects(fromType: Counseiling.self, property: "chat")
 }

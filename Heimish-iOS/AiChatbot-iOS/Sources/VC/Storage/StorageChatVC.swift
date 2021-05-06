@@ -10,6 +10,7 @@ import RealmSwift
 
 class StorageChatVC: UIViewController {
     let realm = try! Realm()
+    var thisidx: Int?
     var chat = List<Content>()
     var date: String?
     @IBOutlet weak var chatTV: UITableView!{
@@ -43,6 +44,16 @@ class StorageChatVC: UIViewController {
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func deleteAction(_ sender: Any) {
+        if  let thisChat = realm.objects(Counseiling.self).filter("idx = \(thisidx ?? -1)").first {
+            try! realm.write {
+                realm.delete(thisChat)
+                self.navigationController?.popViewController(animated: true)
+            }
+        }else{
+            print("지우려는 상담의 인덱스가 없어요")
+        }
     }
 }
 

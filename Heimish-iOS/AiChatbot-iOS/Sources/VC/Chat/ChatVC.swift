@@ -57,6 +57,12 @@ class ChatVC: UIViewController {
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
+    deinit {
+        // 노티 메모리에서 해제
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         UserDefaults.standard.setValue(chatDatas, forKey: "loadChat") // 채팅화면에서 자의에 의해 뒤로가기 한건 상담이 안끝났다는 뜻. 대화 저장.

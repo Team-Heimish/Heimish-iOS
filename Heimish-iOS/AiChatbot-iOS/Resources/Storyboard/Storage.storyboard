@@ -45,13 +45,13 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[1]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Af-DH-9Kn">
                                                                     <rect key="frame" x="0.0" y="0.0" width="14" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
-                                                                    <color key="textColor" name="black"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-y5-dqL">
                                                                     <rect key="frame" x="21" y="0.0" width="27.5" height="15.5"/>
                                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
-                                                                    <color key="textColor" name="black"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -270,20 +270,34 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBe-eo-vUf">
-                                        <rect key="frame" x="187.5" y="11" width="39.5" height="22.5"/>
+                                        <rect key="frame" x="188.5" y="13.5" width="37" height="17.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpv-8S-WGd">
+                                        <rect key="frame" x="374" y="0.0" width="20" height="44"/>
+                                        <color key="tintColor" name="mainColor"/>
+                                        <state key="normal" image="trash" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteAction:" destination="Xzt-xw-x7P" eventType="touchUpInside" id="yUp-J9-NMD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="jye-xy-ntG" firstAttribute="top" secondItem="TAS-Di-4ck" secondAttribute="top" id="2DT-hT-gth"/>
                                     <constraint firstItem="jye-xy-ntG" firstAttribute="leading" secondItem="TAS-Di-4ck" secondAttribute="leading" id="D1P-cB-EPr"/>
+                                    <constraint firstItem="wpv-8S-WGd" firstAttribute="centerY" secondItem="TAS-Di-4ck" secondAttribute="centerY" id="K5r-Um-3Q0"/>
                                     <constraint firstItem="UBe-eo-vUf" firstAttribute="centerY" secondItem="TAS-Di-4ck" secondAttribute="centerY" id="TJt-AI-69E"/>
                                     <constraint firstItem="UBe-eo-vUf" firstAttribute="centerX" secondItem="TAS-Di-4ck" secondAttribute="centerX" id="TbJ-dH-a0f"/>
+                                    <constraint firstAttribute="trailing" secondItem="wpv-8S-WGd" secondAttribute="trailing" constant="20" id="VKq-Vg-3jv"/>
                                     <constraint firstAttribute="height" constant="44" id="aW3-LD-gui"/>
+                                    <constraint firstItem="wpv-8S-WGd" firstAttribute="top" secondItem="TAS-Di-4ck" secondAttribute="top" id="lA3-dQ-MF3"/>
                                     <constraint firstAttribute="bottom" secondItem="jye-xy-ntG" secondAttribute="bottom" id="tg8-70-nHP"/>
+                                    <constraint firstAttribute="bottom" secondItem="wpv-8S-WGd" secondAttribute="bottom" id="uPO-cT-Xvp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -335,9 +349,7 @@
         <image name="sad_w" width="512" height="512"/>
         <image name="smile_w" width="512" height="512"/>
         <image name="soso_w" width="512" height="512"/>
-        <namedColor name="black">
-            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="mainColor">
             <color red="0.9882352941176471" green="0.69019607843137254" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

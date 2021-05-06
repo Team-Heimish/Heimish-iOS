@@ -12,6 +12,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var startChatBtn: UIButton!{
         didSet{
             startChatBtn.makeRounded(cornerRadius: 15.0)
+            startChatBtn.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
         }
     }
     @IBOutlet weak var sunImageView: UIImageView!
@@ -40,10 +41,10 @@ class HomeVC: UIViewController {
     
     func sunAnimation(){
         UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
-                self.sunImageView.transform = CGAffineTransform(translationX: 0, y: 10)
+                self.sunImageView.transform = CGAffineTransform(translationX: 0, y: 5)
             }, completion: { _ in
                 UIView.animate(withDuration: 1, animations: {
-                    self.sunImageView.transform = CGAffineTransform(translationX: 0, y: -10)
+                    self.sunImageView.transform = CGAffineTransform(translationX: 0, y: -5)
                 })
             });
     }

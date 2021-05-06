@@ -40,7 +40,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxv-Kv-zSG">
-                                <rect key="frame" x="30" y="678" width="315" height="50"/>
+                                <rect key="frame" x="30" y="693" width="315" height="50"/>
                                 <color key="backgroundColor" name="mainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0xm-ou-fds"/>
@@ -118,11 +118,11 @@
                             <constraint firstItem="3vS-Y2-QZj" firstAttribute="leading" secondItem="hAp-X4-Hrd" secondAttribute="leading" id="Ugf-eS-SNy"/>
                             <constraint firstItem="2H2-Za-Kl5" firstAttribute="trailing" secondItem="3vS-Y2-QZj" secondAttribute="trailing" constant="30" id="WZg-x8-jdi"/>
                             <constraint firstItem="2H2-Za-Kl5" firstAttribute="trailing" secondItem="dFo-tt-pvM" secondAttribute="trailing" constant="20" id="a24-kK-Dla"/>
-                            <constraint firstItem="2H2-Za-Kl5" firstAttribute="bottom" secondItem="nxv-Kv-zSG" secondAttribute="bottom" constant="50" id="b9O-c7-488"/>
+                            <constraint firstItem="2H2-Za-Kl5" firstAttribute="bottom" secondItem="nxv-Kv-zSG" secondAttribute="bottom" constant="35" id="b9O-c7-488"/>
                             <constraint firstItem="HPa-Tt-l7n" firstAttribute="trailing" secondItem="3vS-Y2-QZj" secondAttribute="trailing" id="bac-1e-B4F"/>
                             <constraint firstItem="nxv-Kv-zSG" firstAttribute="centerX" secondItem="2H2-Za-Kl5" secondAttribute="centerX" id="fgb-al-ULr"/>
                             <constraint firstItem="dFo-tt-pvM" firstAttribute="top" secondItem="2H2-Za-Kl5" secondAttribute="top" constant="20" id="gbX-cW-w8B"/>
-                            <constraint firstItem="nxv-Kv-zSG" firstAttribute="top" secondItem="HPa-Tt-l7n" secondAttribute="bottom" constant="65" id="hsB-LQ-ilg"/>
+                            <constraint firstItem="nxv-Kv-zSG" firstAttribute="top" secondItem="HPa-Tt-l7n" secondAttribute="bottom" constant="80" id="hsB-LQ-ilg"/>
                             <constraint firstItem="HPa-Tt-l7n" firstAttribute="top" secondItem="3vS-Y2-QZj" secondAttribute="bottom" constant="30" id="iw1-La-fHM"/>
                             <constraint firstItem="hAp-X4-Hrd" firstAttribute="leading" secondItem="2H2-Za-Kl5" secondAttribute="leading" constant="30" id="mNm-nh-CpQ"/>
                             <constraint firstItem="5Sm-ob-X9K" firstAttribute="top" secondItem="qhu-HU-g6H" secondAttribute="top" constant="-15" id="qHg-zr-C3N"/>

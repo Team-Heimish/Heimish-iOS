@@ -24,6 +24,11 @@ class StorageVC: UIViewController {
         super.viewDidLoad()
         print(realm.objects(Counseiling.self))
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+    }
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -36,8 +41,7 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-        
+        return 90
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,9 +63,25 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = self.storyboard?.instantiateViewController(identifier: "StorageChatVC") as? StorageChatVC {
             self.navigationController?.pushViewController(vc, animated: true)
+            vc.thisidx = realm.objects(Counseiling.self)[indexPath.row].idx
             vc.chat = realm.objects(Counseiling.self)[indexPath.row].chat
             vc.date = realm.objects(Counseiling.self)[indexPath.row].date
         }
     }
-
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let thisChat = realm.objects(Counseiling.self).filter("idx = \(realm.objects(Counseiling.self)[indexPath.row].idx)").first {
+                try! realm.write {
+                    realm.delete(thisChat)
+                }
+            }else{
+                print("지우려는 상담의 인덱스가 없어요")
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    
 }
