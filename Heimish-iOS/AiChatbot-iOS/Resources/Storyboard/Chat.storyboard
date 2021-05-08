@@ -29,7 +29,7 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rt3-s5-18G">
                                         <rect key="frame" x="315" y="0.0" width="40" height="40"/>
-                                        <color key="backgroundColor" name="mainColor"/>
+                                        <color key="backgroundColor" name="deepGreen"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="akJ-Z6-xFI"/>
                                         </constraints>
@@ -57,6 +57,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S3M-fC-Pm7">
                                         <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                        <color key="tintColor" name="black"/>
                                         <state key="normal" image="icnBack"/>
                                         <connections>
                                             <action selector="backToHome:" destination="IwT-L7-HwH" eventType="touchUpInside" id="IKb-jN-J60"/>
@@ -67,7 +68,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEK-gB-9wE">
                                                 <rect key="frame" x="0.0" y="0.0" width="23.666666666666668" height="22.666666666666668"/>
-                                                <color key="tintColor" name="mainColor"/>
+                                                <color key="tintColor" name="black"/>
                                                 <state key="normal" image="tray.and.arrow.down.fill" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                                 </state>
@@ -77,7 +78,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gO-eg-8L4">
                                                 <rect key="frame" x="38.666666666666629" y="0.0" width="23.666666666666671" height="22.666666666666668"/>
-                                                <color key="tintColor" name="mainColor"/>
+                                                <color key="tintColor" name="black"/>
                                                 <state key="normal" image="memories.badge.minus" catalog="system">
                                                     <color key="titleColor" systemColor="labelColor"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
@@ -88,12 +89,20 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heimish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3B-fB-LFV">
+                                        <rect key="frame" x="156" y="11.999999999999998" width="63.333333333333343" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" name="black"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="h3B-fB-LFV" firstAttribute="centerX" secondItem="Ej7-Hp-ANZ" secondAttribute="centerX" id="1t7-i4-FTX"/>
                                     <constraint firstItem="S3M-fC-Pm7" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="top" id="DfL-0h-Nbd"/>
                                     <constraint firstItem="S3M-fC-Pm7" firstAttribute="leading" secondItem="Ej7-Hp-ANZ" secondAttribute="leading" id="I1C-qC-QMu"/>
                                     <constraint firstAttribute="bottom" secondItem="S3M-fC-Pm7" secondAttribute="bottom" id="IIj-88-xgx"/>
+                                    <constraint firstItem="h3B-fB-LFV" firstAttribute="centerY" secondItem="Ej7-Hp-ANZ" secondAttribute="centerY" id="LTb-8K-Wmh"/>
                                     <constraint firstAttribute="trailing" secondItem="Fqr-A5-Vgl" secondAttribute="trailing" constant="20" id="Uoe-ky-zoo"/>
                                     <constraint firstItem="Fqr-A5-Vgl" firstAttribute="centerY" secondItem="Ej7-Hp-ANZ" secondAttribute="centerY" id="f4R-mi-qlC"/>
                                     <constraint firstAttribute="height" constant="44" id="tPS-Vs-4O7"/>
@@ -162,8 +171,11 @@
         <namedColor name="InputBack">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="mainColor">
-            <color red="0.9882352941176471" green="0.69019607843137254" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="black">
+            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="deepGreen">
+            <color red="0.10196078431372549" green="0.82352941176470584" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

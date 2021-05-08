@@ -20,6 +20,8 @@
 		5436E46826417AC100B71AE4 /* Emotion.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5436E46726417AC100B71AE4 /* Emotion.storyboard */; };
 		5436E46B26417AD100B71AE4 /* EmotionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436E46A26417AD100B71AE4 /* EmotionVC.swift */; };
 		543D62AA2637F78300B94527 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543D62A92637F78300B94527 /* UIColor+Additions.swift */; };
+		545909D72646C85700496AE9 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545909D62646C85700496AE9 /* ProgressBarView.swift */; };
+		545909DA2646D42600496AE9 /* PlainHorizontalProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545909D92646D42600496AE9 /* PlainHorizontalProgressBar.swift */; };
 		5486DC2B2610C51500AB139D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC282610C51500AB139D /* NotoSansCJKkr-Medium.otf */; };
 		5486DC2C2610C51500AB139D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC292610C51500AB139D /* NotoSansCJKkr-Regular.otf */; };
 		5486DC2D2610C51500AB139D /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC2A2610C51500AB139D /* NotoSansCJKkr-Bold.otf */; };
@@ -56,6 +58,8 @@
 		5436E46726417AC100B71AE4 /* Emotion.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Emotion.storyboard; sourceTree = "<group>"; };
 		5436E46A26417AD100B71AE4 /* EmotionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionVC.swift; sourceTree = "<group>"; };
 		543D62A92637F78300B94527 /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		545909D62646C85700496AE9 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		545909D92646D42600496AE9 /* PlainHorizontalProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainHorizontalProgressBar.swift; sourceTree = "<group>"; };
 		5486DC282610C51500AB139D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		5486DC292610C51500AB139D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
 		5486DC2A2610C51500AB139D /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
@@ -138,6 +142,15 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
+		545909D52646C84C00496AE9 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				545909D62646C85700496AE9 /* ProgressBarView.swift */,
+				545909D92646D42600496AE9 /* PlainHorizontalProgressBar.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		5486DC2F2610C51B00AB139D /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +207,7 @@
 		54A6971F26107E47008B4F2C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				545909D52646C84C00496AE9 /* Class */,
 				541A6AA4262584C800201F0F /* Model */,
 				54A697372610905B008B4F2C /* Extensions */,
 				54A6972526107FE9008B4F2C /* Cells */,
@@ -402,6 +416,7 @@
 				541A6AAD262588A200201F0F /* APIService.swift in Sources */,
 				5436E46B26417AD100B71AE4 /* EmotionVC.swift in Sources */,
 				54A6972C26108355008B4F2C /* ChatVC.swift in Sources */,
+				545909D72646C85700496AE9 /* ProgressBarView.swift in Sources */,
 				541A6AA72625851600201F0F /* GenericResponse.swift in Sources */,
 				54A6970926107E1A008B4F2C /* AppDelegate.swift in Sources */,
 				54A6970B26107E1A008B4F2C /* SceneDelegate.swift in Sources */,
@@ -411,6 +426,7 @@
 				54A69731261089A3008B4F2C /* AiBalloonTableViewCell.swift in Sources */,
 				5410ADB3262C1A0100419F50 /* HomeVC.swift in Sources */,
 				541A6AB02625924B00201F0F /* MessageData.swift in Sources */,
+				545909DA2646D42600496AE9 /* PlainHorizontalProgressBar.swift in Sources */,
 				542E7AEF26345013005798AA /* StorageChatVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +570,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N8FDQCW52Q;
 				INFOPLIST_FILE = "AiChatbot-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -574,6 +591,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N8FDQCW52Q;
 				INFOPLIST_FILE = "AiChatbot-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
