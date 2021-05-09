@@ -32,6 +32,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var nagPgbBackView: UIView!
     @IBOutlet weak var nagPgbView: ProgressBarView!
     @IBOutlet weak var nagPercentageLabel: UILabel!
+    @IBOutlet weak var emotionSentenceLabel: UILabel!
     
     @IBOutlet weak var whatToDoView: UIView!{
         didSet{
@@ -39,7 +40,6 @@ class HomeVC: UIViewController {
             whatToDoView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +52,7 @@ class HomeVC: UIViewController {
         setProgressBar()
     }
     
+    // MARK: -애니메이션 관련
     func sunAnimation(){
         UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.sunImageView.transform = CGAffineTransform(translationX: 0, y: 5)
@@ -61,7 +62,6 @@ class HomeVC: UIViewController {
             })
         });
     }
-    
     func startBtnAnimation(){
         UIView.animate(withDuration: 1, animations: {
             self.startChatBtn.transform = CGAffineTransform(translationX: 0, y: -20)
@@ -83,9 +83,19 @@ class HomeVC: UIViewController {
         return [Int(percentage),100-Int(percentage)]
     }
     
+    // MARK: -감정 기록 퍼센트에 따른 응원의 한마디
+    func setSentence(_ postivie: Int, _ nagative: Int){
+        if postivie > nagative{
+            emotionSentenceLabel.text = "점점 더 행복해지고 있는 당신을 보니\n너무 기뻐요!"
+        }else{
+            emotionSentenceLabel.text = "내일은 오늘보다\n더 기분 좋은 일들로 가득할거에요!"
+        }
+    }
+    
     // MARK: -프로그래스바 셋팅
     func setProgressBar(){
         let percentage = setEmotionPercent()
+        setSentence(percentage[0],percentage[1])
         posPercentageLabel.text = "\(percentage[0])%"
         nagPercentageLabel.text = "\(percentage[1])%"
         posPgbBackView.makeRounded(cornerRadius: posPgbBackView.frame.height/2)
@@ -101,10 +111,11 @@ class HomeVC: UIViewController {
         let greenGradient = CAGradientLayer()
         
         // 긍정 게이지
-        // frame을 잡아주고
+        /// frame을 잡아주고
         greenGradient.frame = pgbView.bounds
-        // 섞어줄 색을 colors에 넣어준 뒤
+        /// 섞어줄 색 지정
         greenGradient.colors = [UIColor.mediumGreen.cgColor,UIColor(red: 0, green: 171/255, blue: 162/255, alpha: 1.0).cgColor]
+        /// 시작점과 끝 지점을 지정
         greenGradient.startPoint = CGPoint(x: 0, y: 0)
         greenGradient.endPoint = CGPoint(x: 1, y: 0)
         
