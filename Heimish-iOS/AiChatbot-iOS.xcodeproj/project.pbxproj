@@ -37,6 +37,9 @@
 		54A69735261089B0008B4F2C /* UserBalloonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A69734261089B0008B4F2C /* UserBalloonTableViewCell.swift */; };
 		54A6973926109068008B4F2C /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A6973826109068008B4F2C /* UIView+Extension.swift */; };
 		54A6973D261090B9008B4F2C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A6973C261090B9008B4F2C /* UITextField+Extension.swift */; };
+		54CAB8A62647832B0066D94B /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CAB8A52647832B0066D94B /* UIButton+Extension.swift */; };
+		54CAB8AA2647840D0066D94B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CAB8A92647840D0066D94B /* String+Extension.swift */; };
+		54CAB8AC264784D60066D94B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CAB8AB264784D60066D94B /* UILabel+Extension.swift */; };
 		54F2349326343B16009465B1 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2349226343B16009465B1 /* RealmDB.swift */; };
 		54F23496263440CD009465B1 /* Storage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F23495263440CD009465B1 /* Storage.storyboard */; };
 		54F2349926344171009465B1 /* StorageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2349826344171009465B1 /* StorageVC.swift */; };
@@ -77,6 +80,9 @@
 		54A69734261089B0008B4F2C /* UserBalloonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBalloonTableViewCell.swift; sourceTree = "<group>"; };
 		54A6973826109068008B4F2C /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		54A6973C261090B9008B4F2C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		54CAB8A52647832B0066D94B /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		54CAB8A92647840D0066D94B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		54CAB8AB264784D60066D94B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		54F2349226343B16009465B1 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		54F23495263440CD009465B1 /* Storage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storage.storyboard; sourceTree = "<group>"; };
 		54F2349826344171009465B1 /* StorageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageVC.swift; sourceTree = "<group>"; };
@@ -255,6 +261,9 @@
 				54A6973826109068008B4F2C /* UIView+Extension.swift */,
 				54A6973C261090B9008B4F2C /* UITextField+Extension.swift */,
 				543D62A92637F78300B94527 /* UIColor+Additions.swift */,
+				54CAB8A52647832B0066D94B /* UIButton+Extension.swift */,
+				54CAB8A92647840D0066D94B /* String+Extension.swift */,
+				54CAB8AB264784D60066D94B /* UILabel+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,14 +419,17 @@
 				542E7AE926344694005798AA /* StorageNC.swift in Sources */,
 				54A6973926109068008B4F2C /* UIView+Extension.swift in Sources */,
 				54A69735261089B0008B4F2C /* UserBalloonTableViewCell.swift in Sources */,
+				54CAB8A62647832B0066D94B /* UIButton+Extension.swift in Sources */,
 				543D62AA2637F78300B94527 /* UIColor+Additions.swift in Sources */,
 				54A6973D261090B9008B4F2C /* UITextField+Extension.swift in Sources */,
 				54F2349326343B16009465B1 /* RealmDB.swift in Sources */,
 				541A6AAD262588A200201F0F /* APIService.swift in Sources */,
+				54CAB8AC264784D60066D94B /* UILabel+Extension.swift in Sources */,
 				5436E46B26417AD100B71AE4 /* EmotionVC.swift in Sources */,
 				54A6972C26108355008B4F2C /* ChatVC.swift in Sources */,
 				545909D72646C85700496AE9 /* ProgressBarView.swift in Sources */,
 				541A6AA72625851600201F0F /* GenericResponse.swift in Sources */,
+				54CAB8AA2647840D0066D94B /* String+Extension.swift in Sources */,
 				54A6970926107E1A008B4F2C /* AppDelegate.swift in Sources */,
 				54A6970B26107E1A008B4F2C /* SceneDelegate.swift in Sources */,
 				5410ADBB262C2AF600419F50 /* ChatNC.swift in Sources */,

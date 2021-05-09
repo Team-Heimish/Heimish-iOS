@@ -9,11 +9,7 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    @IBOutlet weak var titileLabel: UILabel!{
-        didSet{
-            titileLabel.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.5, radius: 4)
-        }
-    }
+    @IBOutlet weak var titileLabel: UILabel!
     @IBOutlet weak var startChatBtn: UIButton!{
         didSet{
             startChatBtn.makeRounded(cornerRadius: 15.0)
@@ -21,12 +17,10 @@ class HomeVC: UIViewController {
         }
     }
     @IBOutlet weak var sunImageView: UIImageView!
-    @IBOutlet weak var todayWordView: UIView!{
+    @IBOutlet weak var emotionView: UIView!{
         didSet{
-//            todayWordView.backgroundColor = .none
-//            todayWordView.layer.borderColor = UIColor.nariYellow.cgColor
-//            todayWordView.layer.borderWidth  = 2.0
-            todayWordView.makeRounded(cornerRadius: 15.0)
+            emotionView.makeRounded(cornerRadius: 15.0)
+            emotionView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
         }
     }
     
@@ -41,21 +35,21 @@ class HomeVC: UIViewController {
     @IBOutlet weak var depPgbBackView: UIView!
     @IBOutlet weak var depPgbView: ProgressBarView!
     
-    @IBOutlet weak var yourEmotionView: UIView!{
+    @IBOutlet weak var whatToDoView: UIView!{
         didSet{
-            yourEmotionView.makeRounded(cornerRadius: 15.0)
-            yourEmotionView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
+            whatToDoView.makeRounded(cornerRadius: 15.0)
+            whatToDoView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         startBtnAnimation()
-        setProgressBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         sunAnimation()
+        setProgressBar()
     }
     
     func sunAnimation(){
@@ -81,10 +75,10 @@ class HomeVC: UIViewController {
         sadPgbBackView.makeRounded(cornerRadius: hapPgbBackView.frame.height/2)
         depPgbBackView.makeRounded(cornerRadius: hapPgbBackView.frame.height/2)
         customProgressBarView(20, hapPgbView)
-        customProgressBarView(40, smilePgbView)
-        customProgressBarView(60, soPgbView)
-        customProgressBarView(80, sadPgbView)
-        customProgressBarView(100, depPgbView)
+        customProgressBarView(20, smilePgbView)
+        customProgressBarView(40, soPgbView)
+        customProgressBarView(10, sadPgbView)
+        customProgressBarView(10, depPgbView)
     }
     
     //MARK: - 프로그래스바 커스텀
@@ -97,7 +91,7 @@ class HomeVC: UIViewController {
         greenGradient.frame = pgbView.bounds
 
         // 섞어줄 색을 colors에 넣어준 뒤
-        greenGradient.colors = [UIColor.deepGreen.cgColor,UIColor(red: 0, green: 171/255, blue: 162/255, alpha: 1.0).cgColor]
+        greenGradient.colors = [UIColor.mediumGreen.cgColor,UIColor(red: 0, green: 171/255, blue: 162/255, alpha: 1.0).cgColor]
 
         greenGradient.startPoint = CGPoint(x: 0, y: 0)
         greenGradient.endPoint = CGPoint(x: 1, y: 0)
@@ -113,12 +107,14 @@ class HomeVC: UIViewController {
         redGradient.startPoint = CGPoint(x: 0, y: 0)
         redGradient.endPoint = CGPoint(x: 1, y: 0)
 
-        if value < 50 {
-            pgbView.setProgressColor(color: redGradient)
-        }
-        else {
-            pgbView.setProgressColor(color: greenGradient)
-        }
+        pgbView.setProgressColor(color: greenGradient)
+//        if value < 50 {
+//
+//            pgbView.setProgressColor(color: redGradient)
+//        }
+//        else {
+//            pgbView.setProgressColor(color: greenGradient)
+//        }
         pgbView
             .setProgressValue(currentValue: CGFloat(value))
     }

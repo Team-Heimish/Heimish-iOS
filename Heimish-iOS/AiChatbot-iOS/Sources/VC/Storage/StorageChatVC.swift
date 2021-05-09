@@ -18,7 +18,7 @@ class StorageChatVC: UIViewController {
             chatTV.delegate = self
             chatTV.dataSource = self
             chatTV.separatorStyle = .none // 경계선 제거
-            chatTV.backgroundColor = .nariYellow
+            chatTV.backgroundColor = .lightGreen
         }
     }
     @IBOutlet weak var dateLabel: UILabel!{
@@ -28,7 +28,7 @@ class StorageChatVC: UIViewController {
     }
     @IBOutlet weak var naviView: UIView!{
         didSet{
-            naviView.dropShadow(color: .orange, offSet: CGSize(width: 0, height: 5), opacity: 0.2, radius: 3)
+            naviView.dropShadow(color: .deepGreen, offSet: CGSize(width: 0, height: 5), opacity: 0.2, radius: 3)
         }
     }
     override func viewDidLoad() {
