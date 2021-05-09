@@ -16,6 +16,7 @@ class StorageVC: UIViewController {
         didSet{
             counseilingTV.delegate = self
             counseilingTV.dataSource = self
+            counseilingTV.backgroundColor = .heimishWhite
             counseilingTV.separatorStyle = .none // 경계선 제거
             counseilingTV.contentInset = UIEdgeInsets(top: 10,left: 0,bottom: 10,right: 0)
         }
@@ -24,7 +25,6 @@ class StorageVC: UIViewController {
         super.viewDidLoad()
         print(realm.objects(Counseiling.self))
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
