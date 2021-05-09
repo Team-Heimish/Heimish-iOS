@@ -43,7 +43,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="nariYellow"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Zzs-wB-63j" secondAttribute="bottom" constant="10" id="5B4-IL-jgK"/>
                             <constraint firstItem="Zzs-wB-63j" firstAttribute="top" secondItem="TUK-tc-FZA" secondAttribute="top" constant="10" id="RFF-Ft-huh"/>
@@ -91,6 +91,9 @@
         </namedColor>
         <namedColor name="lightGreen">
             <color red="0.77647058823529413" green="0.85098039215686272" blue="0.61176470588235299" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="nariYellow">
+            <color red="0.97647058823529409" green="0.85098039215686272" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

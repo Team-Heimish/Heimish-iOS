@@ -15,7 +15,12 @@ class StorageTableViewCell: UITableViewCell {
     @IBOutlet weak var emotionView: UIView!{
         didSet{
             emotionView.makeRounded(cornerRadius: 10.0)
-            emotionView.dropShadow(color: .deepGreen, offSet: CGSize(width: 0, height: 5), opacity: 0.4, radius: 3)
+            emotionView.dropShadow(color: .hemishGray, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
+        }
+    }
+    @IBOutlet weak var entryBtn: UIButton!{
+        didSet{
+            entryBtn.roundCorners(cornerRadius: 10.0, maskedCorners:[ .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
         }
     }
     @IBOutlet weak var happyLabel: UILabel!
