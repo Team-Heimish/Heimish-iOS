@@ -41,7 +41,8 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return 100
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,7 +50,7 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource{
         
         // Realm 데이터 불러오기
         let chatModel = realm.objects(Counseiling.self)
-        cell.idxLabel.text = "[\(chatModel[indexPath.row].idx)]"
+        cell.idxLabel.text = "\(chatModel[indexPath.row].idx)"
         cell.dateLabel.text = chatModel[indexPath.row].date
         cell.happyLabel.text = "\(chatModel[indexPath.row].emotion[0])"
         cell.smileLabel.text = "\(chatModel[indexPath.row].emotion[1])"

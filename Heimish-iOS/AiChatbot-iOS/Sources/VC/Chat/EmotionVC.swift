@@ -37,10 +37,10 @@ class EmotionVC: UIViewController {
         let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
            emotions = [0,0,0,0,0]
             happyLabel.text = "\(emotions[0])"
-            happyLabel.text = "\(emotions[1])"
-            happyLabel.text = "\(emotions[2])"
-            happyLabel.text = "\(emotions[3])"
-            happyLabel.text = "\(emotions[4])"
+            smileLabel.text = "\(emotions[1])"
+            sosoLabel.text = "\(emotions[2])"
+            sadLabel.text = "\(emotions[3])"
+            depressedLabel.text = "\(emotions[4])"
         }
         alert.addAction(cancelAction)
         alert.addAction(okAction)

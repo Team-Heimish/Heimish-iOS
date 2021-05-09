@@ -30,18 +30,19 @@
                                 <rect key="frame" x="30" y="303" width="354" height="300"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kOX-Jj-rja">
-                                        <rect key="frame" x="0.0" y="115" width="354" height="100"/>
+                                        <rect key="frame" x="15" y="115" width="324" height="100"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OLR-mg-N7k">
-                                                <rect key="frame" x="0.0" y="0.0" width="71" height="100"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="65" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3op-q3-izG">
-                                                        <rect key="frame" x="15.5" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="12.5" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="3op-q3-izG" secondAttribute="height" multiplier="1:1" id="mp5-cb-VlT"/>
                                                             <constraint firstAttribute="height" constant="40" id="zzO-PT-4G3"/>
                                                         </constraints>
-                                                        <state key="normal" image="happy">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <state key="normal" title="😊">
                                                             <color key="titleColor" name="mainColor"/>
                                                         </state>
                                                         <connections>
@@ -49,7 +50,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eij-NM-NcF">
-                                                        <rect key="frame" x="30" y="40" width="10.5" height="60"/>
+                                                        <rect key="frame" x="27" y="40" width="10.5" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -57,21 +58,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LnE-tK-bAg">
-                                                <rect key="frame" x="71" y="0.0" width="70.5" height="100"/>
+                                                <rect key="frame" x="65" y="0.0" width="64.5" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kay-7o-49r">
-                                                        <rect key="frame" x="15" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="12" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="0Fy-Jj-xgv"/>
                                                             <constraint firstAttribute="width" secondItem="Kay-7o-49r" secondAttribute="height" multiplier="1:1" id="dOf-jN-3Zn"/>
                                                         </constraints>
-                                                        <state key="normal" image="smile"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <state key="normal" title="☺️"/>
                                                         <connections>
                                                             <action selector="clickSmile:" destination="O2z-5B-n49" eventType="touchUpInside" id="5jZ-VO-npk"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwj-oQ-zIk">
-                                                        <rect key="frame" x="30" y="40" width="10.5" height="60"/>
+                                                        <rect key="frame" x="27" y="40" width="10.5" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -79,21 +81,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9kf-ee-oCW">
-                                                <rect key="frame" x="141.5" y="0.0" width="71" height="100"/>
+                                                <rect key="frame" x="129.5" y="0.0" width="65" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvK-3d-N9a">
-                                                        <rect key="frame" x="15.5" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="12.5" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="8Q0-W0-ygj"/>
                                                             <constraint firstAttribute="width" secondItem="nvK-3d-N9a" secondAttribute="height" multiplier="1:1" id="pE4-dD-ylK"/>
                                                         </constraints>
-                                                        <state key="normal" image="soso"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <state key="normal" title="🙂"/>
                                                         <connections>
                                                             <action selector="clickSoSo:" destination="O2z-5B-n49" eventType="touchUpInside" id="VTQ-AF-tGG"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pll-Lm-aKm">
-                                                        <rect key="frame" x="30.5" y="40" width="10.5" height="60"/>
+                                                        <rect key="frame" x="27.5" y="40" width="10.5" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -101,21 +104,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WfM-FU-SWD">
-                                                <rect key="frame" x="212.5" y="0.0" width="70.5" height="100"/>
+                                                <rect key="frame" x="194.5" y="0.0" width="64.5" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6uR-xI-LjC">
-                                                        <rect key="frame" x="15.5" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="12.5" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="40" id="D3N-Hx-gdh"/>
                                                             <constraint firstAttribute="width" secondItem="6uR-xI-LjC" secondAttribute="height" multiplier="1:1" id="Pbh-tm-Jo6"/>
                                                         </constraints>
-                                                        <state key="normal" image="sad"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <state key="normal" title="😕"/>
                                                         <connections>
                                                             <action selector="clickSad:" destination="O2z-5B-n49" eventType="touchUpInside" id="YEX-q8-vsn"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-vg-15P">
-                                                        <rect key="frame" x="30" y="40" width="10.5" height="60"/>
+                                                        <rect key="frame" x="27" y="40" width="10.5" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -123,21 +127,22 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KJ9-B2-aoI">
-                                                <rect key="frame" x="283" y="0.0" width="71" height="100"/>
+                                                <rect key="frame" x="259" y="0.0" width="65" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ea-0Y-Q5L">
-                                                        <rect key="frame" x="15.5" y="0.0" width="40" height="40"/>
+                                                        <rect key="frame" x="12.5" y="0.0" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="9ea-0Y-Q5L" secondAttribute="height" multiplier="1:1" id="8eX-ke-Iex"/>
                                                             <constraint firstAttribute="width" constant="40" id="Lzs-QY-xuY"/>
                                                         </constraints>
-                                                        <state key="normal" image="depressed"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <state key="normal" title="☹️"/>
                                                         <connections>
                                                             <action selector="clickDepressed:" destination="O2z-5B-n49" eventType="touchUpInside" id="Vxq-f4-wFf"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-zO-gvA">
-                                                        <rect key="frame" x="30.5" y="40" width="10.5" height="60"/>
+                                                        <rect key="frame" x="27.5" y="40" width="10.5" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -150,15 +155,15 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MzG-Tr-gJn">
-                                        <rect key="frame" x="20" y="37.5" width="244" height="47.5"/>
+                                        <rect key="frame" x="20" y="27" width="259.5" height="58"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지금 감정은 어떤 상태인지 기록해줘!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLT-O3-mpv">
-                                                <rect key="frame" x="0.0" y="0.0" width="244" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="259.5" height="25.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조금 더 나은 상담을 위해 참고할게!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDK-dj-AeI">
-                                                <rect key="frame" x="0.0" y="30" width="206.5" height="17.5"/>
+                                                <rect key="frame" x="0.0" y="35.5" width="219.5" height="22.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                                 <color key="textColor" systemColor="systemGray2Color"/>
                                                 <nil key="highlightedColor"/>
@@ -179,12 +184,13 @@
                                             <action selector="recordEmotion:" destination="O2z-5B-n49" eventType="touchUpInside" id="ckq-IV-Pvl"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-Rx-68G">
-                                        <rect key="frame" x="300.5" y="84" width="38" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-Rx-68G">
+                                        <rect key="frame" x="314" y="27" width="20" height="21"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                         <color key="tintColor" systemColor="labelColor"/>
-                                        <state key="normal" title="리셋" image="gobackward" catalog="system">
+                                        <state key="normal" image="gobackward" catalog="system">
                                             <color key="titleColor" systemColor="labelColor"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                         </state>
                                         <connections>
                                             <action selector="resetCount:" destination="O2z-5B-n49" eventType="touchUpInside" id="F1E-KO-2RP"/>
@@ -195,20 +201,20 @@
                                 <constraints>
                                     <constraint firstItem="MzG-Tr-gJn" firstAttribute="leading" secondItem="fSI-27-gpo" secondAttribute="leading" id="2ck-to-5DU"/>
                                     <constraint firstItem="fSI-27-gpo" firstAttribute="top" secondItem="kOX-Jj-rja" secondAttribute="bottom" constant="20" id="2xJ-nI-THY"/>
-                                    <constraint firstItem="DOs-Rx-68G" firstAttribute="trailing" secondItem="9ea-0Y-Q5L" secondAttribute="trailing" id="4Ht-tK-nl1"/>
                                     <constraint firstAttribute="trailing" secondItem="fSI-27-gpo" secondAttribute="trailing" constant="20" id="4tV-4K-gSz"/>
                                     <constraint firstItem="fSI-27-gpo" firstAttribute="leading" secondItem="6oY-7X-lmZ" secondAttribute="leading" constant="20" id="CWR-1c-Rik"/>
                                     <constraint firstAttribute="height" constant="300" id="Plt-vY-Lit"/>
-                                    <constraint firstItem="kOX-Jj-rja" firstAttribute="top" secondItem="DOs-Rx-68G" secondAttribute="bottom" constant="10" id="S9i-y5-5ej"/>
                                     <constraint firstAttribute="bottom" secondItem="fSI-27-gpo" secondAttribute="bottom" constant="20" id="ZGt-oU-2Tf"/>
                                     <constraint firstItem="kOX-Jj-rja" firstAttribute="top" secondItem="MzG-Tr-gJn" secondAttribute="bottom" constant="30" id="hO7-x0-8D3"/>
-                                    <constraint firstItem="kOX-Jj-rja" firstAttribute="leading" secondItem="6oY-7X-lmZ" secondAttribute="leading" id="oKf-UE-09k"/>
-                                    <constraint firstAttribute="trailing" secondItem="kOX-Jj-rja" secondAttribute="trailing" id="sdW-WE-yHK"/>
+                                    <constraint firstItem="kOX-Jj-rja" firstAttribute="leading" secondItem="6oY-7X-lmZ" secondAttribute="leading" constant="15" id="oKf-UE-09k"/>
+                                    <constraint firstItem="DOs-Rx-68G" firstAttribute="top" secondItem="HLT-O3-mpv" secondAttribute="top" id="qDX-cp-aGk"/>
+                                    <constraint firstItem="DOs-Rx-68G" firstAttribute="trailing" secondItem="fSI-27-gpo" secondAttribute="trailing" id="sSO-Id-MVg"/>
+                                    <constraint firstAttribute="trailing" secondItem="kOX-Jj-rja" secondAttribute="trailing" constant="15" id="sdW-WE-yHK"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="q0y-Cj-BSj"/>
-                        <color key="backgroundColor" white="0.34123946209343115" alpha="0.79660468701495235" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.67173773351341781" green="0.67173773351341781" blue="0.67173773351341781" alpha="0.70223109769505376" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6oY-7X-lmZ" firstAttribute="leading" secondItem="q0y-Cj-BSj" secondAttribute="leading" constant="30" id="8CF-lt-f4b"/>
                             <constraint firstItem="6oY-7X-lmZ" firstAttribute="centerY" secondItem="q0y-Cj-BSj" secondAttribute="centerY" id="J6Q-Rt-MVh"/>
@@ -232,12 +238,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="depressed" width="512" height="512"/>
         <image name="gobackward" catalog="system" width="121" height="128"/>
-        <image name="happy" width="512" height="512"/>
-        <image name="sad" width="512" height="512"/>
-        <image name="smile" width="512" height="512"/>
-        <image name="soso" width="512" height="512"/>
         <namedColor name="mainColor">
             <color red="0.9882352941176471" green="0.69019607843137254" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
