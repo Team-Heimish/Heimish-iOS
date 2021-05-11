@@ -7,6 +7,6 @@ target 'AiChatbot-iOS' do
 
   # Pods for AiChatbot-iOS
   pod 'Moya'
-  pod 'Firebase/Analytics'
   pod 'RealmSwift'
+  pod 'SwiftLint'
 end

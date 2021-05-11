@@ -9,8 +9,8 @@ import UIKit
 
 class AiBalloonTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var balloonView: UIView!{
-        didSet{
+    @IBOutlet weak var balloonView: UIView! {
+        didSet {
             balloonView.makeRounded(cornerRadius: balloonView.frame.height/4)
         }
     }
@@ -21,7 +21,6 @@ class AiBalloonTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
     
     static func nib() -> UINib {
             return UINib(nibName: "AiBalloonTableViewCell", bundle: nil)

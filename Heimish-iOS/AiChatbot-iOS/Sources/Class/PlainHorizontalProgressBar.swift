@@ -27,7 +27,7 @@ class PlainHorizontalProgressBar: UIView {
     
     private let progressLayer = CALayer()
     
-    override init(frame: CGRect){
+    override init(frame: CGRect) {
         super.init(frame: frame)
         layer.addSublayer(progressLayer)
     }

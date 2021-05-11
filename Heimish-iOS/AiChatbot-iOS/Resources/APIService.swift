@@ -41,8 +41,8 @@ extension APIService: TargetType {
         return Data()
     }
     
-    public var headers: [String : String]? {
-        return ["Content-Type" : "application/json"]
+    public var headers: [String: String]? {
+        return ["Content-Type": "application/json"]
     }
     
     public var validationType: ValidationType {

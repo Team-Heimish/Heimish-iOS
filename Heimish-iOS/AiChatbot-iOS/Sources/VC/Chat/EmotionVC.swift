@@ -9,8 +9,8 @@ import UIKit
 
 class EmotionVC: UIViewController {
     
-    @IBOutlet weak var emotionPopUpView: UIView!{
-        didSet{
+    @IBOutlet weak var emotionPopUpView: UIView! {
+        didSet {
             emotionPopUpView.makeRounded(cornerRadius: 10.0)
         }
     }
@@ -19,12 +19,12 @@ class EmotionVC: UIViewController {
     @IBOutlet weak var sosoLabel: UILabel!
     @IBOutlet weak var sadLabel: UILabel!
     @IBOutlet weak var depressedLabel: UILabel!
-    @IBOutlet weak var completeBtn: UIButton!{
-        didSet{
+    @IBOutlet weak var completeBtn: UIButton! {
+        didSet {
             completeBtn.makeRounded(cornerRadius: 15)
         }
     }
-    var emotions = [0,0,0,0,0]
+    var emotions = [0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +34,8 @@ class EmotionVC: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "취소", style: .default)
-        let okAction = UIAlertAction(title: "확인", style: .default) { [self] (action) in
-           emotions = [0,0,0,0,0]
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] _ in
+            emotions = [0, 0, 0, 0, 0]
             happyLabel.text = "\(emotions[0])"
             smileLabel.text = "\(emotions[1])"
             sosoLabel.text = "\(emotions[2])"
@@ -47,7 +47,6 @@ class EmotionVC: UIViewController {
         
         present(alert, animated: true)
     }
-    
     
     @IBAction func resetCount(_ sender: Any) {
         resetCountAlert(title: "감정을 다시 기록하시겠어요?", message: "0부터 다시 선택하게 돼요!")
@@ -74,8 +73,8 @@ class EmotionVC: UIViewController {
     }
     
     @IBAction func recordEmotion(_ sender: Any) {
-        if let preVC = self.presentingViewController as? UINavigationController{
-            if let topVC = preVC.topViewController as? ChatVC{
+        if let preVC = self.presentingViewController as? UINavigationController {
+            if let topVC = preVC.topViewController as? ChatVC {
                 topVC.emotionDatas = emotions
                 self.presentingViewController?.dismiss(animated: true, completion: {
                     NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: nil)

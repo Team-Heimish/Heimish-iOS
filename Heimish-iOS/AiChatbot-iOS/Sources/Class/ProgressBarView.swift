@@ -8,9 +8,9 @@ import UIKit
 
 class ProgressBarView: UIView {
     // MARK: - Private Variables
-    private var backgroundImage : UIView!
-    private var progressView : UIImageView!
-    private let animationDuration : Double = 0.6
+    private var backgroundImage: UIView!
+    private var progressView: UIImageView!
+    private let animationDuration: Double = 0.6
     
     // MARK: - Overriden Methods
     override func awakeFromNib() {
@@ -21,7 +21,6 @@ class ProgressBarView: UIView {
         super.init(coder: aDecoder)
         self.initBar()
     }
-    
     
     func intrinsicContentSize() -> CGSize {
         return CGSize(width: frame.size.width, height: frame.size.height)
@@ -44,9 +43,9 @@ class ProgressBarView: UIView {
         backgroundImage.backgroundColor = UIColor.clear
         addSubview(backgroundImage)
         
-        //level of progress
+        // level of progress
         let progressRect = CGRect(x: Double(frame.size.width), y: 0.0, width: 0.0, height: Double(frame.size.height))
-//        let progressRect = CGRect(x: 0.0, y: Double(frame.size.height), width: Double(frame.size.width), height: 0.0)
+        // let progressRect = CGRect(x: 0.0, y: Double(frame.size.height), width: Double(frame.size.width), height: 0.0)
         progressView = UIImageView(frame: progressRect)
         progressView.layer.cornerRadius = frame.size.height / 2
         progressView.layer.masksToBounds = true
@@ -59,7 +58,7 @@ class ProgressBarView: UIView {
      - Parameter currentValue : The value that needs to be displayed as a progress bar.
      - Parameter threshold : Optional. The max percentage that the progress bar will display.
      */
-    func setProgressValue(currentValue : CGFloat , threshold  : CGFloat = 100.0) {
+    func setProgressValue(currentValue: CGFloat, threshold: CGFloat = 100.0) {
         let xOffset = ((threshold - currentValue) / threshold) * frame.size.width
         self.progressView.frame.origin.x = 0
         UIView.animate(withDuration: self.animationDuration, delay: 0, options: .curveEaseInOut, animations: {
@@ -71,14 +70,14 @@ class ProgressBarView: UIView {
      Sets the background color of the progress view.
      This color will be displayed underneath the progress view.
      */
-    func setBackColor(color : UIColor) {
+    func setBackColor(color: UIColor) {
         backgroundImage.backgroundColor = color
     }
     /**
      Sets the background color of the progress view.
      This is the color that will display the value you have inserted.
      */
-    func setProgressColor(color : CAGradientLayer) {
+    func setProgressColor(color: CAGradientLayer) {
         progressView.layer.addSublayer(color)
     }
 }

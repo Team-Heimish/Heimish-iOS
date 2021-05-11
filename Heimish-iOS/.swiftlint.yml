@@ -1,0 +1,21 @@
+disabled_rules:
+- line_length
+
+included:
+
+excluded:
+- Pods
+- AiChatbot-iOS/Sources/Extensions
+
+trailing_whitespace:
+    ignores_empty_lines: true
+
+force_cast: warning # 암시적으로 지정, 강제 캐스팅은 error에서 warning으로 변경
+force_try: warning # 암시적으로 지정, 강제 캐스팅은 error에서 warning으로 변경
+
+identifier_name:
+  allowed_symbols: ["_"]
+  excluded: # 제외할 문자열 목록 사용
+    - id
+    - URL
+    - GlobalAPIKey

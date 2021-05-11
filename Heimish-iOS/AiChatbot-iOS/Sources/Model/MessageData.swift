@@ -12,6 +12,4 @@ struct MessageData: Codable {
     let status: Int
     let success: Bool
     let message, data: String
-    
 }
-
