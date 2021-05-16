@@ -11,18 +11,10 @@ class StorageTableViewCell: UITableViewCell {
     static let identifier = "StorageTableViewCell"
     
     @IBOutlet weak var idxLabel: UILabel!
+    @IBOutlet weak var idxView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var emotionView: UIView! {
-        didSet {
-            emotionView.makeRounded(cornerRadius: 10.0)
-            emotionView.dropShadow(color: .hemishGray, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
-        }
-    }
-    @IBOutlet weak var entryBtn: UIButton! {
-        didSet {
-            entryBtn.roundCorners(cornerRadius: 10.0, maskedCorners: [ .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
-        }
-    }
+    @IBOutlet weak var emotionView: UIView!
+    @IBOutlet weak var entryBtn: UIButton!
     @IBOutlet weak var happyLabel: UILabel!
     @IBOutlet weak var smileLabel: UILabel!
     @IBOutlet weak var sosoLabel: UILabel!
@@ -31,7 +23,14 @@ class StorageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setCellStyle()
+    }
+    
+    func setCellStyle() {
+        emotionView.makeRounded(cornerRadius: 10.0)
+        emotionView.dropShadow(color: .hemishGray, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
+        entryBtn.roundCorners(cornerRadius: 10.0, maskedCorners: [ .layerMaxXMinYCorner, .layerMaxXMaxYCorner])
+        idxView.roundCorners(cornerRadius: 10.0, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMaxYCorner])
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

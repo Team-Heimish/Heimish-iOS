@@ -15,7 +15,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var startChatBtn: UIButton! {
         didSet {
             startChatBtn.makeRounded(cornerRadius: 15.0)
-            startChatBtn.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
+            startChatBtn.dropShadow(color: .lightGreen, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 5)
         }
     }
     @IBOutlet weak var sunImageView: UIImageView!
@@ -86,20 +86,25 @@ class HomeVC: UIViewController {
     // MARK: - 감정 기록 퍼센트에 따른 응원의 한마디
     func setSentence(_ postivie: Int, _ nagative: Int) {
         if postivie > nagative {
-            emotionSentenceLabel.text = "점점 더 행복해지고 있는 당신을 보니\n너무 기뻐요!"
+            emotionSentenceLabel.text = "점점 더 행복해지고 있는 당신을 보니 너무 기뻐요!"
         } else {
-            emotionSentenceLabel.text = "내일은 오늘보다\n더 기분 좋은 일들로 가득할거에요!"
+            emotionSentenceLabel.text = "내일은 오늘보다 더 기분 좋은 일들로 가득할거에요!"
         }
     }
     
     // MARK: - 프로그래스바 셋팅
     func setProgressBar() {
-        let percentage = setEmotionPercent()
+        var percentage = [Int]()
+        if realm?.objects(Counseiling.self).count ?? 0 > 0 {
+            percentage = setEmotionPercent()
+        } else {
+            percentage = [0, 0]
+        }
         setSentence(percentage[0], percentage[1])
         posPercentageLabel.text = "\(percentage[0])%"
         nagPercentageLabel.text = "\(percentage[1])%"
-        posPgbBackView.makeRounded(cornerRadius: posPgbBackView.frame.height/2)
-        nagPgbBackView.makeRounded(cornerRadius: nagPgbBackView.frame.height/2)
+        posPgbBackView.makeRounded(cornerRadius: nil)
+        nagPgbBackView.makeRounded(cornerRadius: nil)
         customProgressBarView(percentage[0], posPgbView)
         customProgressBarView(percentage[1], nagPgbView)
     }

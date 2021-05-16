@@ -13,7 +13,8 @@ class ChatVC: UIViewController {
     let realm = try? Realm() // Realm 가져오기
     let formatter = DateFormatter()
     var chatDatas = [[String]]() // 대화가 저장되는 배열
-    var emotionDatas = [Int]()
+    var emotionDatas = [Int]() // 감정 기록 배열
+    var emotionMemos: String? // 감정 하소연 문자열
     var nowTime: String?
     var keyboardStatus: Bool = false
     
@@ -67,6 +68,71 @@ class ChatVC: UIViewController {
         UserDefaults.standard.setValue(chatDatas, forKey: "loadChat") // 채팅화면에서 자의에 의해 뒤로가기 한건 상담이 안끝났다는 뜻. 대화 저장.
     }
     
+    @IBAction func backToHome(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func resetChat(_ sender: Any) {
+        if chatDatas.count == 0 {
+            normalAlert(title: "초기화 할 수 없어요", message: "Heimish와의 대화를 시작해보세요!")
+        } else {
+            resetAlert(title: "정말 초기화 하시겠어요?", message: "초기화된 대화는 복구할 수 없어요!")
+        }
+        
+    }
+    
+    // 상담일지 기록
+    @IBAction func finishChat(_ sender: Any) {
+        if chatDatas.count == 0 {
+            normalAlert(title: "기록할 상담이 없어요", message: "상담이 이루어져야 기록할 수 있어요!")
+        } else {
+            finishAlert(title: "상담을 기록하시겠어요?", message: "기록된 상담은 \n 모아보기에서 확인 할 수 있어요!")
+        }
+        
+    }
+    // 전송버튼
+    @IBAction func sendBtnAction(_ sender: Any) {
+        formatter.dateFormat = "HH:mm"
+        // 텍스트뷰에 있는 값이 chatDatas에 저장
+        if inputTextView.text != ""{
+            // textView 초기화 위해 messageBox 변수 선언하여 먼저 저장
+            let messageBox = self.inputTextView.text
+            nowTime = formatter.string(from: Date()) // 사용자가 보낸 메시지 도착 시간
+            self.inputTextView.text = ""
+            chatDatas.append(["user", messageBox ?? "행복해", nowTime ?? "-"])
+            // chatTableView.reloadData() 는 부자연스러워서 scrollToRow를 사용하여 전송할때마다 최신 대화로 이동.
+            let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
+            self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
+            self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+            
+            // Server: -Dialogflow/message .POST
+            provider.request(.intent(text: messageBox ?? "행복해", sessionId: "1111")) { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let response):
+                    do {
+                        let msgData = try JSONDecoder().decode(MessageData.self, from: response.data)
+                        print(msgData.message)
+                        self.nowTime = self.formatter.string(from: Date()) // 챗봇이 보낸 메시지 도착 시간
+                        self.chatDatas.append(["chatbot", msgData.data, self.nowTime ?? "-"])
+                        let lastindexPath = IndexPath(row: self.chatDatas.count - 1, section: 0)
+                        // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
+                        self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
+                        // TableView에는 원하는 곳으로 이동하는 함수가 있다. 고로 전송할때마다 최신 대화로 이동.
+                        self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
+                        
+                    } catch let err {
+                        print(err.localizedDescription)
+                    }
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+}
+
+extension ChatVC {
     // MARK: - 사용자 정의 함수
     // Nib 등록
     func setNib() {
@@ -115,7 +181,6 @@ class ChatVC: UIViewController {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Emotion", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(identifier: "EmotionVC") as? EmotionVC {
                 dvc.modalPresentationStyle = .fullScreen
-                dvc.modalTransitionStyle = .crossDissolve
                 self.present(dvc, animated: true, completion: nil)
             }
         }
@@ -131,11 +196,6 @@ class ChatVC: UIViewController {
         let okAction = UIAlertAction(title: "확인", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
-    }
-    
-    // 화면 터치시 키보드 내리기
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
     
     @objc func recordChat() {
@@ -201,69 +261,6 @@ class ChatVC: UIViewController {
             UIView.animate(withDuration: animationDuration) {
                 self.inputBottomContraint.constant -= keyboardSize-30
                 self.view.layoutIfNeeded()
-            }
-        }
-    }
-    
-    @IBAction func backToHome(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func resetChat(_ sender: Any) {
-        if chatDatas.count == 0 {
-            normalAlert(title: "초기화 할 수 없어요", message: "Heimish와의 대화를 시작해보세요!")
-        } else {
-            resetAlert(title: "정말 초기화 하시겠어요?", message: "초기화된 대화는 복구할 수 없어요!")
-        }
-        
-    }
-    
-    // 상담일지 기록
-    @IBAction func finishChat(_ sender: Any) {
-        if chatDatas.count == 0 {
-            normalAlert(title: "기록할 상담이 없어요", message: "상담이 이루어져야 기록할 수 있어요!")
-        } else {
-            finishAlert(title: "상담을 기록하시겠어요?", message: "기록된 상담은 \n 모아보기에서 확인 할 수 있어요!")
-        }
-        
-    }
-    // 전송버튼
-    @IBAction func sendBtnAction(_ sender: Any) {
-        formatter.dateFormat = "HH:mm"
-        // 텍스트뷰에 있는 값이 chatDatas에 저장
-        if inputTextView.text != ""{
-            // textView 초기화 위해 messageBox 변수 선언하여 먼저 저장
-            let messageBox = self.inputTextView.text
-            nowTime = formatter.string(from: Date()) // 사용자가 보낸 메시지 도착 시간
-            self.inputTextView.text = ""
-            chatDatas.append(["user", messageBox ?? "행복해", nowTime ?? "-"])
-            // chatTableView.reloadData() 는 부자연스러워서 scrollToRow를 사용하여 전송할때마다 최신 대화로 이동.
-            let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
-            self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
-            self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
-            
-            // Server: -Dialogflow/message .POST
-            provider.request(.intent(text: messageBox ?? "행복해", sessionId: "1111")) { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success(let response):
-                    do {
-                        let msgData = try JSONDecoder().decode(MessageData.self, from: response.data)
-                        print(msgData.message)
-                        self.nowTime = self.formatter.string(from: Date()) // 챗봇이 보낸 메시지 도착 시간
-                        self.chatDatas.append(["chatbot", msgData.data, self.nowTime ?? "-"])
-                        let lastindexPath = IndexPath(row: self.chatDatas.count - 1, section: 0)
-                        // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
-                        self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
-                        // TableView에는 원하는 곳으로 이동하는 함수가 있다. 고로 전송할때마다 최신 대화로 이동.
-                        self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
-                        
-                    } catch let err {
-                        print(err.localizedDescription)
-                    }
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
             }
         }
     }

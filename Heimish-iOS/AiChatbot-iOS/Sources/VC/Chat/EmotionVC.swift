@@ -8,48 +8,35 @@
 import UIKit
 
 class EmotionVC: UIViewController {
-    
-    @IBOutlet weak var emotionPopUpView: UIView! {
-        didSet {
-            emotionPopUpView.makeRounded(cornerRadius: 10.0)
-        }
-    }
+    var emotions = [0, 0, 0, 0, 0]
+    @IBOutlet weak var resetBtn: UIButton!
     @IBOutlet weak var happyLabel: UILabel!
     @IBOutlet weak var smileLabel: UILabel!
     @IBOutlet weak var sosoLabel: UILabel!
     @IBOutlet weak var sadLabel: UILabel!
     @IBOutlet weak var depressedLabel: UILabel!
-    @IBOutlet weak var completeBtn: UIButton! {
+    @IBOutlet weak var completeBtn: UIButton!
+    @IBOutlet weak var emotionTextView: UITextView! {
         didSet {
-            completeBtn.makeRounded(cornerRadius: 15)
+            emotionTextView.delegate = self
+            emotionTextView.textContainerInset = UIEdgeInsets(top: 14, left: 16, bottom: 14, right: 16)
         }
     }
-    var emotions = [0, 0, 0, 0, 0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func resetCountAlert(title: String?, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "취소", style: .default)
-        let okAction = UIAlertAction(title: "확인", style: .default) { [self] _ in
-            emotions = [0, 0, 0, 0, 0]
-            happyLabel.text = "\(emotions[0])"
-            smileLabel.text = "\(emotions[1])"
-            sosoLabel.text = "\(emotions[2])"
-            sadLabel.text = "\(emotions[3])"
-            depressedLabel.text = "\(emotions[4])"
-        }
-        alert.addAction(cancelAction)
-        alert.addAction(okAction)
-        
-        present(alert, animated: true)
+        setRound()
+        addGesutre()
+        textViewPlaceholder()
     }
     
     @IBAction func resetCount(_ sender: Any) {
-        resetCountAlert(title: "감정을 다시 기록하시겠어요?", message: "0부터 다시 선택하게 돼요!")
+        emotions = [0, 0, 0, 0, 0]
+        happyLabel.text = "\(emotions[0])"
+        smileLabel.text = "\(emotions[1])"
+        sosoLabel.text = "\(emotions[2])"
+        sadLabel.text = "\(emotions[3])"
+        depressedLabel.text = "\(emotions[4])"
     }
     @IBAction func clickHappy(_ sender: Any) {
         emotions[0] += 1
@@ -81,5 +68,68 @@ class EmotionVC: UIViewController {
                 })
             }
         }
+    }
+}
+
+extension EmotionVC {
+    
+    // MARK: - radius 관련
+    func setRound() {
+        resetBtn.makeRounded(cornerRadius: 5)
+        completeBtn.makeRounded(cornerRadius: 10)
+        emotionTextView.makeRounded(cornerRadius: 10)
+    }
+    
+    // MARK: - Gesture
+    func addGesutre() {
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
+    
+    func textViewPlaceholder() {
+        if emotionTextView.text == "얼마든지 적어도 좋아" {
+            emotionTextView.text = ""
+            emotionTextView.textColor = .black
+        } else if emotionTextView.text == "" {
+            emotionTextView.text = "얼마든지 적어도 좋아"
+            emotionTextView.textColor = .lightGray
+        }
+    }
+    
+    @objc
+    func keyboardWillShowEmotion(_ sender: Notification) {
+        /// 텍스트 뷰 입력할 때에만 키보드 올리면 됨
+        let info = sender.userInfo!
+        let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
+        if emotionTextView.isFirstResponder {
+            UIView.animate(withDuration: 2.0, animations: { [self] in
+                self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardSize)
+            })
+        }
+    }
+    
+    @objc
+    func keyboardWillHideEmotion(_ sender: Notification) {
+        /// 텍스트 뷰 입력할 때에만 키보드 올리면 됨
+        if emotionTextView.isFirstResponder {
+            UIView.animate(withDuration: 2.0, animations: {
+                self.view.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+        }
+    }
+    
+    // 터치가 있을 시 핸들러 캐치
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            self.view.endEditing(true)
+        }
+        sender.cancelsTouchesInView = false
+    }
+}
+extension EmotionVC: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textViewPlaceholder()
+    }
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textViewPlaceholder()
     }
 }
