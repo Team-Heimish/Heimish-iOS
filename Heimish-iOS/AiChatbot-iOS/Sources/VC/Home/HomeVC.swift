@@ -30,13 +30,13 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setStyle()
-        setActivity()
         startBtnAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         sunAnimation()
+        setActivity()
         setProgressBar()
     }
     
