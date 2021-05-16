@@ -12,37 +12,25 @@ class HomeVC: UIViewController {
     let realm = try? Realm()
     
     @IBOutlet weak var titileLabel: UILabel!
-    @IBOutlet weak var startChatBtn: UIButton! {
-        didSet {
-            startChatBtn.makeRounded(cornerRadius: 15.0)
-            startChatBtn.dropShadow(color: .lightGreen, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 5)
-        }
-    }
+    @IBOutlet weak var startChatBtn: UIButton!
     @IBOutlet weak var sunImageView: UIImageView!
-    @IBOutlet weak var emotionView: UIView! {
-        didSet {
-            emotionView.makeRounded(cornerRadius: 15.0)
-            emotionView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
-        }
-    }
-    
+    @IBOutlet weak var emotionView: UIView!
     @IBOutlet weak var posPgbBackView: UIView!
     @IBOutlet weak var posPgbView: ProgressBarView!
     @IBOutlet weak var posPercentageLabel: UILabel!
     @IBOutlet weak var nagPgbBackView: UIView!
     @IBOutlet weak var nagPgbView: ProgressBarView!
     @IBOutlet weak var nagPercentageLabel: UILabel!
+    @IBOutlet weak var activityTitleLabel: UILabel!
+    @IBOutlet weak var activityDescLabel: UILabel!
     @IBOutlet weak var emotionSentenceLabel: UILabel!
-    
-    @IBOutlet weak var whatToDoView: UIView! {
-        didSet {
-            whatToDoView.makeRounded(cornerRadius: 15.0)
-            whatToDoView.dropShadow(color: .black, offSet: CGSize(width: 0, height: 4), opacity: 0.4, radius: 3)
-        }
-    }
+    @IBOutlet weak var sunView: UIView!
+    @IBOutlet weak var whatToDoView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStyle()
+        setActivity()
         startBtnAnimation()
     }
     
@@ -50,6 +38,56 @@ class HomeVC: UIViewController {
         super.viewWillAppear(true)
         sunAnimation()
         setProgressBar()
+    }
+    
+    // MARK: - 상담일지 보러 가기
+    @IBAction func goToStorage(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Storage", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(identifier: "StorageVC") as? StorageVC {
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
+    
+    // MARK: - 상담 시작하기
+    @IBAction func startChat(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Chat", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(identifier: "ChatVC") as? ChatVC {
+            self.navigationController?.pushViewController(dvc, animated: true)
+        }
+    }
+}
+
+extension HomeVC {
+    
+    func setStyle() {
+        startChatBtn.makeRounded(cornerRadius: 15.0)
+        startChatBtn.dropShadow(color: .lightGreen, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 5)
+        emotionView.makeRounded(cornerRadius: 15.0)
+        emotionView.dropShadow(color: .deepGreen, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 3)
+        sunView.makeRounded(cornerRadius: nil)
+        sunView.dropShadow(color: .mainOrange, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 20)
+        whatToDoView.makeRounded(cornerRadius: 15.0)
+        whatToDoView.dropShadow(color: .brown, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 3)
+    }
+    
+    // MARK: - 하루 추천 행동
+    func setActivity() {
+        var percentage = [Int]()
+        if realm?.objects(Counseiling.self).count ?? 0 > 0 {
+            percentage = setEmotionPercent()
+        } else {
+            percentage = [0, 0]
+        }
+        if percentage[1] >= 90 {
+            activityTitleLabel.text = "상담 센터 방문"
+            activityDescLabel.text = "우울감이 계속해서 지속된다면,\n전문 상담사와의 상담이 꼭 필요합니다"
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd"
+            let day  = dateFormatter.string(from: Date())
+            activityTitleLabel.text = activities[(Int(day) ?? 0)%activities.count].activity
+            activityDescLabel.text = activities[(Int(day) ?? 0)%activities.count].description
+        }
     }
     
     // MARK: - 애니메이션 관련
@@ -137,21 +175,5 @@ class HomeVC: UIViewController {
             pgbView.setProgressColor(color: redGradient)
         }
         pgbView.setProgressValue(currentValue: CGFloat(value))
-    }
-    
-    // MARK: - 상담일지 보러 가기
-    @IBAction func goToStorage(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Storage", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(identifier: "StorageVC") as? StorageVC {
-            self.navigationController?.pushViewController(dvc, animated: true)
-        }
-    }
-    
-    // MARK: - 상담 시작하기
-    @IBAction func startChat(_ sender: Any) {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Chat", bundle: nil)
-        if let dvc = storyBoard.instantiateViewController(identifier: "ChatVC") as? ChatVC {
-            self.navigationController?.pushViewController(dvc, animated: true)
-        }
     }
 }

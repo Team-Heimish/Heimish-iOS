@@ -244,7 +244,7 @@ extension ChatVC {
             // 키보드 올라오는 애니메이션이랑 동일하게 텍스트뷰 올라가게 만들기.
             UIView.animate(withDuration: animationDuration) {
                 self.inputBottomContraint.constant += keyboardSize-30
-                self.chatTV.setContentOffset(CGPoint(x: 0, y: self.chatTV.frame.height), animated: true)
+                self.chatTV.setContentOffset(CGPoint(x: 0, y: keyboardSize), animated: true)
                 self.view.layoutIfNeeded()
             }
         }

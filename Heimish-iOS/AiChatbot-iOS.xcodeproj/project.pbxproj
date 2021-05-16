@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5410ADB0262C19E700419F50 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5410ADAF262C19E700419F50 /* Home.storyboard */; };
 		5410ADB3262C1A0100419F50 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5410ADB2262C1A0100419F50 /* HomeVC.swift */; };
+		5412CC1826518B95003EDA6C /* activityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412CC1726518B95003EDA6C /* activityData.swift */; };
 		541A69B9261C64E200201F0F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 541A69B8261C64E200201F0F /* GoogleService-Info.plist */; };
 		541A6AA72625851600201F0F /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A6AA62625851600201F0F /* GenericResponse.swift */; };
 		541A6AAD262588A200201F0F /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541A6AAC262588A200201F0F /* APIService.swift */; };
@@ -49,6 +50,7 @@
 		2FC5A43631D8559E69F60552 /* Pods-AiChatbot-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AiChatbot-iOS.debug.xcconfig"; path = "Target Support Files/Pods-AiChatbot-iOS/Pods-AiChatbot-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5410ADAF262C19E700419F50 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		5410ADB2262C1A0100419F50 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		5412CC1726518B95003EDA6C /* activityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = activityData.swift; sourceTree = "<group>"; };
 		541A69B8261C64E200201F0F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		541A6AA62625851600201F0F /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		541A6AAC262588A200201F0F /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5412CC1626518B85003EDA6C /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				5412CC1726518B95003EDA6C /* activityData.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		541A6AA4262584C800201F0F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +206,7 @@
 		54A6971E26107E40008B4F2C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5412CC1626518B85003EDA6C /* Mock */,
 				54F2349126343AF6009465B1 /* Realm */,
 				5486DC2F2610C51B00AB139D /* Font */,
 				54A6972026107E92008B4F2C /* Storyboard */,
@@ -438,6 +449,7 @@
 				543D62AA2637F78300B94527 /* UIColor+Additions.swift in Sources */,
 				54A6973D261090B9008B4F2C /* UITextField+Extension.swift in Sources */,
 				54F2349326343B16009465B1 /* RealmDB.swift in Sources */,
+				5412CC1826518B95003EDA6C /* activityData.swift in Sources */,
 				541A6AAD262588A200201F0F /* APIService.swift in Sources */,
 				54CAB8AC264784D60066D94B /* UILabel+Extension.swift in Sources */,
 				5436E46B26417AD100B71AE4 /* EmotionVC.swift in Sources */,

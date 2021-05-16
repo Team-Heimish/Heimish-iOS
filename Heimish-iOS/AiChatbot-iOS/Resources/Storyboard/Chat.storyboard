@@ -123,7 +123,7 @@
                             <constraint firstItem="b1B-Fv-aj5" firstAttribute="leading" secondItem="gFl-pg-9xo" secondAttribute="leading" constant="10" id="bH5-zt-TT2"/>
                             <constraint firstItem="b1B-Fv-aj5" firstAttribute="top" secondItem="stF-If-yYh" secondAttribute="bottom" constant="10" id="bHa-Fc-uzy"/>
                             <constraint firstItem="stF-If-yYh" firstAttribute="leading" secondItem="gFl-pg-9xo" secondAttribute="leading" id="f5h-IG-DM7"/>
-                            <constraint firstAttribute="bottom" secondItem="b1B-Fv-aj5" secondAttribute="bottom" constant="54" id="k3N-3M-sWh"/>
+                            <constraint firstItem="gFl-pg-9xo" firstAttribute="bottom" secondItem="b1B-Fv-aj5" secondAttribute="bottom" constant="20" id="k3N-3M-sWh"/>
                             <constraint firstItem="stF-If-yYh" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="bottom" id="mjb-jg-sH6"/>
                             <constraint firstItem="gFl-pg-9xo" firstAttribute="trailing" secondItem="b1B-Fv-aj5" secondAttribute="trailing" constant="10" id="rr2-3d-oY2"/>
                             <constraint firstItem="stF-If-yYh" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="bottom" id="syI-1L-ndu"/>
