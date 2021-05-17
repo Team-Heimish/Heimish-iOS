@@ -85,7 +85,7 @@ class ChatVC: UIViewController {
         if chatDatas.count == 0 {
             normalAlert(title: "기록할 상담이 없어요", message: "상담이 이루어져야 기록할 수 있어요!")
         } else {
-            finishAlert(title: "상담을 기록하시겠어요?", message: "기록된 상담은 \n 모아보기에서 확인 할 수 있어요!")
+            finishAlert(title: "상담을 기록하시겠어요?", message: "기록된 상담은 모아보기에서 확인 할 수 있어요!")
         }
         
     }
