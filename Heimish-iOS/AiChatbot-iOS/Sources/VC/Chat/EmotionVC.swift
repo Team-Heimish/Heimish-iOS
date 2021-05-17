@@ -60,14 +60,8 @@ class EmotionVC: UIViewController {
     }
     
     @IBAction func recordEmotion(_ sender: Any) {
-        if let preVC = self.presentingViewController as? UINavigationController {
-            if let topVC = preVC.topViewController as? ChatVC {
-                topVC.emotionDatas = emotions
-                self.presentingViewController?.dismiss(animated: true, completion: {
-                    NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: nil)
-                })
-            }
-        }
+        NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: emotions)
+        self.navigationController?.popToRootViewController(animated: true)
     }
 }
 

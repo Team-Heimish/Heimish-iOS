@@ -13,7 +13,6 @@ class ChatVC: UIViewController {
     let realm = try? Realm() // Realm 가져오기
     let formatter = DateFormatter()
     var chatDatas = [[String]]() // 대화가 저장되는 배열
-    var emotionDatas = [Int]() // 감정 기록 배열
     var emotionMemos: String? // 감정 하소연 문자열
     var nowTime: String?
     var keyboardStatus: Bool = false
@@ -180,8 +179,7 @@ extension ChatVC {
             NotificationCenter.default.addObserver(self, selector: #selector(recordChat), name: NSNotification.Name("recordChat"), object: nil)
             let storyBoard: UIStoryboard = UIStoryboard(name: "Emotion", bundle: nil)
             if let dvc = storyBoard.instantiateViewController(identifier: "EmotionVC") as? EmotionVC {
-                dvc.modalPresentationStyle = .fullScreen
-                self.present(dvc, animated: true, completion: nil)
+                self.navigationController?.pushViewController(dvc, animated: true)
             }
         }
         alert.addAction(cancelAction)
@@ -198,7 +196,8 @@ extension ChatVC {
         present(alert, animated: true)
     }
     
-    @objc func recordChat() {
+    @objc func recordChat(notification: NSNotification) {
+        guard let emotionDatas = notification.object as? [Int] else { return }
         formatter.dateFormat = "YYYY년 MM월 dd일"
         let finishTime = formatter.string(from: Date()) // 상담 종료 시각
         let counseiling = Counseiling()
