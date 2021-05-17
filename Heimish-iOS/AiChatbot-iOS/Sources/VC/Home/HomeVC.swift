@@ -63,11 +63,11 @@ extension HomeVC {
         startChatBtn.makeRounded(cornerRadius: 15.0)
         startChatBtn.dropShadow(color: .lightGreen, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 5)
         emotionView.makeRounded(cornerRadius: 15.0)
-        emotionView.dropShadow(color: .deepGreen, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 3)
+        emotionView.dropShadow(color: .lightGreen, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 20)
         sunView.makeRounded(cornerRadius: nil)
         sunView.dropShadow(color: .mainOrange, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 20)
         whatToDoView.makeRounded(cornerRadius: 15.0)
-        whatToDoView.dropShadow(color: .brown, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 3)
+        whatToDoView.dropShadow(color: .nariYellow, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 50)
     }
     
     // MARK: - 하루 추천 행동
@@ -93,10 +93,10 @@ extension HomeVC {
     // MARK: - 애니메이션 관련
     func sunAnimation() {
         UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
-            self.sunImageView.transform = CGAffineTransform(translationX: 0, y: 5)
+            self.sunView.transform = CGAffineTransform(translationX: 0, y: 5)
         }, completion: { _ in
             UIView.animate(withDuration: 1, animations: {
-                self.sunImageView.transform = CGAffineTransform(translationX: 0, y: -5)
+                self.sunView.transform = CGAffineTransform(translationX: 0, y: -5)
             })
         })
     }
@@ -149,7 +149,7 @@ extension HomeVC {
     
     // MARK: - 프로그래스바 커스텀
     func customProgressBarView(_ value: Int, _ pgbView: ProgressBarView) {
-        pgbView.setBackColor(color: .white)
+        pgbView.setBackColor(color: .heimishWhite)
         
         let greenGradient = CAGradientLayer()
         
