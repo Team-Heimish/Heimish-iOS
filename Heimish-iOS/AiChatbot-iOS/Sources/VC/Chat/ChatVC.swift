@@ -10,12 +10,12 @@ import Moya
 import RealmSwift
 
 class ChatVC: UIViewController {
-    let realm = try? Realm() // Realm 가져오기
-    let formatter = DateFormatter()
     var chatDatas = [[String]]() // 대화가 저장되는 배열
     var emotionMemos: String? // 감정 하소연 문자열
     var nowTime: String?
     var keyboardStatus: Bool = false
+    let realm = try? Realm() // Realm 가져오기
+    let formatter = DateFormatter()
     
     fileprivate var provider = MoyaProvider<APIService>()
     
@@ -31,6 +31,7 @@ class ChatVC: UIViewController {
             chatTV.dataSource = self
             chatTV.separatorStyle = .none // 경계선 제거
             chatTV.backgroundColor = .lightGreen
+            chatTV.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 15, right: 0)
         }
     }
     @IBOutlet weak var inputTextView: UITextView! {
@@ -115,9 +116,7 @@ class ChatVC: UIViewController {
                         self.nowTime = self.formatter.string(from: Date()) // 챗봇이 보낸 메시지 도착 시간
                         self.chatDatas.append(["chatbot", msgData.data, self.nowTime ?? "-"])
                         let lastindexPath = IndexPath(row: self.chatDatas.count - 1, section: 0)
-                        // 방법 1 : chatTableView.reloadData() 리로드는 조금 부자연스럽다.
                         self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
-                        // TableView에는 원하는 곳으로 이동하는 함수가 있다. 고로 전송할때마다 최신 대화로 이동.
                         self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
                         
                     } catch let err {
@@ -234,16 +233,14 @@ extension ChatVC {
     
     @objc func keyboardWillShow(_ sender: Notification) {
         let info = sender.userInfo!
-        let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
-        let animationDuration = info[ UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
-        
+        let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height
+        let animationDuration = info[ UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval
         if !keyboardStatus {
             keyboardStatus = true
-            print("Show \(keyboardSize)")
             // 키보드 올라오는 애니메이션이랑 동일하게 텍스트뷰 올라가게 만들기.
-            UIView.animate(withDuration: animationDuration) {
-                self.inputBottomContraint.constant += keyboardSize-30
-                self.chatTV.setContentOffset(CGPoint(x: 0, y: keyboardSize), animated: true)
+            UIView.animate(withDuration: animationDuration ?? 0) {
+                self.inputBottomContraint.constant = ((keyboardSize ?? 0)-self.view.safeAreaInsets.bottom+10)
+                self.chatTV.setContentOffset(CGPoint(x: 0, y: keyboardSize ?? 0), animated: true)
                 self.view.layoutIfNeeded()
             }
         }
@@ -251,14 +248,11 @@ extension ChatVC {
     
     @objc func keyboardWillHide(_ sender: Notification) {
         let info = sender.userInfo!
-        let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
-        let animationDuration = info[ UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
-        
-        print(keyboardSize)
+        let animationDuration = info[ UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval
         if keyboardStatus {
             keyboardStatus = false
-            UIView.animate(withDuration: animationDuration) {
-                self.inputBottomContraint.constant -= keyboardSize-30
+            UIView.animate(withDuration: animationDuration ?? 0) {
+                self.inputBottomContraint.constant = 10
                 self.view.layoutIfNeeded()
             }
         }

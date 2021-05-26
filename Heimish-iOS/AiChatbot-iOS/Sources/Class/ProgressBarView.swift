@@ -32,22 +32,21 @@ class ProgressBarView: UIView {
      */
     func initBar() {
         // make the container with rounded corners and clear background.
-        self.layer.cornerRadius = frame.size.height / 2
+//        self.makeRounded(cornerRadius: nil)
+        self.setNeedsLayout()
         self.layer.masksToBounds = true
         self.backgroundColor = UIColor.clear
-        
         // background image / this view being the same width and height as the parent doesn't need to round the corners. It will take the parent frame.
-        let backgroundRect = CGRect(x: 0.0, y: 0.0, width: Double(frame.size.width), height: Double(frame.size.height))
-        backgroundImage = UIView(frame: backgroundRect)
-        backgroundImage.clipsToBounds = true
-        backgroundImage.backgroundColor = UIColor.clear
-        addSubview(backgroundImage)
+//        let backgroundRect = CGRect(x: 0.0, y: 0.0, width: Double(frame.size.width), height: Double(frame.size.height))
+//        backgroundImage = UIView(frame: backgroundRect)
+//        backgroundImage.clipsToBounds = true
+//        backgroundImage.backgroundColor = UIColor.clear
+//        addSubview(backgroundImage)
         
         // level of progress
-        let progressRect = CGRect(x: Double(frame.size.width), y: 0.0, width: 0.0, height: Double(frame.size.height))
-        // let progressRect = CGRect(x: 0.0, y: Double(frame.size.height), width: Double(frame.size.width), height: 0.0)
+        let progressRect = CGRect(x: 0.0, y: 0.0, width: 0.0, height: self.frame.height)
         progressView = UIImageView(frame: progressRect)
-        progressView.layer.cornerRadius = frame.size.height / 2
+        progressView.makeRounded(cornerRadius: nil)
         progressView.layer.masksToBounds = true
         progressView.backgroundColor = UIColor.blue
         addSubview(progressView)
@@ -70,9 +69,9 @@ class ProgressBarView: UIView {
      Sets the background color of the progress view.
      This color will be displayed underneath the progress view.
      */
-    func setBackColor(color: UIColor) {
-        backgroundImage.backgroundColor = color
-    }
+//    func setBackColor(color: UIColor) {
+//        backgroundImage.backgroundColor = color
+//    }
     /**
      Sets the background color of the progress view.
      This is the color that will display the value you have inserted.

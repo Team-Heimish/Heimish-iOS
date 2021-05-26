@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b1B-Fv-aj5">
-                                <rect key="frame" x="10" y="718" width="355" height="40"/>
+                                <rect key="frame" x="10" y="728" width="355" height="40"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ioz-xJ-10u">
                                         <rect key="frame" x="0.0" y="0.0" width="305" height="40"/>
@@ -50,7 +50,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="stF-If-yYh">
-                                <rect key="frame" x="0.0" y="88" width="375" height="620"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="630"/>
                                 <color key="backgroundColor" name="ChatBack"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ej7-Hp-ANZ">
@@ -123,7 +123,7 @@
                             <constraint firstItem="b1B-Fv-aj5" firstAttribute="leading" secondItem="gFl-pg-9xo" secondAttribute="leading" constant="10" id="bH5-zt-TT2"/>
                             <constraint firstItem="b1B-Fv-aj5" firstAttribute="top" secondItem="stF-If-yYh" secondAttribute="bottom" constant="10" id="bHa-Fc-uzy"/>
                             <constraint firstItem="stF-If-yYh" firstAttribute="leading" secondItem="gFl-pg-9xo" secondAttribute="leading" id="f5h-IG-DM7"/>
-                            <constraint firstItem="gFl-pg-9xo" firstAttribute="bottom" secondItem="b1B-Fv-aj5" secondAttribute="bottom" constant="20" id="k3N-3M-sWh"/>
+                            <constraint firstItem="gFl-pg-9xo" firstAttribute="bottom" secondItem="b1B-Fv-aj5" secondAttribute="bottom" constant="10" id="k3N-3M-sWh"/>
                             <constraint firstItem="stF-If-yYh" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="bottom" id="mjb-jg-sH6"/>
                             <constraint firstItem="gFl-pg-9xo" firstAttribute="trailing" secondItem="b1B-Fv-aj5" secondAttribute="trailing" constant="10" id="rr2-3d-oY2"/>
                             <constraint firstItem="stF-If-yYh" firstAttribute="top" secondItem="Ej7-Hp-ANZ" secondAttribute="bottom" id="syI-1L-ndu"/>
@@ -181,7 +181,7 @@
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mediumGreen">
-            <color red="0.58431372549019611" green="0.74901960784313726" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.65227768352363968" green="0.82352941176470584" blue="0.15701108044501549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

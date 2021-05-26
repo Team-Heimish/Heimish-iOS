@@ -18,6 +18,7 @@ extension UIView {
             self.layer.cornerRadius = self.layer.frame.height / 2
         }
         self.layer.masksToBounds = true
+        self.layoutIfNeeded()
     }
     
     // UIView 부분적으로 둥글게 적용
