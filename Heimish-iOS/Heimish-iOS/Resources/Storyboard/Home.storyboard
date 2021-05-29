@@ -21,7 +21,7 @@
         <!--HomeVC-->
         <scene sceneID="KiS-ng-8U4">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="jYl-LR-0iz" customClass="HomeVC" customModule="AiChatbot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="jYl-LR-0iz" customClass="HomeVC" customModule="Heimish_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U3e-O9-15s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,7 +98,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5gs-Ch-UX5">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="40.333333333333336"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNe-fZ-orf" customClass="ProgressBarView" customModule="AiChatbot_iOS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNe-fZ-orf" customClass="ProgressBarView" customModule="Heimish_iOS" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5.9999999999999982" width="240" height="28.333333333333329"/>
                                                         <color key="backgroundColor" name="deepGreen"/>
                                                     </view>
@@ -127,7 +127,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DHX-1Q-Bsp">
                                                 <rect key="frame" x="0.0" y="55.333333333333371" width="250" height="40"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyx-JJ-cCV" customClass="ProgressBarView" customModule="AiChatbot_iOS" customModuleProvider="target">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyx-JJ-cCV" customClass="ProgressBarView" customModule="Heimish_iOS" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="6" width="240" height="28"/>
                                                         <color key="backgroundColor" name="deepGreen"/>
                                                         <userDefinedRuntimeAttributes>
@@ -218,7 +218,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-2C-vGI">
-                                        <rect key="frame" x="19.999999999999996" y="115" width="38.666666666666657" height="22.333333333333343"/>
+                                        <rect key="frame" x="19.999999999999996" y="84.666666666666686" width="38.666666666666657" height="22.333333333333329"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                         <color key="textColor" name="heimishGray"/>
                                         <nil key="highlightedColor"/>
@@ -231,8 +231,8 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="hQK-2C-vGI" firstAttribute="top" secondItem="X3o-q7-g6M" secondAttribute="bottom" constant="40" id="9V3-O1-d8R"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hQK-2C-vGI" secondAttribute="trailing" constant="20" id="9tG-pA-mX1"/>
-                                    <constraint firstAttribute="bottom" secondItem="hQK-2C-vGI" secondAttribute="bottom" constant="25" id="F5y-OA-vgj"/>
                                     <constraint firstItem="X3o-q7-g6M" firstAttribute="leading" secondItem="prf-OF-Beq" secondAttribute="leading" constant="20" id="Yby-fV-UI3"/>
                                     <constraint firstItem="hQK-2C-vGI" firstAttribute="leading" secondItem="X3o-q7-g6M" secondAttribute="leading" id="ktZ-OX-cSS"/>
                                     <constraint firstItem="X3o-q7-g6M" firstAttribute="top" secondItem="prf-OF-Beq" secondAttribute="top" constant="15" id="xgM-Xj-VuI"/>
@@ -328,22 +328,22 @@
     <resources>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
         <namedColor name="black">
-            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.11400000005960464" green="0.11400000005960464" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="deepGreen">
-            <color red="0.49411764705882355" green="0.65098039215686276" blue="0.16078431372549021" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.49399998784065247" green="0.65100002288818359" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="heimishGray">
-            <color red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="heimishWhite">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mediumGreen">
-            <color red="0.65227768352363968" green="0.82352941176470584" blue="0.15701108044501549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.65100002288818359" green="0.82400000095367432" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="nariYellow">
-            <color red="0.97647058823529409" green="0.85098039215686272" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97600001096725464" green="0.85100001096725464" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

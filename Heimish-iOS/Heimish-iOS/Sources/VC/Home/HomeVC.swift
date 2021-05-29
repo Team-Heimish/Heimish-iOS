@@ -85,7 +85,7 @@ extension HomeVC {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd"
             let day  = dateFormatter.string(from: Date())
-            activityTitleLabel.text = activities[(Int(day) ?? 0)%activities.count].activity
+            activityTitleLabel.text = "📌 \(activities[(Int(day) ?? 0)%activities.count].activity ?? "휴식")"
             activityDescLabel.text = activities[(Int(day) ?? 0)%activities.count].description
         }
     }
