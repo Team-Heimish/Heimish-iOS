@@ -64,8 +64,8 @@ extension StorageChatVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as? UserBalloonTableViewCell else { return UITableViewCell() }
-        guard let aiCell = tableView.dequeueReusableCell(withIdentifier: "AiBalloonTableViewCell", for: indexPath) as? AiBalloonTableViewCell else { return UITableViewCell() }
+        guard let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as? UserBalloonTVCell else { return UITableViewCell() }
+        guard let aiCell = tableView.dequeueReusableCell(withIdentifier: "AiBalloonTableViewCell", for: indexPath) as? AiBalloonTVCell else { return UITableViewCell() }
         
         if chat[indexPath.row].sender == "user" {
             userCell.messageLabel.text = chat[indexPath.row].message

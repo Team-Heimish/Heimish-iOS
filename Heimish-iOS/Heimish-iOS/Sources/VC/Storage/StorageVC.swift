@@ -18,12 +18,11 @@ class StorageVC: UIViewController {
             counseilingTV.dataSource = self
             counseilingTV.backgroundColor = .heimishWhite
             counseilingTV.separatorStyle = .none // 경계선 제거
-            counseilingTV.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+            counseilingTV.register(NoDataTVCell.nib(), forCellReuseIdentifier: NoDataTVCell.identifier)
         }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(realm?.objects(Counseiling.self))
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -36,27 +35,50 @@ class StorageVC: UIViewController {
 
 extension StorageVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let savedChat = realm?.objects(Counseiling.self)
-        return savedChat?.count ?? 0
+        if let savedChat = realm?.objects(Counseiling.self) {
+            if savedChat.count > 0 {
+                return savedChat.count
+            }
+        }
+        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        if let savedChat = realm?.objects(Counseiling.self) {
+            if savedChat.count > 0 {
+                counseilingTV.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+                counseilingTV.isScrollEnabled = true
+                return 100
+            }
+        }
+        let statusBarHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        counseilingTV.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        counseilingTV.isScrollEnabled = false
+        return (self.view.frame.height - (44+statusBarHeight))
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "StorageTableViewCell", for: indexPath) as? StorageTableViewCell else { return UITableViewCell() }
+        if let savedChat = realm?.objects(Counseiling.self) {
+            if savedChat.count > 0 {
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: "StorageTableViewCell", for: indexPath) as? StorageTVCell else { return UITableViewCell() }
+                
+                // Realm 데이터 불러오기
+                let chatModel = realm?.objects(Counseiling.self)
+                cell.idxLabel.text = "\(chatModel?[indexPath.row].idx ?? 999)"
+                cell.dateLabel.text = chatModel?[indexPath.row].date ?? "error"
+                cell.happyLabel.text = "\(chatModel?[indexPath.row].emotion[0] ?? 999)"
+                cell.smileLabel.text = "\(chatModel?[indexPath.row].emotion[1] ?? 999)"
+                cell.sosoLabel.text = "\(chatModel?[indexPath.row].emotion[2] ?? 999)"
+                cell.sadLabel.text = "\(chatModel?[indexPath.row].emotion[3] ?? 999)"
+                cell.depressedLabel.text = "\(chatModel?[indexPath.row].emotion[4] ?? 999)"
+                cell.selectionStyle = .none
+                cell.isUserInteractionEnabled = true
+                return cell
+            }
+        }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "NoDataTVCell", for: indexPath) as? NoDataTVCell else { return UITableViewCell() }
+        cell.isUserInteractionEnabled = false
         
-        // Realm 데이터 불러오기
-        let chatModel = realm?.objects(Counseiling.self)
-        cell.idxLabel.text = "\(chatModel?[indexPath.row].idx ?? 999)"
-        cell.dateLabel.text = chatModel?[indexPath.row].date ?? "error"
-        cell.happyLabel.text = "\(chatModel?[indexPath.row].emotion[0] ?? 999)"
-        cell.smileLabel.text = "\(chatModel?[indexPath.row].emotion[1] ?? 999)"
-        cell.sosoLabel.text = "\(chatModel?[indexPath.row].emotion[2] ?? 999)"
-        cell.sadLabel.text = "\(chatModel?[indexPath.row].emotion[3] ?? 999)"
-        cell.depressedLabel.text = "\(chatModel?[indexPath.row].emotion[4] ?? 999)"
-        cell.selectionStyle = .none
         return cell
     }
     

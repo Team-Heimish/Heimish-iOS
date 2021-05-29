@@ -1,5 +1,5 @@
 //
-//  StorageTableViewCell.swift
+//  StorageTVCell.swift
 //  AiChatbot-iOS
 //
 //  Created by 이원석 on 2021/04/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StorageTableViewCell: UITableViewCell {
+class StorageTVCell: UITableViewCell {
     static let identifier = "StorageTableViewCell"
     
     @IBOutlet weak var idxLabel: UILabel!

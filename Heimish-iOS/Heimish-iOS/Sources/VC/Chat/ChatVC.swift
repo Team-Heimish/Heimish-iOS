@@ -270,7 +270,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
         
         if chatDatas[indexPath.row][0] == "user"{
             
-            guard let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as? UserBalloonTableViewCell else { return UITableViewCell() }
+            guard let userCell = tableView.dequeueReusableCell(withIdentifier: "UserBalloonTableViewCell", for: indexPath) as? UserBalloonTVCell else { return UITableViewCell() }
             userCell.messageLabel.text = chatDatas[indexPath.row][1]
             
             if userCell.timeLabel.text != chatDatas[indexPath.row][2] {
@@ -283,7 +283,7 @@ extension ChatVC: UITableViewDelegate, UITableViewDataSource, UITextViewDelegate
             return userCell
         } else if chatDatas[indexPath.row][0] == "chatbot"{
             
-            guard let aiCell = tableView.dequeueReusableCell(withIdentifier: "AiBalloonTableViewCell", for: indexPath) as? AiBalloonTableViewCell else { return UITableViewCell() }
+            guard let aiCell = tableView.dequeueReusableCell(withIdentifier: "AiBalloonTableViewCell", for: indexPath) as? AiBalloonTVCell else { return UITableViewCell() }
             aiCell.messageLabel.text = chatDatas[indexPath.row][1]
             if aiCell.timeLabel.text != chatDatas[indexPath.row][2] {
                 aiCell.timeLabel.text = chatDatas[indexPath.row][2]

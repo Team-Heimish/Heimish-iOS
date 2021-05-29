@@ -21,7 +21,7 @@
         <!--StorageVC-->
         <scene sceneID="xEA-Ft-5ow">
             <objects>
-                <viewController storyboardIdentifier="StorageVC" id="RxS-VL-lOM" customClass="StorageVC" customModule="AiChatbot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StorageVC" id="RxS-VL-lOM" customClass="StorageVC" customModule="Heimish_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZZy-NJ-Fbv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StorageTableViewCell" rowHeight="103" id="n5s-Lj-qQa" customClass="StorageTableViewCell" customModule="AiChatbot_iOS" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StorageTableViewCell" rowHeight="103" id="n5s-Lj-qQa" customClass="StorageTVCell" customModule="Heimish_iOS" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="103"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n5s-Lj-qQa" id="TE3-14-aZU">
@@ -268,7 +268,7 @@
         <!--Storage ChatVC-->
         <scene sceneID="5Kw-ar-acx">
             <objects>
-                <viewController storyboardIdentifier="StorageChatVC" id="Xzt-xw-x7P" customClass="StorageChatVC" customModule="AiChatbot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StorageChatVC" id="Xzt-xw-x7P" customClass="StorageChatVC" customModule="Heimish_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bEU-IA-ORG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -346,7 +346,7 @@
         <!--StorageNC-->
         <scene sceneID="p72-IK-Vxl">
             <objects>
-                <navigationController storyboardIdentifier="StorageNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pGi-Ey-CMQ" customClass="StorageNC" customModule="AiChatbot_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="StorageNC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pGi-Ey-CMQ" customClass="StorageNC" customModule="Heimish_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cnm-f9-WBY">
                         <autoresizingMask key="autoresizingMask"/>
@@ -366,16 +366,16 @@
         <image name="icnBack" width="44" height="44"/>
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="black">
-            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.11372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.11400000005960464" green="0.11400000005960464" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="heimishGray">
-            <color red="0.34901960784313724" green="0.34901960784313724" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="heimishWhite">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="nariYellow">
-            <color red="0.97647058823529409" green="0.85098039215686272" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97600001096725464" green="0.85100001096725464" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
