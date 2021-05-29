@@ -96,11 +96,19 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource {
             if let thisChat = realm?.objects(Counseiling.self).filter("idx = \(realm?.objects(Counseiling.self)[indexPath.row].idx ?? 999)").first {
                 try? realm?.write {
                     realm?.delete(thisChat)
+                    if let savedChat = realm?.objects(Counseiling.self) {
+                        if savedChat.count != 0 {
+                            // 지워도 데이터가 1개 이상이면 그냥 지우면 됨
+                            tableView.deleteRows(at: [indexPath], with: .fade)
+                        } else {
+                            // 근데 지웠을 때 데이터가 0개면 상담 시작해보라는 Cell 나와야 해서 Cell Count 1 유지
+                            tableView.reloadRows(at: [indexPath], with: .fade)
+                        }
+                    }
                 }
             } else {
                 print("지우려는 상담의 인덱스가 없어요")
             }
-            tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }

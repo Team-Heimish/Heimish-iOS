@@ -29,6 +29,8 @@ class HomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // navi Bar 숨겨도 스와이프로 뒤로가기 활성화
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
         setStyle()
         startBtnAnimation()
     }
