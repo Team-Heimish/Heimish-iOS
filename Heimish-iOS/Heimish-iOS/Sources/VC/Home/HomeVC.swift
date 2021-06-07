@@ -13,7 +13,6 @@ class HomeVC: UIViewController {
     
     @IBOutlet weak var titileLabel: UILabel!
     @IBOutlet weak var startChatBtn: UIButton!
-
     @IBOutlet weak var emotionView: UIView!
     @IBOutlet weak var posPgbBackView: UIView!
     @IBOutlet weak var posPgbView: ProgressBarView!
