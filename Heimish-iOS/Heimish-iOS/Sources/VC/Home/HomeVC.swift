@@ -80,7 +80,7 @@ extension HomeVC {
             percentage = [0, 0]
         }
         if percentage[1] >= 90 {
-            activityTitleLabel.text = "상담 센터 방문"
+            activityTitleLabel.text = "📌 상담 센터 방문"
             activityDescLabel.text = "우울감이 계속해서 지속된다면,\n전문 상담사와의 상담이 꼭 필요합니다"
         } else {
             let dateFormatter = DateFormatter()
@@ -150,31 +150,11 @@ extension HomeVC {
     
     // MARK: - 프로그래스바 커스텀
     func customProgressBarView(_ value: Int, _ pgbView: ProgressBarView) {
-//        pgbView.setBackColor(color: .heimishWhite)
-        
-        let greenGradient = CAGradientLayer()
-        
-        // 긍정 게이지
-        // frame을 잡아주고
-        greenGradient.frame = pgbView.bounds
-        // 섞어줄 색 지정
-        greenGradient.colors = [UIColor.mediumGreen.cgColor, UIColor(red: 0, green: 171/255, blue: 162/255, alpha: 1.0).cgColor]
-        // 시작점과 끝 지점을 지정
-        greenGradient.startPoint = CGPoint(x: 0, y: 0)
-        greenGradient.endPoint = CGPoint(x: 1, y: 0)
-        
-        // 부정 게이지
-        let redGradient = CAGradientLayer()
-        redGradient.frame = pgbView.bounds
-        redGradient.colors = [UIColor.mainOrange.cgColor, UIColor(red: 171/255, green: 0/255, blue: 23/255, alpha: 1.0).cgColor]
-        redGradient.startPoint = CGPoint(x: 0, y: 0)
-        redGradient.endPoint = CGPoint(x: 1, y: 0)
-        
         if pgbView == posPgbView {
-            pgbView.setProgressColor(color: greenGradient)
+            pgbView.kindOf = .pos // 긍정 게이지
         } else {
-            pgbView.setProgressColor(color: redGradient)
+            pgbView.kindOf = .nag // 부정 게이지
         }
-        pgbView.setProgressValue(currentValue: CGFloat(value))
+        pgbView.progress = CGFloat(value)*1/100
     }
 }

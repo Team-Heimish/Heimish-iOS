@@ -13,27 +13,27 @@ class StorageChatVC: UIViewController {
     var thisidx: Int?
     var chat = List<Content>()
     var date: String?
+    
     @IBOutlet weak var chatTV: UITableView! {
         didSet {
             chatTV.delegate = self
             chatTV.dataSource = self
-            chatTV.separatorStyle = .none // 경계선 제거
-            chatTV.backgroundColor = .lightGreen
         }
     }
-    @IBOutlet weak var dateLabel: UILabel! {
-        didSet {
-            dateLabel.text = date
-        }
-    }
-    @IBOutlet weak var naviView: UIView! {
-        didSet {
-            naviView.dropShadow(color: .deepGreen, offSet: CGSize(width: 0, height: 5), opacity: 0.2, radius: 3)
-        }
-    }
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var naviView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStyle()
         setNib()
+    }
+    
+    func setStyle() {
+        chatTV.separatorStyle = .none // 경계선 제거
+        chatTV.backgroundColor = .lightGreen
+        dateLabel.text = date
+        naviView.dropShadow(color: .deepGreen, offSet: CGSize(width: 0, height: 5), opacity: 0.2, radius: 3)
     }
     
     // Nib 등록
