@@ -83,7 +83,8 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let dvc = self.storyboard?.instantiateViewController(identifier: "StorageChatVC") as? StorageChatVC {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "StorageChat", bundle: nil)
+        if let dvc = storyBoard.instantiateViewController(identifier: "StorageChatVC") as? StorageChatVC {
             self.navigationController?.pushViewController(dvc, animated: true)
             dvc.thisidx = realm?.objects(Counseiling.self)[indexPath.row].idx
             dvc.chat = realm?.objects(Counseiling.self)[indexPath.row].chat ?? List<Content>()

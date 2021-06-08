@@ -9,6 +9,7 @@ import UIKit
 
 class EmotionVC: UIViewController {
     var emotions = [0, 0, 0, 0, 0]
+    @IBOutlet weak var toggleSwtich: UISwitch!
     @IBOutlet weak var resetBtn: UIButton!
     @IBOutlet weak var happyLabel: UILabel!
     @IBOutlet weak var smileLabel: UILabel!
@@ -30,6 +31,13 @@ class EmotionVC: UIViewController {
         textViewPlaceholder()
     }
     
+    @IBAction func swtichTapped(_ sender: Any) {
+        if toggleSwtich.isOn {
+            self.basicAlert(title: "기록 ON", message: "작성한 속마음을 상담일지에서 열람할 수 있어요!")
+        } else {
+            self.basicAlert(title: "기록 OFF", message: "상담일지에 작성한 속마음이 기록되지 않아요")
+        }
+    }
     @IBAction func resetCount(_ sender: Any) {
         emotions = [0, 0, 0, 0, 0]
         happyLabel.text = "\(emotions[0])"
@@ -60,7 +68,11 @@ class EmotionVC: UIViewController {
     }
     
     @IBAction func recordEmotion(_ sender: Any) {
-        NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: emotions)
+        if toggleSwtich.isOn, let complaining = emotionTextView.text {
+            NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: [emotions,complaining])
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: [emotions])
+        }
         self.navigationController?.popToRootViewController(animated: true)
     }
 }
@@ -68,18 +80,18 @@ class EmotionVC: UIViewController {
 extension EmotionVC {
     
     // MARK: - radius 관련
-    func setRound() {
+    private func setRound() {
         resetBtn.makeRounded(cornerRadius: 5)
         completeBtn.makeRounded(cornerRadius: 10)
         emotionTextView.makeRounded(cornerRadius: 10)
     }
     
     // MARK: - Gesture
-    func addGesutre() {
+    private func addGesutre() {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
-    func textViewPlaceholder() {
+    private func textViewPlaceholder() {
         if emotionTextView.text == "얼마든지 적어도 좋아" {
             emotionTextView.text = ""
             emotionTextView.textColor = .black
@@ -89,8 +101,7 @@ extension EmotionVC {
         }
     }
     
-    @objc
-    func keyboardWillShowEmotion(_ sender: Notification) {
+    @objc private func keyboardWillShowEmotion(_ sender: Notification) {
         /// 텍스트 뷰 입력할 때에만 키보드 올리면 됨
         let info = sender.userInfo!
         let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
@@ -101,8 +112,7 @@ extension EmotionVC {
         }
     }
     
-    @objc
-    func keyboardWillHideEmotion(_ sender: Notification) {
+    @objc private func keyboardWillHideEmotion(_ sender: Notification) {
         /// 텍스트 뷰 입력할 때에만 키보드 올리면 됨
         if emotionTextView.isFirstResponder {
             UIView.animate(withDuration: 2.0, animations: {
@@ -112,13 +122,14 @@ extension EmotionVC {
     }
     
     // 터치가 있을 시 핸들러 캐치
-    @objc func handleTap(sender: UITapGestureRecognizer) {
+    @objc private func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             self.view.endEditing(true)
         }
         sender.cancelsTouchesInView = false
     }
 }
+
 extension EmotionVC: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         textViewPlaceholder()

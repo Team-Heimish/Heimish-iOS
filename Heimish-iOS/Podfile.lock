@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.3)
+  - FloatingPanel (2.4.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -12,6 +13,7 @@ PODS:
   - SwiftLint (0.43.1)
 
 DEPENDENCIES:
+  - FloatingPanel
   - Moya
   - RealmSwift
   - SwiftLint
@@ -19,6 +21,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FloatingPanel
     - Moya
     - Realm
     - RealmSwift
@@ -26,11 +29,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  FloatingPanel: fa60183672ed86313b9e241e34465e82211260e8
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Realm: ed860452717c8db8f4bf832b6807f7f2ce708839
   RealmSwift: e31c4ddbcc42ac879313d656b86f9ca539f6f4f4
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
 
-PODFILE CHECKSUM: bd91c257e262c2ef1abc5ce4889b47166da3d94b
+PODFILE CHECKSUM: 897c6f0f4044e98250cd9fb5fde60ed2f61e00f3
 
 COCOAPODS: 1.10.0

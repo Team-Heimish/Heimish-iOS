@@ -74,21 +74,19 @@ class ChatVC: UIViewController {
     
     @IBAction func resetChat(_ sender: Any) {
         if chatDatas.count == 0 {
-            normalAlert(title: "초기화 할 수 없어요", message: "Heimish와의 대화를 시작해보세요!")
+            self.basicAlert(title: "초기화 할 수 없어요", message: "Heimish와의 대화를 시작해보세요!")
         } else {
             resetAlert(title: "정말 초기화 하시겠어요?", message: "초기화된 대화는 복구할 수 없어요!")
         }
-        
     }
     
     // 상담일지 기록
     @IBAction func finishChat(_ sender: Any) {
         if chatDatas.count == 0 {
-            normalAlert(title: "기록할 상담이 없어요", message: "상담이 이루어져야 기록할 수 있어요!")
+            self.basicAlert(title: "기록할 상담이 없어요", message: "상담이 이루어져야 기록할 수 있어요!")
         } else {
             finishAlert(title: "상담을 기록하시겠어요?", message: "기록된 상담은 모아보기에서 확인 할 수 있어요!")
         }
-        
     }
     // 전송버튼
     @IBAction func sendBtnAction(_ sender: Any) {
@@ -133,12 +131,12 @@ class ChatVC: UIViewController {
 extension ChatVC {
     // MARK: - 사용자 정의 함수
     // Nib 등록
-    func setNib() {
+    private func setNib() {
         chatTV.register(UINib(nibName: "UserBalloonTableViewCell", bundle: nil), forCellReuseIdentifier: "UserBalloonTableViewCell")
         chatTV.register(UINib(nibName: "AiBalloonTableViewCell", bundle: nil), forCellReuseIdentifier: "AiBalloonTableViewCell")
     }
     
-    func setNoti() {
+    private func setNoti() {
         // 키보드 관련 옵저버 설정
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -149,12 +147,12 @@ extension ChatVC {
     }
     
     // 대화 불러오기
-    func loadChat() {
+    private func loadChat() {
         chatDatas = UserDefaults.standard.array(forKey: "loadChat") as? [[String]] ?? [[String]]()
     }
     
     // 대화 reset Alert
-    func resetAlert(title: String?, message: String) {
+    private func resetAlert(title: String?, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "취소", style: .default)
@@ -170,7 +168,7 @@ extension ChatVC {
     }
     
     // 상담 종료 Alert
-    func finishAlert(title: String?, message: String) {
+    private func finishAlert(title: String?, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancelAction = UIAlertAction(title: "취소", style: .default)
@@ -187,23 +185,19 @@ extension ChatVC {
         present(alert, animated: true)
     }
     
-    // 일반 Alert
-    func normalAlert(title: String?, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
-    }
-    
-    @objc func recordChat(notification: NSNotification) {
-        guard let emotionDatas = notification.object as? [Int] else { return }
+    @objc private func recordChat(notification: NSNotification) {
+        guard let datas = notification.object as? [Any] else { return }
         formatter.dateFormat = "YYYY년 MM월 dd일"
         let finishTime = formatter.string(from: Date()) // 상담 종료 시각
         let counseiling = Counseiling()
         counseiling.idx = (realm?.objects(Counseiling.self).last?.idx ?? 0) + 1
         counseiling.date = finishTime
-        counseiling.emotionArray = emotionDatas
-        print(emotionDatas)
+        counseiling.emotionArray = datas.first as! [Int]
+        if let secondData = datas.last {
+            counseiling.complaining = secondData as? String
+        } else {
+            counseiling.complaining = nil
+        }
         for idx in 0..<chatDatas.count {
             let content = Content(value: ["sender": chatDatas[idx][0], "message": chatDatas[idx][1], "time": chatDatas[idx][2]])
             counseiling.chat.append(content)
@@ -218,20 +212,20 @@ extension ChatVC {
     }
     
     // 터치가 있을 시 핸들러 캐치
-    @objc func handleTap(sender: UITapGestureRecognizer) {
+    @objc private func handleTap(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
             self.view.endEditing(true)
         }
         sender.cancelsTouchesInView = false
     }
     
-    @objc func saveChat() {
+    @objc private func saveChat() {
         if chatDatas.count > 0 {
             UserDefaults.standard.setValue(chatDatas, forKey: "loadChat") // chat기록 저장
         }
     }
     
-    @objc func keyboardWillShow(_ sender: Notification) {
+    @objc private func keyboardWillShow(_ sender: Notification) {
         let info = sender.userInfo!
         let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.height
         let animationDuration = info[ UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval
@@ -246,7 +240,7 @@ extension ChatVC {
         }
     }
     
-    @objc func keyboardWillHide(_ sender: Notification) {
+    @objc private func keyboardWillHide(_ sender: Notification) {
         let info = sender.userInfo!
         let animationDuration = info[ UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval
         if keyboardStatus {

@@ -64,7 +64,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5h-qt-49i">
-                                                                            <rect key="frame" x="8" y="31" width="9.5" height="24"/>
+                                                                            <rect key="frame" x="8" y="31" width="9" height="24"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                             <color key="textColor" name="black"/>
                                                                             <nil key="highlightedColor"/>
@@ -81,7 +81,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SX9-wn-R3V">
-                                                                            <rect key="frame" x="8" y="31" width="9.5" height="24"/>
+                                                                            <rect key="frame" x="8" y="31" width="9" height="24"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                             <color key="textColor" name="black"/>
                                                                             <nil key="highlightedColor"/>
@@ -98,7 +98,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vdp-8J-Tte">
-                                                                            <rect key="frame" x="8" y="31" width="9.5" height="24"/>
+                                                                            <rect key="frame" x="8" y="31" width="9" height="24"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                             <color key="textColor" name="black"/>
                                                                             <nil key="highlightedColor"/>
@@ -115,7 +115,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlW-9g-8gS">
-                                                                            <rect key="frame" x="8" y="31" width="9.5" height="24"/>
+                                                                            <rect key="frame" x="8" y="31" width="9" height="24"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                             <color key="textColor" name="black"/>
                                                                             <nil key="highlightedColor"/>
@@ -132,7 +132,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2J-eb-8vr">
-                                                                            <rect key="frame" x="8" y="31" width="9.5" height="24"/>
+                                                                            <rect key="frame" x="8" y="31" width="9" height="24"/>
                                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="16"/>
                                                                             <color key="textColor" name="black"/>
                                                                             <nil key="highlightedColor"/>
@@ -148,7 +148,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuj-y5-dqL">
-                                                            <rect key="frame" x="10" y="34.5" width="32" height="19.5"/>
+                                                            <rect key="frame" x="10" y="36.5" width="27.5" height="15.5"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="13"/>
                                                             <color key="textColor" name="black"/>
                                                             <nil key="highlightedColor"/>
@@ -159,11 +159,11 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsF-iu-lPS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="27.5" height="29.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="27.5" height="25.5"/>
                                                             <color key="backgroundColor" name="heimishGray"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Af-DH-9Kn">
-                                                            <rect key="frame" x="10" y="5" width="7.5" height="19.5"/>
+                                                            <rect key="frame" x="10" y="5" width="7.5" height="15.5"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -227,7 +227,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heimish와의 상담일지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jo6-Io-de8">
-                                        <rect key="frame" x="133" y="11" width="148" height="22.5"/>
+                                        <rect key="frame" x="139" y="13.5" width="136.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="15"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
@@ -265,84 +265,6 @@
             </objects>
             <point key="canvasLocation" x="931.88405797101461" y="130.58035714285714"/>
         </scene>
-        <!--Storage ChatVC-->
-        <scene sceneID="5Kw-ar-acx">
-            <objects>
-                <viewController storyboardIdentifier="StorageChatVC" id="Xzt-xw-x7P" customClass="StorageChatVC" customModule="Heimish_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bEU-IA-ORG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nYp-aO-L2b">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TAS-Di-4ck">
-                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jye-xy-ntG">
-                                        <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
-                                        <color key="tintColor" name="black"/>
-                                        <state key="normal" image="icnBack"/>
-                                        <connections>
-                                            <action selector="backAction:" destination="Xzt-xw-x7P" eventType="touchUpInside" id="DIm-di-unj"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UBe-eo-vUf">
-                                        <rect key="frame" x="186.5" y="11" width="41" height="22.5"/>
-                                        <color key="tintColor" name="black"/>
-                                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="15"/>
-                                        <color key="textColor" name="black"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wpv-8S-WGd">
-                                        <rect key="frame" x="374" y="0.0" width="20" height="44"/>
-                                        <color key="tintColor" name="black"/>
-                                        <state key="normal" image="trash" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="semibold"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="deleteAction:" destination="Xzt-xw-x7P" eventType="touchUpInside" id="yUp-J9-NMD"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="jye-xy-ntG" firstAttribute="top" secondItem="TAS-Di-4ck" secondAttribute="top" id="2DT-hT-gth"/>
-                                    <constraint firstItem="jye-xy-ntG" firstAttribute="leading" secondItem="TAS-Di-4ck" secondAttribute="leading" id="D1P-cB-EPr"/>
-                                    <constraint firstItem="wpv-8S-WGd" firstAttribute="centerY" secondItem="TAS-Di-4ck" secondAttribute="centerY" id="K5r-Um-3Q0"/>
-                                    <constraint firstItem="UBe-eo-vUf" firstAttribute="centerY" secondItem="TAS-Di-4ck" secondAttribute="centerY" id="TJt-AI-69E"/>
-                                    <constraint firstItem="UBe-eo-vUf" firstAttribute="centerX" secondItem="TAS-Di-4ck" secondAttribute="centerX" id="TbJ-dH-a0f"/>
-                                    <constraint firstAttribute="trailing" secondItem="wpv-8S-WGd" secondAttribute="trailing" constant="20" id="VKq-Vg-3jv"/>
-                                    <constraint firstAttribute="height" constant="44" id="aW3-LD-gui"/>
-                                    <constraint firstItem="wpv-8S-WGd" firstAttribute="top" secondItem="TAS-Di-4ck" secondAttribute="top" id="lA3-dQ-MF3"/>
-                                    <constraint firstAttribute="bottom" secondItem="jye-xy-ntG" secondAttribute="bottom" id="tg8-70-nHP"/>
-                                    <constraint firstAttribute="bottom" secondItem="wpv-8S-WGd" secondAttribute="bottom" id="uPO-cT-Xvp"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="OiD-qw-nhO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="nYp-aO-L2b" secondAttribute="bottom" id="4F8-gI-E1r"/>
-                            <constraint firstItem="TAS-Di-4ck" firstAttribute="top" secondItem="OiD-qw-nhO" secondAttribute="top" id="KSI-Af-HBq"/>
-                            <constraint firstItem="nYp-aO-L2b" firstAttribute="leading" secondItem="OiD-qw-nhO" secondAttribute="leading" id="QVA-7q-j80"/>
-                            <constraint firstItem="TAS-Di-4ck" firstAttribute="leading" secondItem="OiD-qw-nhO" secondAttribute="leading" id="cra-jy-qT8"/>
-                            <constraint firstItem="nYp-aO-L2b" firstAttribute="trailing" secondItem="OiD-qw-nhO" secondAttribute="trailing" id="pLw-t8-9hf"/>
-                            <constraint firstItem="OiD-qw-nhO" firstAttribute="trailing" secondItem="TAS-Di-4ck" secondAttribute="trailing" id="quT-zS-Jaj"/>
-                            <constraint firstItem="nYp-aO-L2b" firstAttribute="top" secondItem="TAS-Di-4ck" secondAttribute="bottom" id="rqi-E7-CIS"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="chatTV" destination="nYp-aO-L2b" id="zFa-bY-xe9"/>
-                        <outlet property="dateLabel" destination="UBe-eo-vUf" id="xm3-oO-lm7"/>
-                        <outlet property="naviView" destination="TAS-Di-4ck" id="hTy-oK-wt9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zkX-0j-YaE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1631.8840579710147" y="130.58035714285714"/>
-        </scene>
         <!--StorageNC-->
         <scene sceneID="p72-IK-Vxl">
             <objects>
@@ -364,7 +286,6 @@
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="icnBack" width="44" height="44"/>
-        <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="black">
             <color red="0.11400000005960464" green="0.11400000005960464" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

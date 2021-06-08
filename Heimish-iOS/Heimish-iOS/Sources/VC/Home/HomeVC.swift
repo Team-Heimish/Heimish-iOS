@@ -60,7 +60,7 @@ class HomeVC: UIViewController {
 
 extension HomeVC {
     
-    func setStyle() {
+    private func setStyle() {
         startChatBtn.makeRounded(cornerRadius: 15.0)
         startChatBtn.dropShadow(color: .lightGreen, offSet: CGSize(width: 0, height: 4), opacity: 1, radius: 5)
         emotionView.makeRounded(cornerRadius: 15.0)
@@ -72,7 +72,7 @@ extension HomeVC {
     }
     
     // MARK: - 하루 추천 행동
-    func setActivity() {
+    private func setActivity() {
         var percentage = [Int]()
         if realm?.objects(Counseiling.self).count ?? 0 > 0 {
             percentage = setEmotionPercent()
@@ -92,7 +92,7 @@ extension HomeVC {
     }
     
     // MARK: - 애니메이션 관련
-    func sunAnimation() {
+    private func sunAnimation() {
         UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.sunView.transform = CGAffineTransform(translationX: 0, y: 5)
         }, completion: { _ in
@@ -101,14 +101,14 @@ extension HomeVC {
             })
         })
     }
-    func startBtnAnimation() {
+    private func startBtnAnimation() {
         UIView.animate(withDuration: 1, animations: {
             self.startChatBtn.transform = CGAffineTransform(translationX: 0, y: -20)
         })
     }
     
     // MARK: - 감정 기록 퍼센트 화
-    func setEmotionPercent() -> [Int] {
+    private func setEmotionPercent() -> [Int] {
         var positive = 0
         var nagative = 0
         var total = 0
@@ -123,7 +123,7 @@ extension HomeVC {
     }
     
     // MARK: - 감정 기록 퍼센트에 따른 응원의 한마디
-    func setSentence(_ postivie: Int, _ nagative: Int) {
+    private func setSentence(_ postivie: Int, _ nagative: Int) {
         if postivie > nagative {
             emotionSentenceLabel.text = "점점 더 행복해지고 있는 당신을 보니 너무 기뻐요!"
         } else {
@@ -132,7 +132,7 @@ extension HomeVC {
     }
     
     // MARK: - 프로그래스바 셋팅
-    func setProgressBar() {
+    private func setProgressBar() {
         var percentage = [Int]()
         if realm?.objects(Counseiling.self).count ?? 0 > 0 {
             percentage = setEmotionPercent()
@@ -149,7 +149,7 @@ extension HomeVC {
     }
     
     // MARK: - 프로그래스바 커스텀
-    func customProgressBarView(_ value: Int, _ pgbView: ProgressBarView) {
+    private func customProgressBarView(_ value: Int, _ pgbView: ProgressBarView) {
         if pgbView == posPgbView {
             pgbView.kindOf = .pos // 긍정 게이지
         } else {

@@ -11,6 +11,7 @@ import RealmSwift
 class Counseiling: Object {
     @objc dynamic var idx = 0
     @objc dynamic var date: String = ""
+    @objc dynamic var complaining: String?
     let emotion: List<Int> = List<Int>()
     var emotionArray: [Int] {
         get {

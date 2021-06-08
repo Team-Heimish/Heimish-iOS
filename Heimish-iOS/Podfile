@@ -9,4 +9,5 @@ target 'Heimish-iOS' do
   pod 'Moya'
   pod 'RealmSwift'
   pod 'SwiftLint'
+  pod 'FloatingPanel'
 end
