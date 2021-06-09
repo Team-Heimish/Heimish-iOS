@@ -100,7 +100,7 @@ class ChatVC: UIViewController {
             chatDatas.append(["user", messageBox ?? "행복해", nowTime ?? "-"])
             // chatTableView.reloadData() 는 부자연스러워서 scrollToRow를 사용하여 전송할때마다 최신 대화로 이동.
             let lastindexPath = IndexPath(row: chatDatas.count - 1, section: 0)
-            self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
+            self.chatTV.insertRows(at: [lastindexPath], with: .fade)
             self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
             
             // Server: -Dialogflow/message .POST
@@ -114,7 +114,7 @@ class ChatVC: UIViewController {
                         self.nowTime = self.formatter.string(from: Date()) // 챗봇이 보낸 메시지 도착 시간
                         self.chatDatas.append(["chatbot", msgData.data, self.nowTime ?? "-"])
                         let lastindexPath = IndexPath(row: self.chatDatas.count - 1, section: 0)
-                        self.chatTV.insertRows(at: [lastindexPath], with: UITableView.RowAnimation.automatic)
+                        self.chatTV.insertRows(at: [lastindexPath], with: .fade)
                         self.chatTV.scrollToRow(at: lastindexPath, at: UITableView.ScrollPosition.bottom, animated: true)
                         
                     } catch let err {
