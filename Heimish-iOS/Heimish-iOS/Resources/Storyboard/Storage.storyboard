@@ -160,12 +160,12 @@
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OsF-iu-lPS">
                                                             <rect key="frame" x="0.0" y="0.0" width="27.5" height="25.5"/>
-                                                            <color key="backgroundColor" name="heimishGray"/>
+                                                            <color key="backgroundColor" name="heimishWhite"/>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Af-DH-9Kn">
                                                             <rect key="frame" x="10" y="5" width="7.5" height="15.5"/>
                                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="textColor" name="heimishGray"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
@@ -173,16 +173,26 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UfE-7A-8Gb">
+                                                            <rect key="frame" x="152" y="16.5" width="2" height="55"/>
+                                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="2" id="kMZ-IY-oMe"/>
+                                                            </constraints>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="8Af-DH-9Kn" firstAttribute="leading" secondItem="vuj-y5-dqL" secondAttribute="leading" id="ExI-Af-Mmv"/>
                                                         <constraint firstItem="8Af-DH-9Kn" firstAttribute="centerX" secondItem="OsF-iu-lPS" secondAttribute="centerX" id="N3C-Lg-JGq"/>
                                                         <constraint firstItem="9Uh-wo-fCL" firstAttribute="centerY" secondItem="GwR-QL-jyh" secondAttribute="centerY" id="ODv-EV-eka"/>
+                                                        <constraint firstItem="9Uh-wo-fCL" firstAttribute="leading" secondItem="UfE-7A-8Gb" secondAttribute="trailing" constant="15" id="SI3-u9-C53"/>
+                                                        <constraint firstItem="UfE-7A-8Gb" firstAttribute="top" secondItem="9Uh-wo-fCL" secondAttribute="top" id="WZ2-Ei-Qnj"/>
                                                         <constraint firstItem="OsF-iu-lPS" firstAttribute="leading" secondItem="GwR-QL-jyh" secondAttribute="leading" id="Zof-vo-Vfu"/>
                                                         <constraint firstAttribute="bottom" secondItem="lY5-Oc-4rp" secondAttribute="bottom" id="aBy-ra-lMd"/>
                                                         <constraint firstItem="OsF-iu-lPS" firstAttribute="top" secondItem="GwR-QL-jyh" secondAttribute="top" id="cax-Oi-vuy"/>
                                                         <constraint firstItem="8Af-DH-9Kn" firstAttribute="centerY" secondItem="OsF-iu-lPS" secondAttribute="centerY" id="djb-1g-ZYJ"/>
+                                                        <constraint firstItem="UfE-7A-8Gb" firstAttribute="bottom" secondItem="9Uh-wo-fCL" secondAttribute="bottom" id="lRr-9m-uUB"/>
                                                         <constraint firstItem="8Af-DH-9Kn" firstAttribute="top" secondItem="GwR-QL-jyh" secondAttribute="top" constant="5" id="mC2-p3-vaP"/>
                                                         <constraint firstItem="lY5-Oc-4rp" firstAttribute="leading" secondItem="9Uh-wo-fCL" secondAttribute="trailing" constant="10" id="mNw-rE-ZEl"/>
                                                         <constraint firstItem="lY5-Oc-4rp" firstAttribute="top" secondItem="GwR-QL-jyh" secondAttribute="top" id="pCG-eW-9b4"/>
@@ -259,6 +269,7 @@
                     <navigationItem key="navigationItem" id="nZ5-7V-tjo"/>
                     <connections>
                         <outlet property="counseilingTV" destination="rfk-PJ-dH4" id="Won-Mu-VRE"/>
+                        <outlet property="naviView" destination="JFb-xy-UbB" id="RAE-gm-KAp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSG-bU-Wt1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -300,6 +311,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

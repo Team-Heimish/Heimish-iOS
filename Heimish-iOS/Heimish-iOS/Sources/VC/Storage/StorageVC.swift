@@ -12,18 +12,22 @@ class StorageVC: UIViewController {
     // Realm 가져오기
     let realm = try? Realm()
     
+    @IBOutlet weak var naviView: UIView!
     @IBOutlet weak var counseilingTV: UITableView! {
         didSet {
             counseilingTV.delegate = self
             counseilingTV.dataSource = self
+            counseilingTV.register(NoDataTVCell.nib(), forCellReuseIdentifier: NoDataTVCell.identifier)
             counseilingTV.backgroundColor = .heimishWhite
             counseilingTV.separatorStyle = .none // 경계선 제거
-            counseilingTV.register(NoDataTVCell.nib(), forCellReuseIdentifier: NoDataTVCell.identifier)
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(realm?.objects(Counseiling.self))
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         counseilingTV.reloadSections(IndexSet(0...0), with: .fade)
@@ -32,6 +36,7 @@ class StorageVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 }
+
 
 extension StorageVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,9 +69,9 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource {
                 
                 // Realm 데이터 불러오기
                 let chatModel = realm?.objects(Counseiling.self)
-                cell.idxLabel.text = "\(chatModel?[indexPath.row].idx ?? 999)"
-                cell.dateLabel.text = chatModel?[indexPath.row].date ?? "error"
-                cell.happyLabel.text = "\(chatModel?[indexPath.row].emotion[0] ?? 999)"
+                cell.idxLabel.text = "\(indexPath.row+1)" // 상담일지 번호
+                cell.dateLabel.text = chatModel?[indexPath.row].date ?? "error" // 상담한 날짜
+                cell.happyLabel.text = "\(chatModel?[indexPath.row].emotion[0] ?? 999)" // 감정 기록
                 cell.smileLabel.text = "\(chatModel?[indexPath.row].emotion[1] ?? 999)"
                 cell.sosoLabel.text = "\(chatModel?[indexPath.row].emotion[2] ?? 999)"
                 cell.sadLabel.text = "\(chatModel?[indexPath.row].emotion[3] ?? 999)"

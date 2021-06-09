@@ -37,14 +37,7 @@ class StorageChatVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     @IBAction func deleteAction(_ sender: Any) {
-        if  let thisChat = realm?.objects(Counseiling.self).filter("idx = \(thisidx ?? -1)").first {
-            try? realm?.write {
-                realm?.delete(thisChat)
-                self.navigationController?.popViewController(animated: true)
-            }
-        } else {
-            print("지우려는 상담의 인덱스가 없어요")
-        }
+        deleteAlert(title: "상담기록 삭제", message: "상담 기록을 삭제하시겠습니까?")
     }
 }
 
@@ -65,7 +58,7 @@ extension StorageChatVC {
         fpc.changePanelStyle() // panel 스타일 변경 (대신 bar UI가 사라지므로 따로 넣어주어야함)
         fpc.set(contentViewController: contentsVC) // floating panel에 삽입할 것
         fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
-        fpc = FloatingPanelController(delegate: self)
+        fpc.delegate = self
         fpc.layout = MyFloatingPanelLayout()
         fpc.invalidateLayout() // if needed
     }
@@ -74,6 +67,27 @@ extension StorageChatVC {
     private func setNib() {
         chatTV.register(UINib(nibName: "UserBalloonTableViewCell", bundle: nil), forCellReuseIdentifier: "UserBalloonTableViewCell")
         chatTV.register(UINib(nibName: "AiBalloonTableViewCell", bundle: nil), forCellReuseIdentifier: "AiBalloonTableViewCell")
+    }
+    
+    // 삭제 확인 Alert
+    private func deleteAlert(title: String?, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .default)
+        let okAction = UIAlertAction(title: "확인", style: .default) { [self] _ in
+            if  let thisChat = realm?.objects(Counseiling.self).filter("idx = \(thisidx ?? -1)").first {
+                try? realm?.write {
+                    realm?.delete(thisChat)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            } else {
+                print("지우려는 상담의 인덱스가 없어요")
+            }
+        }
+        alert.addAction(cancelAction)
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
     }
 }
 
@@ -98,8 +112,8 @@ extension FloatingPanelController {
 }
 
 extension StorageChatVC: FloatingPanelControllerDelegate {
-    func floatingPanel(_ vc: FloatingPanelController, layoutFor size: CGSize) -> FloatingPanelLayout {
-            return MyFloatingPanelLayout()
+    func floatingPanel(_ fpc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout {
+        return MyFloatingPanelLayout()
     }
 }
 
@@ -130,12 +144,14 @@ extension StorageChatVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 class MyFloatingPanelLayout: FloatingPanelLayout {
+    var layoutBottomInset: CGFloat = 150 // floating panel의 길이 조정 (밑 anchors 변수에 사용)
+    
     let position: FloatingPanelPosition = .bottom
     let initialState: FloatingPanelState = .tip
-    var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] { // 가능한 floating panel: 현재 full, half만 가능하게 설정
+    var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         return [
             .full: FloatingPanelLayoutAnchor(absoluteInset: 16.0, edge: .top, referenceGuide: .safeArea),
-            .half: FloatingPanelLayoutAnchor(fractionalInset: 0.5, edge: .bottom, referenceGuide: .safeArea),
+            .half: FloatingPanelLayoutAnchor(absoluteInset: layoutBottomInset, edge: .bottom, referenceGuide: .safeArea),
             .tip: FloatingPanelLayoutAnchor(absoluteInset: 44.0, edge: .bottom, referenceGuide: .safeArea)
         ]
     }

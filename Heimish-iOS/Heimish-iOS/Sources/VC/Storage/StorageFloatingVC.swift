@@ -18,7 +18,7 @@ class StorageFloatingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         floatingBtn.makeRounded(cornerRadius: nil)
-        if let complaining = realm?.objects(Counseiling.self)[idx-1].complaining {
+        if let complaining = realm?.objects(Counseiling.self).filter("idx = \(idx)").first?.complaining {
             complainingLabel.text = complaining
         } else {
             complainingLabel.text = "해당 상담은 속마음 기록을 OFF 하셨었네요!"

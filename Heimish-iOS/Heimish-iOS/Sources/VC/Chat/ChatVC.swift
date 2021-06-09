@@ -190,23 +190,21 @@ extension ChatVC {
         formatter.dateFormat = "YYYY년 MM월 dd일"
         let finishTime = formatter.string(from: Date()) // 상담 종료 시각
         let counseiling = Counseiling()
-        counseiling.idx = (realm?.objects(Counseiling.self).last?.idx ?? 0) + 1
-        counseiling.date = finishTime
-        counseiling.emotionArray = datas.first as! [Int]
-        if let secondData = datas.last {
-            counseiling.complaining = secondData as? String
-        } else {
-            counseiling.complaining = nil
-        }
+        counseiling.idx = (realm?.objects(Counseiling.self).last?.idx ?? 0) + 1 // 상담 고유 번호
+        counseiling.date = finishTime // 상담 종료 시각
+        counseiling.emotionArray = datas.first as? [Int] ?? [0,0,0,0] // 감정기록
+        counseiling.complaining = datas.last as? String ?? nil // 속마음 털어놓기
+        // 채팅 기록
         for idx in 0..<chatDatas.count {
             let content = Content(value: ["sender": chatDatas[idx][0], "message": chatDatas[idx][1], "time": chatDatas[idx][2]])
             counseiling.chat.append(content)
         }
+        // DB 등록
         try? realm?.write {
             realm?.add(counseiling)
         }
-        UserDefaults.standard.removeObject(forKey: "loadChat")
-        chatDatas = []
+        UserDefaults.standard.removeObject(forKey: "loadChat") // Active->In Active->Background에서 저장되어, Background->In Active->Active될 때 Load되던 대화 기록 초기화
+        chatDatas = [] // ChatVC 대화 초기화
         chatTV.reloadData()
         self.navigationController?.popViewController(animated: true)
     }

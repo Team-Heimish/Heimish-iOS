@@ -22,7 +22,7 @@ let activities: [ActivityData] = [
     ActivityData(activity: "샤워 하기", description: "샤워하고 나오면 상쾌해서 기분이 좋아질거에요,\n몸의 피로를 풀어보아요!"),
     ActivityData(activity: "오렌지 껍질 벗기기", description: "오렌지에 있는 시트러스 향은 스트레스를 줄여준대요!"),
     ActivityData(activity: "명상 하기", description: "명상이 정말 하기 간단하면서도 마음을 평온하게 해준답니다!"),
-    ActivityData(activity: "감사한 일 찾아보기", description: "저는 오늘 당신이 저를 찾아주셔서 감사해요"),
+    ActivityData(activity: "감사한 일 찾아보기", description: "오늘 당신이 저를 찾아주셔서 감사해요!"),
     ActivityData(activity: "식물 키우기", description: "식물을 하나 정성껏 키우다보면 마음이 따뜻해질거에요!"),
     ActivityData(activity: "다크 초콜릿 먹기", description: "스트레스 받을땐 다크 초콜릿만한 게 없답니다!"),
     ActivityData(activity: "한 가지 일만 하기", description: "너무 많은 것을 하고있지는 않은가요?\n충분히 열심히 하고 있어요 조금 쉬어도 돼요"),

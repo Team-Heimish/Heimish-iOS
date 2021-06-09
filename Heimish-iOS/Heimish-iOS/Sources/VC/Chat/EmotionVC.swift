@@ -69,8 +69,14 @@ class EmotionVC: UIViewController {
     
     @IBAction func recordEmotion(_ sender: Any) {
         if toggleSwtich.isOn, let complaining = emotionTextView.text {
-            NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: [emotions,complaining])
+            print("적은거 있을때"+complaining)
+            if complaining != "얼마든지 적어도 좋아" && emotionTextView.text.count > 0 {
+                NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: [emotions,complaining])
+            } else {
+                NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: [emotions])
+            }
         } else {
+            print("적은거 없을때")
             NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: [emotions])
         }
         self.navigationController?.popToRootViewController(animated: true)

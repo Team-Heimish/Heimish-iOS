@@ -73,8 +73,8 @@
                     <constraint firstItem="TUK-tc-FZA" firstAttribute="leading" secondItem="Fc1-fl-aJZ" secondAttribute="trailing" constant="5" id="Mqz-XR-u6T"/>
                     <constraint firstAttribute="trailing" secondItem="TUK-tc-FZA" secondAttribute="trailing" constant="15" id="VIJ-lo-TGt"/>
                     <constraint firstItem="TUK-tc-FZA" firstAttribute="top" secondItem="AHR-03-Ubx" secondAttribute="top" constant="10" id="bxO-l8-Lm0"/>
-                    <constraint firstItem="Fc1-fl-aJZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AHR-03-Ubx" secondAttribute="leading" constant="100" id="eDT-N5-NXG"/>
                     <constraint firstItem="Fc1-fl-aJZ" firstAttribute="bottom" secondItem="TUK-tc-FZA" secondAttribute="bottom" id="sCI-1x-rCG"/>
+                    <constraint firstItem="TUK-tc-FZA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AHR-03-Ubx" secondAttribute="leading" constant="70" id="yB0-0d-1Pp"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
