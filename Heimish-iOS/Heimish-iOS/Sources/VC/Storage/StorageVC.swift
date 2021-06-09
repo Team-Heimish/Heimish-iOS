@@ -105,8 +105,10 @@ extension StorageVC: UITableViewDelegate, UITableViewDataSource {
                     if let savedChat = realm?.objects(Counseiling.self) {
                         if savedChat.count != 0 {
                             // 지워도 데이터가 1개 이상이면 그냥 지우면 됨
-                            tableView.deleteRows(at: [indexPath], with: .fade)
-                            tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+                            tableView.performBatchUpdates({
+                                tableView.deleteRows(at: [indexPath], with: .fade)
+                                tableView.reloadSections(IndexSet(integer: 0), with: .fade)
+                            }, completion: nil)
                         } else {
                             // 근데 지웠을 때 데이터가 0개면 상담 시작해보라는 Cell 나와야 해서 Cell Count 1 유지
                             tableView.reloadRows(at: [indexPath], with: .fade)

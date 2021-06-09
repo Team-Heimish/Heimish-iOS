@@ -79,7 +79,9 @@ class EmotionVC: UIViewController {
             print("적은거 없을때")
             NotificationCenter.default.post(name: NSNotification.Name("recordChat"), object: [emotions])
         }
-        self.navigationController?.popToRootViewController(animated: true)
+        if let homeVC = self.navigationController?.viewControllers.filter({$0 is HomeVC}).first {
+            self.navigationController?.popToViewController(homeVC, animated: true)
+        }
     }
 }
 
