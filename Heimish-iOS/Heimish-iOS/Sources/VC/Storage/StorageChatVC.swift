@@ -59,8 +59,10 @@ extension StorageChatVC {
         fpc.view.translatesAutoresizingMaskIntoConstraints = false
         fpc.set(contentViewController: contentsVC) // floating panel에 삽입할 것
         fpc.delegate = self
-        fpc.layout = MyFloatingPanelLayout()
+        fpc.layout = CustomFloatingPanelLayout()
+        fpc.behavior = CustomPanelBehavior()
         fpc.invalidateLayout() // if needed
+        fpc.contentMode = .fitToBounds
         fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
     }
     
@@ -113,7 +115,7 @@ extension FloatingPanelController {
 
 extension StorageChatVC: FloatingPanelControllerDelegate {
     func floatingPanel(_ fpc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout {
-        return MyFloatingPanelLayout()
+        return CustomFloatingPanelLayout()
     }
 }
 
@@ -143,16 +145,22 @@ extension StorageChatVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-class MyFloatingPanelLayout: FloatingPanelLayout {
+class CustomFloatingPanelLayout: FloatingPanelLayout {
     var layoutBottomInset: CGFloat = 150 // floating panel의 길이 조정 (밑 anchors 변수에 사용)
     
     let position: FloatingPanelPosition = .bottom
     let initialState: FloatingPanelState = .half
     var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         return [
-            .full: FloatingPanelLayoutAnchor(absoluteInset: 16.0, edge: .top, referenceGuide: .safeArea),
+            .full: FloatingPanelLayoutAnchor(absoluteInset: 44.0, edge: .top, referenceGuide: .safeArea),
             .half: FloatingPanelLayoutAnchor(absoluteInset: layoutBottomInset, edge: .bottom, referenceGuide: .safeArea),
             .tip: FloatingPanelLayoutAnchor(absoluteInset: 44.0, edge: .bottom, referenceGuide: .safeArea)
         ]
+    }
+}
+
+class CustomPanelBehavior: FloatingPanelBehavior {
+    func allowsRubberBanding(for edge: UIRectEdge) -> Bool {
+        return true
     }
 }

@@ -23,7 +23,7 @@
     pod 'Moya'
     pod 'RealmSwift'
     pod 'SwiftLint'
-    pod 'FloatingPanel`
+    pod 'FloatingPanel'
     ```
 
 <br>
