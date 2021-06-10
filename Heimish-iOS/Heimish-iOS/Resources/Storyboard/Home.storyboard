@@ -27,10 +27,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hAp-X4-Hrd">
-                                <rect key="frame" x="30" y="109" width="232" height="84"/>
+                                <rect key="frame" x="30" y="120" width="232" height="73"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heimish" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhu-HU-g6H">
-                                        <rect key="frame" x="0.0" y="0.0" width="137.33333333333334" height="52"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="126.66666666666667" height="41"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="35"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
@@ -44,7 +44,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=": 당신의 아늑한 심리상담 챗봇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60S-WE-RUi">
-                                        <rect key="frame" x="0.0" y="60" width="232" height="24"/>
+                                        <rect key="frame" x="0.0" y="49" width="232" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
@@ -90,7 +90,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="goA-k7-dXn">
-                                <rect key="frame" x="20" y="455.66666666666669" width="335" height="135.33333333333331"/>
+                                <rect key="frame" x="20" y="436.66666666666669" width="335" height="135.33333333333331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Sgh-H2-vdU">
                                         <rect key="frame" x="65" y="26.999999999999993" width="250" height="81.333333333333314"/>
@@ -108,7 +108,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTN-Gy-uom">
-                                                        <rect key="frame" x="20" y="6.9999999999999982" width="30" height="19.333333333333329"/>
+                                                        <rect key="frame" x="20" y="9" width="31.333333333333329" height="15.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -142,7 +142,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 %" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUc-Wq-h3f">
-                                                        <rect key="frame" x="20" y="6.666666666666627" width="30" height="19.333333333333329"/>
+                                                        <rect key="frame" x="20" y="8.6666666666666288" width="31.333333333333329" height="15.333333333333336"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -166,7 +166,7 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🥳" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivJ-Ka-MWk">
-                                        <rect key="frame" x="20" y="21.333333333333311" width="30" height="44.666666666666657"/>
+                                        <rect key="frame" x="20" y="26" width="30" height="35"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -177,7 +177,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Me3-wQ-qH3">
-                                        <rect key="frame" x="20" y="69.333333333333314" width="30" height="44.666666666666657"/>
+                                        <rect key="frame" x="20" y="74.333333333333314" width="30" height="35"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -196,7 +196,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내일은 오늘보다 더 기분 좋은 일들로 가득할거에요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJW-pg-5jM">
-                                <rect key="frame" x="20" y="421.33333333333331" width="86.666666666666671" height="19.333333333333314"/>
+                                <rect key="frame" x="20" y="406.33333333333331" width="82.333333333333329" height="15.333333333333314"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
@@ -207,10 +207,10 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prf-OF-Beq">
-                                <rect key="frame" x="20" y="272.33333333333331" width="335" height="117"/>
+                                <rect key="frame" x="20" y="268.33333333333331" width="335" height="106"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3o-q7-g6M">
-                                        <rect key="frame" x="19.999999999999996" y="15.000000000000002" width="52.666666666666657" height="29.666666666666671"/>
+                                        <rect key="frame" x="20" y="14.999999999999998" width="49" height="23.333333333333329"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="20"/>
                                         <color key="textColor" red="0.27058823529411763" green="0.27058823529411763" blue="0.27058823529411763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -221,7 +221,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQK-2C-vGI">
-                                        <rect key="frame" x="19.999999999999996" y="74.666666666666686" width="38.666666666666657" height="22.333333333333329"/>
+                                        <rect key="frame" x="20" y="68.333333333333371" width="37" height="17.666666666666671"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                         <color key="textColor" name="heimishGray"/>
                                         <nil key="highlightedColor"/>
@@ -243,7 +243,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘은 이걸 해보면 어때요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z8N-ou-2fK">
-                                <rect key="frame" x="20" y="238" width="149" height="19.333333333333314"/>
+                                <rect key="frame" x="20" y="238" width="142" height="15.333333333333343"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
                                 <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
@@ -254,7 +254,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgk-lv-Wic">
-                                <rect key="frame" x="187.33333333333334" y="64" width="67" height="67"/>
+                                <rect key="frame" x="176.66666666666666" y="64" width="67" height="67"/>
                                 <color key="backgroundColor" name="nariYellow"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Xgk-lv-Wic" secondAttribute="height" multiplier="1:1" id="lp0-6D-mLs"/>

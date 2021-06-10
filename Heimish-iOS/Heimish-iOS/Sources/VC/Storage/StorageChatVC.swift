@@ -32,7 +32,7 @@ class StorageChatVC: UIViewController {
         setNib()
         setupFloatingView()
     }
-
+    
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -62,6 +62,7 @@ extension StorageChatVC {
         fpc.layout = CustomFloatingPanelLayout()
         fpc.behavior = CustomPanelBehavior()
         fpc.invalidateLayout() // if needed
+        fpc.view.frame = self.view.bounds
         fpc.contentMode = .fitToBounds
         fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
     }
@@ -107,7 +108,7 @@ extension FloatingPanelController {
         appearance.backgroundColor = .clear
         appearance.borderColor = .clear
         appearance.borderWidth = 0
-
+        
         surfaceView.grabberHandle.isHidden = false
         surfaceView.appearance = appearance
     }
