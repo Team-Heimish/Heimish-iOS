@@ -23,7 +23,6 @@
 		54426784266FDBCC00A2A65F /* StorageChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54426783266FDBCC00A2A65F /* StorageChat.storyboard */; };
 		54426786266FDCC300A2A65F /* StorageFloatingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54426785266FDCC300A2A65F /* StorageFloatingVC.swift */; };
 		54426788266FE3D400A2A65F /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54426787266FE3D400A2A65F /* UIViewController+Extension.swift */; };
-		5442678A2670B65A00A2A65F /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 544267892670B65A00A2A65F /* SplashVC.swift */; };
 		545909D72646C85700496AE9 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545909D62646C85700496AE9 /* ProgressBarView.swift */; };
 		5486DC2B2610C51500AB139D /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC282610C51500AB139D /* NotoSansCJKkr-Medium.otf */; };
 		5486DC2C2610C51500AB139D /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5486DC292610C51500AB139D /* NotoSansCJKkr-Regular.otf */; };
@@ -46,6 +45,8 @@
 		54CAB8AA2647840D0066D94B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CAB8A92647840D0066D94B /* String+Extension.swift */; };
 		54CAB8AC264784D60066D94B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CAB8AB264784D60066D94B /* UILabel+Extension.swift */; };
 		54E1BA25264A8F460076C306 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 54E1BA24264A8F460076C306 /* .swiftlint.yml */; };
+		54E997342671DE6F00B20414 /* HomeNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E997332671DE6F00B20414 /* HomeNC.swift */; };
+		54E997362672099000B20414 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E997352672099000B20414 /* SplashVC.swift */; };
 		54F2349326343B16009465B1 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2349226343B16009465B1 /* RealmDB.swift */; };
 		54F23496263440CD009465B1 /* Storage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54F23495263440CD009465B1 /* Storage.storyboard */; };
 		54F2349926344171009465B1 /* StorageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F2349826344171009465B1 /* StorageVC.swift */; };
@@ -67,7 +68,6 @@
 		54426783266FDBCC00A2A65F /* StorageChat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StorageChat.storyboard; sourceTree = "<group>"; };
 		54426785266FDCC300A2A65F /* StorageFloatingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageFloatingVC.swift; sourceTree = "<group>"; };
 		54426787266FE3D400A2A65F /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		544267892670B65A00A2A65F /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		545909D62646C85700496AE9 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		5486DC282610C51500AB139D /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
 		5486DC292610C51500AB139D /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
@@ -92,6 +92,8 @@
 		54CAB8A92647840D0066D94B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		54CAB8AB264784D60066D94B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		54E1BA24264A8F460076C306 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		54E997332671DE6F00B20414 /* HomeNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNC.swift; sourceTree = "<group>"; };
+		54E997352672099000B20414 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		54F2349226343B16009465B1 /* RealmDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 		54F23495263440CD009465B1 /* Storage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storage.storyboard; sourceTree = "<group>"; };
 		54F2349826344171009465B1 /* StorageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageVC.swift; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				5410ADB2262C1A0100419F50 /* HomeVC.swift */,
-				544267892670B65A00A2A65F /* SplashVC.swift */,
+				54E997332671DE6F00B20414 /* HomeNC.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				54A6971326107E1D008B4F2C /* LaunchScreen.storyboard */,
+				54E997352672099000B20414 /* SplashVC.swift */,
 				54A6972226107EB4008B4F2C /* Chat.storyboard */,
 				5410ADAF262C19E700419F50 /* Home.storyboard */,
 				54F23495263440CD009465B1 /* Storage.storyboard */,
@@ -468,6 +471,7 @@
 				54A6973D261090B9008B4F2C /* UITextField+Extension.swift in Sources */,
 				549827E726621126001485B9 /* NoDataTVCell.swift in Sources */,
 				54F2349326343B16009465B1 /* RealmDB.swift in Sources */,
+				54E997362672099000B20414 /* SplashVC.swift in Sources */,
 				5412CC1826518B95003EDA6C /* activityData.swift in Sources */,
 				541A6AAD262588A200201F0F /* APIService.swift in Sources */,
 				54CAB8AC264784D60066D94B /* UILabel+Extension.swift in Sources */,
@@ -481,11 +485,11 @@
 				54A6970B26107E1A008B4F2C /* SceneDelegate.swift in Sources */,
 				542E7AE5263442FD005798AA /* StorageTVCell.swift in Sources */,
 				54F2349926344171009465B1 /* StorageVC.swift in Sources */,
-				5442678A2670B65A00A2A65F /* SplashVC.swift in Sources */,
 				54A69731261089A3008B4F2C /* AiBalloonTVCell.swift in Sources */,
 				5410ADB3262C1A0100419F50 /* HomeVC.swift in Sources */,
 				541A6AB02625924B00201F0F /* MessageData.swift in Sources */,
 				542E7AEF26345013005798AA /* StorageChatVC.swift in Sources */,
+				54E997342671DE6F00B20414 /* HomeNC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

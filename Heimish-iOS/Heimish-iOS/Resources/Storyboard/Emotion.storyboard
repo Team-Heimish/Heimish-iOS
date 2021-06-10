@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kOX-Jj-rja">
-                                <rect key="frame" x="16" y="444.66666666666669" width="343" height="100.00000000000006"/>
+                                <rect key="frame" x="16" y="473.33333333333326" width="343" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OLR-mg-N7k">
                                         <rect key="frame" x="0.0" y="0.0" width="68.666666666666671" height="100"/>
@@ -50,7 +50,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eij-NM-NcF">
-                                                <rect key="frame" x="28.999999999999996" y="40" width="10.333333333333332" height="60"/>
+                                                <rect key="frame" x="28.999999999999996" y="40.000000000000057" width="10.333333333333332" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwj-oQ-zIk">
-                                                <rect key="frame" x="28.999999999999996" y="40" width="10.333333333333332" height="60"/>
+                                                <rect key="frame" x="28.999999999999996" y="40.000000000000057" width="10.333333333333332" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pll-Lm-aKm">
-                                                <rect key="frame" x="28.999999999999996" y="40" width="10.333333333333332" height="60"/>
+                                                <rect key="frame" x="28.999999999999996" y="40.000000000000057" width="10.333333333333332" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -119,7 +119,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-vg-15P">
-                                                <rect key="frame" x="29.333333333333339" y="40" width="10.333333333333332" height="60"/>
+                                                <rect key="frame" x="29.333333333333339" y="40.000000000000057" width="10.333333333333332" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -142,7 +142,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qOT-zO-gvA">
-                                                <rect key="frame" x="29.333333333333368" y="40" width="10.333333333333332" height="60"/>
+                                                <rect key="frame" x="29.333333333333368" y="40.000000000000057" width="10.333333333333332" height="60"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -155,16 +155,16 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MzG-Tr-gJn">
-                                <rect key="frame" x="16" y="386.66666666666669" width="215.33333333333334" height="38"/>
+                                <rect key="frame" x="16" y="406.66666666666669" width="229" height="46.666666666666686"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상담이 종료된 현재 감정을 기록해줘!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLT-O3-mpv">
-                                        <rect key="frame" x="0.0" y="0.0" width="215.33333333333334" height="17.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="229" height="22.333333333333332"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="조금 더 나은 상담을 위해 참고할게!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDK-dj-AeI">
-                                        <rect key="frame" x="0.0" y="22.666666666666629" width="179" height="15.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="27.333333333333314" width="190" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                         <color key="textColor" systemColor="systemGray2Color"/>
                                         <nil key="highlightedColor"/>
@@ -186,22 +186,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heimish 일기장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uge-er-PmD">
-                                <rect key="frame" x="16" y="74" width="130" height="23.333333333333329"/>
+                                <rect key="frame" x="16" y="74" width="140.66666666666666" height="29.666666666666671"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="20"/>
                                 <color key="textColor" name="mediumGreen"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oNv-vU-Im0">
-                                <rect key="frame" x="15.999999999999986" y="129.33333333333334" width="253.66666666666663" height="55.333333333333343"/>
+                                <rect key="frame" x="16" y="135.66666666666666" width="269" height="69"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="말하지 못한 것들이 있다면, 자유롭게 너의 속마음을 털어놓아봐" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg5-i5-NDk">
-                                        <rect key="frame" x="0.0" y="0.0" width="253.66666666666666" height="35"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="269" height="44.666666666666664"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
                                         <color key="textColor" name="black"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그냥 이야기 하는 것 만으로도 큰 효과가 있을거야!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FhK-7H-b3e">
-                                        <rect key="frame" x="0.0" y="40" width="253.66666666666666" height="15.333333333333336"/>
+                                        <rect key="frame" x="0.0" y="49.666666666666686" width="269" height="19.333333333333329"/>
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                         <color key="textColor" systemColor="systemGray2Color"/>
                                         <nil key="highlightedColor"/>
@@ -209,14 +209,14 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vA6-sR-q0W">
-                                <rect key="frame" x="16" y="204.66666666666663" width="343" height="150"/>
+                                <rect key="frame" x="16" y="224.66666666666663" width="343" height="150"/>
                                 <color key="backgroundColor" name="heimishWhite"/>
                                 <color key="textColor" name="black"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOs-Rx-68G">
-                                <rect key="frame" x="289" y="399.66666666666669" width="70" height="25"/>
+                                <rect key="frame" x="289" y="428.33333333333331" width="70" height="25"/>
                                 <color key="backgroundColor" name="mainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="D4u-V8-bMV"/>
@@ -233,7 +233,7 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MmN-ov-HWd">
-                                <rect key="frame" x="310" y="153.66666666666666" width="51" height="31"/>
+                                <rect key="frame" x="310" y="173.66666666666666" width="51" height="31"/>
                                 <color key="onTintColor" name="mainColor"/>
                                 <connections>
                                     <action selector="swtichTapped:" destination="O2z-5B-n49" eventType="valueChanged" id="J4u-y0-Giu"/>

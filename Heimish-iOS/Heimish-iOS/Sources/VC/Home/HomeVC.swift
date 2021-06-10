@@ -10,7 +10,7 @@ import RealmSwift
 
 class HomeVC: UIViewController {
     let realm = try? Realm()
-    
+    let appDel = AppDelegate()
     @IBOutlet weak var titileLabel: UILabel!
     @IBOutlet weak var startChatBtn: UIButton!
     @IBOutlet weak var emotionView: UIView!

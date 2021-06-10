@@ -55,12 +55,13 @@ extension StorageChatVC {
         })
         contentsVC.idx = thisidx!
         fpc = FloatingPanelController()
-        fpc.changePanelStyle() // panel 스타일 변경 (대신 bar UI가 사라지므로 따로 넣어주어야함)
+        fpc.changePanelStyle() // panel 스타일 변경
+        fpc.view.translatesAutoresizingMaskIntoConstraints = false
         fpc.set(contentViewController: contentsVC) // floating panel에 삽입할 것
-        fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
         fpc.delegate = self
         fpc.layout = MyFloatingPanelLayout()
         fpc.invalidateLayout() // if needed
+        fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
     }
     
     // Nib 등록
@@ -95,7 +96,7 @@ extension FloatingPanelController {
     func changePanelStyle() {
         let appearance = SurfaceAppearance()
         let shadow = SurfaceAppearance.Shadow()
-        shadow.color = UIColor.black
+        shadow.color = .hemishGray
         shadow.offset = CGSize(width: 0, height: -4.0)
         shadow.opacity = 0.15
         shadow.radius = 2
@@ -105,9 +106,8 @@ extension FloatingPanelController {
         appearance.borderColor = .clear
         appearance.borderWidth = 0
 
-        surfaceView.grabberHandle.isHidden = true
+        surfaceView.grabberHandle.isHidden = false
         surfaceView.appearance = appearance
-
     }
 }
 
@@ -147,7 +147,7 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
     var layoutBottomInset: CGFloat = 150 // floating panel의 길이 조정 (밑 anchors 변수에 사용)
     
     let position: FloatingPanelPosition = .bottom
-    let initialState: FloatingPanelState = .tip
+    let initialState: FloatingPanelState = .half
     var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
         return [
             .full: FloatingPanelLayoutAnchor(absoluteInset: 16.0, edge: .top, referenceGuide: .safeArea),

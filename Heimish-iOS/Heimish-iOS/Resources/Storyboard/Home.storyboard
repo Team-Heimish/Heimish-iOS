@@ -308,61 +308,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9W-F6-dUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095.2" y="121.18226600985223"/>
+            <point key="canvasLocation" x="308" y="120"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--HomeNC-->
         <scene sceneID="IgM-NU-kgS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="njM-As-Xry" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="njM-As-Xry" customClass="HomeNC" customModule="Heimish_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OWy-BN-TTo">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="z9N-kS-Ejb" kind="relationship" relationship="rootViewController" id="Vkm-F1-gpg"/>
+                        <segue destination="jYl-LR-0iz" kind="relationship" relationship="rootViewController" id="qjj-fq-Fke"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x8S-Dj-5xb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-425" y="121"/>
         </scene>
-        <!--SplashVC-->
-        <scene sceneID="PX4-s4-IKu">
-            <objects>
-                <viewController storyboardIdentifier="SplashVC" id="z9N-kS-Ejb" customClass="SplashVC" customModule="Heimish_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pbI-Oj-t4F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playstore" translatesAutoresizingMaskIntoConstraints="NO" id="WZ9-8b-4Mg">
-                                <rect key="frame" x="127.66666666666669" y="351" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="WZ9-8b-4Mg" secondAttribute="height" multiplier="1:1" id="JZm-7E-yRR"/>
-                                    <constraint firstAttribute="width" constant="120" id="ZwD-O7-Uqf"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="iAP-hW-bsR"/>
-                        <color key="backgroundColor" name="nariYellow"/>
-                        <constraints>
-                            <constraint firstItem="WZ9-8b-4Mg" firstAttribute="centerY" secondItem="iAP-hW-bsR" secondAttribute="centerY" id="PPC-C8-D0w"/>
-                            <constraint firstItem="WZ9-8b-4Mg" firstAttribute="centerX" secondItem="iAP-hW-bsR" secondAttribute="centerX" id="raN-pR-b76"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="L2Q-Ln-5pD"/>
-                    <connections>
-                        <outlet property="logoImageView" destination="WZ9-8b-4Mg" id="ygk-Oc-2iw"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vOw-HT-NAD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="278" y="121"/>
-        </scene>
     </scenes>
     <resources>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
-        <image name="playstore" width="512" height="512"/>
         <namedColor name="black">
             <color red="0.11400000005960464" green="0.11400000005960464" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -107,14 +107,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnB-ft-Fiu">
-                                <rect key="frame" x="177" y="10" width="60" height="5"/>
-                                <color key="backgroundColor" name="heimishGray"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="BuC-pv-Wgo"/>
-                                    <constraint firstAttribute="height" constant="5" id="dka-o8-oZL"/>
-                                </constraints>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2h1-dy-36O">
                                 <rect key="frame" x="15" y="126.5" width="384" height="133.5"/>
                                 <string key="text">하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연하소연</string>
@@ -142,10 +134,8 @@
                         <viewLayoutGuide key="safeArea" id="lkG-ib-TX2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VnB-ft-Fiu" firstAttribute="centerX" secondItem="lkG-ib-TX2" secondAttribute="centerX" id="3dr-c2-SJ0"/>
                             <constraint firstItem="2h1-dy-36O" firstAttribute="leading" secondItem="JiN-BX-cIZ" secondAttribute="leading" id="7rQ-d0-DGs"/>
                             <constraint firstItem="JiN-BX-cIZ" firstAttribute="leading" secondItem="lkG-ib-TX2" secondAttribute="leading" constant="15" id="9Da-2r-n6f"/>
-                            <constraint firstItem="VnB-ft-Fiu" firstAttribute="top" secondItem="IT6-H0-i3D" secondAttribute="top" constant="10" id="OHe-Ng-stc"/>
                             <constraint firstItem="lkG-ib-TX2" firstAttribute="trailing" secondItem="2h1-dy-36O" secondAttribute="trailing" constant="15" id="QYR-nK-BIY"/>
                             <constraint firstItem="2h1-dy-36O" firstAttribute="top" secondItem="JiN-BX-cIZ" secondAttribute="bottom" constant="35" id="X0S-pG-r1k"/>
                             <constraint firstItem="lkG-ib-TX2" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2h1-dy-36O" secondAttribute="bottom" constant="35" id="YrP-E8-QE8"/>
@@ -155,7 +145,6 @@
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
                         <outlet property="complainingLabel" destination="2h1-dy-36O" id="l8k-uM-cPS"/>
-                        <outlet property="floatingBtn" destination="VnB-ft-Fiu" id="3tB-sD-NGb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Nu-R9-YXJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -168,9 +157,6 @@
         <image name="trash" catalog="system" width="121" height="128"/>
         <namedColor name="black">
             <color red="0.11400000005960464" green="0.11400000005960464" blue="0.11400000005960464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="heimishGray">
-            <color red="0.34900000691413879" green="0.34900000691413879" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="mainColor">
             <color red="0.98799997568130493" green="0.68999999761581421" blue="0.25900000333786011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
