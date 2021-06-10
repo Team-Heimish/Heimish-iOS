@@ -16,11 +16,6 @@
 * Development Environment  
 ![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg) ![iOS](https://img.shields.io/badge/Platform-iOS-black.svg)
 
-<img width="1289" alt="flow-1" src="https://user-images.githubusercontent.com/42789819/121510164-4fb6a200-ca22-11eb-9232-558abca942dc.png">
-<img width="1054" alt="flow-2" src="https://user-images.githubusercontent.com/42789819/121510178-51806580-ca22-11eb-942f-0201588768dc.png">
-<img width="1144" alt="flow-3" src="https://user-images.githubusercontent.com/42789819/121510184-5218fc00-ca22-11eb-8e82-a8a47d1ac275.png">
-![Heimish-Workflow](https://user-images.githubusercontent.com/42789819/121510189-52b19280-ca22-11eb-9360-ea7a59832918.jpg)
-
 
 * Using Library  
     ```ruby
@@ -30,6 +25,22 @@
     pod 'SwiftLint'
     pod 'FloatingPanel`
     ```
+
+<br>
+<br>
+
+## 📌 Work flow
+<img width=100% src=https://user-images.githubusercontent.com/42789819/121510189-52b19280-ca22-11eb-9360-ea7a59832918.jpg>
+
+
+<br>
+<br>
+
+## 🧑🏻‍💼 Description
+ <img width="1289" alt="flow-1" src="https://user-images.githubusercontent.com/42789819/121510164-4fb6a200-ca22-11eb-9232-558abca942dc.png">
+<img width="1054" alt="flow-2" src="https://user-images.githubusercontent.com/42789819/121510178-51806580-ca22-11eb-942f-0201588768dc.png">
+<img width="1144" alt="flow-3" src="https://user-images.githubusercontent.com/42789819/121510184-5218fc00-ca22-11eb-8e82-a8a47d1ac275.png">
+
 
 <br>
 <br>
@@ -174,38 +185,6 @@ if (condition) {
 <br>
 <br>
 
-## Extension을 통해 작성한 메소드 설명  
-```Swift
-// 기기별 사이즈를 알기 위한 Extension
-UIDevice+ScreenSize.swift
-
-// 색상을 정의해놓은 Extension
-UIColor+Additions.swift
-
-// Notification을 쓰기 위한 Name Extension 
-NotificationName.swift
-
-// 자주 사용하는 Radius와 Shadow 를 함수로 정의해 놓은 Extension
-UIView+Extension.swift
-
-String+Extension.swift 
-// TextField의 입력 구역을 정의를 위한 Extension
-UITextField+Extension.swift
-
-// 버튼의 자간을 설정하기 위한 Extension
-UIButton+Extension.swift
-
-// ImageView에서 Gif를 불러오기 위한 Extension
-UIImage+Extension.swift
-
-// 공통적으로
-UIViewController+Extension.swift
-```
-
-
-<br>
-<br>
- 
 
 ## <img width=20px src=https://user-images.githubusercontent.com/42789819/115146245-9cb87080-a090-11eb-9762-1a686d8fc737.png> Heimish iOS Dev
 
