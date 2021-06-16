@@ -61,9 +61,9 @@ extension StorageChatVC {
         fpc.delegate = self
         fpc.layout = CustomFloatingPanelLayout()
         fpc.behavior = CustomPanelBehavior()
-        fpc.invalidateLayout() // if needed
         fpc.view.frame = self.view.bounds
-        fpc.contentMode = .fitToBounds
+//        fpc.contentMode = .fitToBounds
+        fpc.invalidateLayout() // if needed
         fpc.addPanel(toParent: self) // fpc를 관리하는 UIViewController
     }
     
